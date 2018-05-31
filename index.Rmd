@@ -1,0 +1,45 @@
+---
+title: ""
+output: html_document
+---
+
+<div id="intro_band"> 
+
+<div class="about">
+Data in depth leverages Kenya's vast array of demand-side data to explore themes that are relevant to financial inclusion and development.
+</div> 
+
+</div> 
+
+<div class="row proj_band">
+
+<div class="col-sm-5">
+<div class="img_container" id = "proj1_img"> </div>
+</div> 
+
+<div class="col-sm-7" class = "proj_details">
+
+#[Digital credit in Kenya](digitalcredit.html)
+
+This report explores emerging questions about the growth, adoption and usage of digital credit in Kenya using a host of demand-side survey data, including a 2017 mobile phone survey. 
+
+</div> 
+
+</div> 
+
+<div class = "row proj_band"> 
+
+<div class="col-sm-5">
+<div class="img_container" id = "proj2_img"> </div>
+</div> 
+
+<div class="col-sm-7" class = "proj_details">
+
+#[Exploring Gallup's 2018 financial health survey](https://fsdkenya.shinyapps.io/gallup_global_financial_health/)
+
+This interactive note provides a preliminary take on Gallup's recent survey of financial health in Kenya. 
+
+</div> 
+
+</div> 
+

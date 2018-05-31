@@ -1,0 +1,2236 @@
+---
+title: 'Digital credit in Kenya: Evidence from demand-side surveys'
+author: Paul Gubbins & Edoardo Totolo, FSD Kenya
+output:
+  html_document:
+    css: digitalcredit.css
+    fig_caption: yes
+    highlight: zenburn
+    number_sections: no
+    theme: yeti
+    toc: yes
+    toc_depth: 3
+    toc_float: 
+      collapsed: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE, 
+  fig.width=7.5, 
+  fig.height=4,
+  fig.align = "center", 
+  cache = TRUE
+  )
+
+source("assets/digitalcredit/functions.R")
+source("assets/digitalcredit/globals.R")
+
+#Creating figures: 
+#Introduction
+createf("acctrnds_allcb")     #Fig 1.1
+createf("acctrnds_cba")       #Fig 1.2
+createf("acctrnds_eqb")       #Fig 1.3
+createf("acctrnds_kcb")       #Fig 1.4
+createf("gnpls_acb")          #Fig 1.5
+createf("gnpls_nla_cbs")      #Fig 1.6
+createf("trnd_noloans_wlth")  #Fig 1.7
+createf("trnd_evloans_wlth")  #Fig 1.8
+#Methods & data
+bump(figs, level = 1)
+createf("wealthprofile_assets") 
+createf("wealthprofile_income")
+createf("segsize_loc")
+createf("segsize_dem")
+createf("segsize_liv")
+createf("segsize_edu")
+createf("segsize_age")
+# Section 3
+bump(figs, level = 1)
+createf("trnd_wlth")
+createf("trnd_loc")
+createf("trnd_gnd")
+createf("trnd_age")
+createf("trnd_liv")
+# Section 4
+bump(figs, level = 1)
+createf("mshare_landscape")
+createf("mshare_provider")
+# Section 5
+bump(figs, level = 1)
+createf("mp_loc_bsg")
+createf("mp_dem_bsg")
+createf("mp_liv_bsg")
+createf("mp_wlth_bsg")
+createf("mp_edu_bsg")
+createf("mp_vuln_bsg")
+createf("mp_acc_bsg")
+createf("db_loc_gnd")
+createf("db_edu_loc")
+createf("db_edu_wlth")
+createf("db_vuln_wlth")
+createf("db_wlth_acc")
+createf("adb_dem")
+createf("adb_liv")
+createf("adb_wlth")
+createf("ndl_geo_gnd")
+createf("ndl_dem")
+createf("ndl_liv_gnd")
+createf("ndl_liv_gnd")
+createf("ndl_liv_gnd")
+createf("ndl_vuln_wlth")
+#Section 6
+bump(figs, level = 1)
+createf("ndb_reas_dem")
+createf("ndb_reas_wlth")
+createf("ndb_reas_liv")
+createf("ndb_reas_vuln")
+createf("db_pref_dem")
+createf("db_pref_wlth")
+createf("db_pref_liv")
+createf("db_pref_dlp")
+createf("db_lnprp_dem")
+createf("db_lnprp_wlth")
+createf("db_lnprp_liv")
+createf("db_lnprp_dlp")
+#Section 7
+bump(figs, level = 1)
+createf("db_dem_rps")
+createf("db_wlth_rps")
+createf("db_liv_rps")
+createf("db_prov_rps")
+createf("db_prov_rps")
+createf("lp_edu_rps")
+createf("lp_vuln_wlth")
+createf("lp_liv_wlth")
+createf("def_dem_rps")
+createf("def_vuln_wlth")
+createf("def_liv_wlth")
+#Section 8
+bump(figs, level = 1)
+createf("db_rep_rsg")
+createf("db_rep_dem")
+createf("db_rep_wlth")
+createf("db_rep_vuln")
+createf("lp_rslt_dem")
+createf("lp_rslt_wlth")
+createf("lp_rslt_vuln")
+#Section 9
+bump(figs, level = 1)
+createf("db_exp_dem")
+createf("db_exp_edu")
+createf("db_exp_wlth")
+createf("db_exp_dlp")
+createf("db_exp_rsg")
+#Section 10
+bump(figs, level = 1)
+createf("ln_prov_use")
+createf("trnd_lnany_db")
+createf("trnd_lnformalany_db")
+createf("trnd_lninformalany_db")
+createf("trnd_lninformalshpk_db")
+#Section 11
+bump(figs, level = 1)
+createf("mfx_panel1")
+createf("mfx_panel2")
+```
+
+# 1. Introduction {#sec1 .sec}
+
+In the past five years digital loans have transformed the credit landscape in Kenya. Mobile phones, identity-linked digital footprints, automated credit scoring, agent networks and credit information sharing[^1] - the building blocks of digital credit - have enabled providers to deliver loans quickly and at scale. For millions of adults, the possibility of borrowing from their phones has opened the door to private, formal consumer credit for the first time. Yet the pricing, marketing and potential misuse of these products coupled with the extensive 'blacklisting' (see [Box 3](#box3)) of borrowers who have failed to repay these relatively small loans has raised a growing chorus of concern about their design and the adverse impacts they have on borrowers and the financial system more broadly [^2]. 
+
+#### BOX 1: What are digital loans? {.box2 #box1}
+In 2006, getting a consumer loan from a bank in Kenya, would have required traveling about 9km to the nearest branch [^3], speaking to a loan officer, gathering together documents, submitting an application and hoping for the best. Putting interest rates aside, the process was costly for the average earner, it took days and involved out-of-pocket costs such as paying for transporation. For a bank, extending these kind of loans was also costly. It required having staff who could screen an applicant and gather information or collateral in order to make a judgement about their creditworthiness. Digital loans have transformed the process for both borrowers and lenders. 
+
+As opposed to conventional credit, borrowers do not have to wait to receive a decision on whether the loan was granted after application. Digital loans are *instant* since loan-eligibility decisions are *automated* based on a set of rules applied to available data, and not on human judgement applied on a case by case basis. Another distinguishing factor of digital credit is that information, loan disbursements and repayments are managed *remotely*, without the need for customers to visit bank branches. 
+
+[`r icon::fa("external-link")` Find out more about the attributes of digital credit from CGAP](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
+
+#### {.empty}
+
+On the supply side, the volume of digital lending speaks, well, *volumes* about the impact that digital credit has had on the market. For example, in its first two years [M-Shwari](http://cbagroup.com/m-shwari/) - Kenya's first digital banking product offered by the Commercial Bank of Africa (CBA) - supplied over 20 million loans to 2.6 million borrowers. To put that into perspective, CBA only had 13,000 open loan accounts the year before M-Shwari was launched (`r citef("acctrnds_cba")`), between 2013 and 2015, CBA opened over twice as many loan accounts - 27,400 on average - per day, effectively transforming CBA from a niche bank serving corporate clients to a bank serving the mass market. Similarly, Kenya Commercial Bank (KCB) historically processed around 200,000 new loans per year, in 2015, the year it launched [KCB M-PESA](https://ke.kcbgroup.com/home/loans/mobile/kcb-m-pesa) the number of new loans it disbursed increased 20 fold to around 4 million. 
+
+Bank superversion data from the CBK indicates that the number of deposit and loan accounts in the overall commercial banking system increased from 11.9 and 1.67 million in 2010 to 34.6 and 8.51 million in 2016 (`r citef("acctrnds_allcb")`), amounts significantly greater than if trends had continued at their historic (pre mobile banking) rate (however, total loan accounts represents the 'stock' of loan accounts which remain open *at the time* banks submit their reports to the CBK, the total 'flow' or volume of lending *over time* is therefore much greater). 
+
+It is unclear how this unprecedented wave of lending has influenced the quality of the banking sector's loan portfolio. Between December of 2011 and December of 2016, the value of non-performing loans as a share of total gross loans more than doubled across all commercial banks, rising from 4.35 to 9.34 percent, reaching levels not seen since the end of 2007 (`r citef("gnpls_acb")`). It is not clear what is driving this deterioriation in asset quality but the fact that it coincides with the emergence of digital credit suggests more research is needed. A look at changes in NPLs for each of Kenya's 10 largest banks between 2014 and 2016 (`r citef("gnpls_nla_cbs")`) shows that NPLs increased for all banks, not just those that most aggresively expanded their lending via mobile banking. 
+
+### Figure: An industry emerges
+
+```{r timeline, fig.height = 2.25, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+
+ ggplot(timeline, mapping = aes(x=x, y=value)) + 
+      geom_point() + 
+      geom_segment(aes(xend=x, yend=0)) + 
+      geom_text(aes(label=str_wrap(event,15)), nudge_x=-40, hjust=1, size=3.25) + 
+      scale_x_date(date_labels = format("%Y"), date_breaks="1 year", limits=as.Date(c("2011-01-01", "2019-01-01"))) + 
+  scale_y_continuous(expand = c(0, 0), limits=c(0,0.6)) + 
+  theme(
+    axis.title.y = element_blank(), 
+    axis.title.x = element_blank(), 
+    axis.text = element_text(size=9), 
+    plot.title = element_text(size=11), 
+    panel.background = element_rect(fill = "white"), 
+    legend.position = "none", 
+    axis.ticks.x = element_blank(), 
+    axis.ticks.y = element_blank(), 
+    axis.text.x = element_text(face="bold"), 
+    axis.text.y = element_blank(), 
+    axis.line.x = element_line(colour="black", size=1, arrow=arrow(ends="both", length=unit(0.1, "inches")))
+  ) 
+
+```
+
+While commercial banks in partnerhsip with mobile network operators were first to offer digital loans, a number of start-ups offering loans through apps have emerged. [Tala](https://tala.co/) and [Branch](https://branch.co/), for example, use alternative data such as call logs, GPS, social network data and contact lists obtained with permission of the user, to assess credit risk and tailor loan offers (such as reductions in interest rates as users build a credit history). Tala and Branch both have more than one million installs from Kenya's google play store. Data on the number and performance of app-based loan accounts are not reported publicly since financial service providers that offer credit but do not take deposits are unlicensed and not regulated by CBK. This also means that app-based lenders are not subject to the interest-rate cap law that took effect in September of 2016 with the promulgation of the [Banking Amendment Act](https://www.centralbank.go.ke/uploads/banking_circulars/1456582762_Banking%20Circular%20No%204%20of%202016%20-%20The%20Banking%20Amendment%20Act%202016.pdf), which limits loan interest rates to 4 percentage points above the central bank reference rate. Reports in the press indicate that to date Tala has disbursed over 5.6 million loans worth Ksh 28 billion to over 1 million customers since its launch in March of 2014 (known then as M-Kopo Rahisi) and by mid-2017 Branch had disbursed 1.5 million loans worth Ksh 3.63 billion to 350,000 customers since its launch in April of 2015 [^4].  
+
+On the demand-side, the introduction of digital loans met a need for a type of credit that had not been satisfied by other formal lenders. In 2009, only one in ten adults with a mobile phone had ever used a formal loan from a bank or non-bank financial institution (NBFI), five times as many (one in two adults) had used a loan from informal sources, such as friends and family, an employer, shopkeeper or savings group (`r citef("trnd_noloans_wlth")`). By 2017, almost three in four adults with a mobile phone had ever used a formal loan (including mobile loans). Over this time period, the prevalance of formal borrowing among the poorest 40% of the adult population increased fivefold. The growth in exposure to formal loans accelerated significantly after 2013, suggesting just how influential digital loans have been in expanding the credit 'frontier' in Kenya. 
+
+### Figure: Deposit & loan accounts, 2017 {.tabset .tabset-fade}
+
+#### `r figs("acctrnds_allcb", "All commercial banks")`
+```{r acctrnds_allcb, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
+title <- "Deposit & loan accounts, all commercial banks"
+df <- supply[supply$unique_indicator_code %in% c("CBK.NLA.ABS", "CBK.NDA.ABS"), ]
+btrendplot(df, x = "year_c", y = "value", o = "indicator_type", pal = colAcc, subtitle = "", legtitle = "", ylab="Number of accounts (m)", xline = 2012.5, title = title, caption = "Source: Central Bank of Kenya (CBK) bank supervision reports.", notes = "Loan accounts refers to the number of open loan accounts at the time a bank sumbits its report to the CBK.")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/acctrnds_allcb-1.png) 
+
+#### `r figs("acctrnds_cba", "CBA")`
+```{r acctrnds_cba, echo=FALSE, warning=FALSE, error = FALSE, message = FALSE}
+title <- "Deposit & loan accounts, Commercial Bank of Africa (CBA)"
+df <- supply[supply$unique_indicator_code %in% c("CBK.NDA.CBA", "CBK.NLA.CBA"), ]
+btrendplot(df, x = "year_c", y = "value", o = "indicator_type", pal = colAcc, subtitle = "", legtitle = "Commercial bank", ylab="Number of accounts (m)", xline = 2012.5, title = title, caption = "Source: Central Bank of Kenya (CBK) bank supervision reports.", notes = "Loan accounts refers to the number of open loan accounts at the time a bank sumbits its report to the CBK.") 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/acctrnds_cba-1.png) 
+
+#### `r figs("acctrnds_eqb", "Equity bank")`
+```{r acctrnds_eqb, echo=FALSE, warning=FALSE, error=FALSE, message = FALSE}
+df <- supply[supply$unique_indicator_code %in% c("CBK.NDA.EQB", "CBK.NLA.EQB"), ]
+title <- "Deposit & loan accounts, Equity Bank"
+btrendplot(df, x = "year_c", y = "value", o = "indicator_type", pal = colAcc, subtitle = "", legtitle = "Commercial bank", ylab="Number of accounts (m)", xline = 2015.6, title = title, caption = "Source: Central Bank of Kenya (CBK) bank supervision reports.", notes = "Loan accounts refers to the number of open loan accounts at the time a bank sumbits its report to the CBK.") 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/acctrnds_eqb-1.png)  
+
+#### `r figs("acctrnds_kcb", "KCB")`
+```{r acctrnds_kcb, echo=FALSE, warning=FALSE, error = FALSE,  message = FALSE}
+df <- supply[supply$unique_indicator_code %in% c("CBK.NDA.KCB","CBK.NLA.KCB"), ]
+title <- "Deposit & loan accounts, Kenya Commercial Bank (KCB)"
+btrendplot(df, x = "year_c", y = "value", o = "indicator_type", pal = colAcc, subtitle = "", legtitle = "Commercial bank", ylab="Number of accounts (m)", xline = 2015.3, title = title, caption = "Source: Central Bank of Kenya (CBK) bank supervision reports.", notes = "Loan accounts refers to the number of open loan accounts at the time a bank sumbits its report to the CBK.") 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/acctrnds_kcb-1.png)  
+
+### Figure: Gross non-performing loans, banking sector {.tabset .tabset-fade}
+
+#### `r figs("gnpls_acb", "All commercial banks")`
+```{r gnpls_acb, echo=FALSE, warning=FALSE, error = FALSE,  message = FALSE}
+title <- "Gross non-performing loans as share of total gross loans, all commercial banks"
+btrendplot(filter(gnpls, provider == "ABS" & year_c >= 2000), x = "year_c", y = "value", o = "provider", notes = "", pal = colBnks, subtitle = "", legend = FALSE, ylab="Percent", xline = 2012.5, title = title, caption = "Source: Central Bank of Kenya (CBK) bank supervision reports.") 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/gnpls_acb-1.png)  
+
+#### `r figs("gnpls_nla_cbs", "By commercial bank")`
+``` {r gnpls_nla_cbs, echo=FALSE, warning=FALSE, error = FALSE,  message = FALSE}
+
+## Keeping gross loans, gross npls and number of loan accounts for all years 
+
+# df <- kfsidb %>% 
+#   separate(unique_indicator_code, into = paste0("V", 1:4), sep="[.]", remove=FALSE) %>%
+#   rename(indtype = V2) %>% 
+#   rename(provider = V3) %>%
+#   filter(indtype %in% c("GL", "GNPL", "NLA", "NA")) %>% 
+#   select(-c(V1, V4, unique_indicator_code, unique_value_code, quarter, month_name, month_num, lci, uci, notes)) %>% 
+#   spread(indtype, value) 
+  
+df <- bankstats %>%
+  mutate(
+    shareNPL = (GNPL/GL)*100, 
+    logNLA = log(NLA), 
+    logGL = log(GL)
+    ) %>% 
+  filter(year %in% c(2014, 2016) & top10 == 1) %>% 
+  group_by(provider) %>%
+  mutate(
+    pctchangeNPL = (shareNPL-lag(shareNPL))/lag(shareNPL)*100, 
+    pctchangeNLA = (NLA-lag(NLA))/lag(NLA)*100, 
+    label = ifelse(year == 2016, label_short, NA), 
+    NLA = NLA/1000
+  ) %>%
+  fill(pctchangeNPL, .direction = "up")
+
+ggplot(df, mapping = aes(x = NLA, y =  shareNPL, group=provider)) + 
+  geom_path(aes(color=pctchangeNPL), arrow = arrow(type = "open", angle = 30, length = unit(0.1, "inches"))) + 
+  scale_colour_gradient(low = "yellow", high = "red") + 
+  geom_label_repel(aes(x = NLA, y = shareNPL, label=label), size = 2.5, color="black", show.legend=FALSE) + 
+  geom_text(aes(x = NLA, y = shareNPL, label=year), size = 2, color="black", show.legend=FALSE) + 
+  scale_x_continuous(trans="log", breaks = c(10, 20, 50, 100, 500, 1000, 2000, 4000, 8000)) + 
+  guides(
+        color = guide_legend(title = str_wrap("Percent change in NPLs between 2014 & 2016",20))
+      ) + 
+  labs(
+      x = "Number of loan accounts (Thousands) [log scale]", 
+      y = "NPLs (as % of total value of gross loans)", 
+      title = str_wrap("Non-performing loans vs. number of loan accounts, 2014 & 2016, largest 10 banks",50), 
+      caption = str_wrap("Source: Central Bank of Kenya, Annual bank supervision reports",80)
+    ) + 
+  theme(
+      axis.text = element_text(size=11), 
+      plot.caption=element_text(hjust=0, color="#848b8c"), 
+      panel.background = element_rect(fill = "#f2f7fc")
+    )
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/gnpls_nla_cbs-1.png)  
+
+### Figure: Trends in exposure to formal loans, by population subgroups, 2006-2017 {.tabset .tabset-fade}
+
+#### `r figs("trnd_noloans_wlth", "Ever used a formal loan")` 
+```{r trnd_noloans_wlth, fig.height = 4.75, echo=FALSE, warning=FALSE}
+title <- "Adults who have ever used a formal loan, by wealth & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_formal_any_ev")
+selectedSubgroupCats <- c("Kenya", "Wealth: Poorest 40%", "Wealth: Top 20%")
+minyear <- 2008
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes=notesTrnds)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_noloans_wlth-1.png) 
+
+#### `r figs("trnd_evloans_wlth", "Never used a formal loan")` 
+```{r trnd_evloans_wlth, fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Adults who have never used a formal loan, by wealth & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_formal_any_nv")
+selectedSubgroupCats <- c("Kenya", "Wealth: Poorest 40%", "Wealth: Top 20%")
+minyear <- 2008
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes=notesTrnds)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_evloans_wlth-1.png) 
+
+### {.empty}
+
+Perhaps due to just how rapidly digital credit has spread in Kenya, the patterns and impacts of its diffusion have not been researched extensively. The benefits of instant and accessible credit to low income borrowers without a formal credit history are potentially very important, especially in helping them manage volatile incomes and cope with adverse shocks that require an immediate response. In addition, given the potential harm to consumers and risks to the economy of widespread borrowing, the need for research in this domain is particularly acute. In an effort to help fill this knowledge gap, FSD Kenya partnered with [CGAP](http://www.cgap.org), the [Central Bank of Kenya](https://www.centralbank.go.ke/) and the [Kenya Bureau of Statistics (KNBS)](https://www.knbs.or.ke/) to conduct a nationally representative survey to better identify who is using digital credit, for what reasons and what their experience using these loans has been like. High level findings from this survey were shared in  "Kenya's digital credit revolution five years on" [CGAP blog](http://www.cgap.org/blog/kenya%E2%80%99s-digital-credit-revolution-five-years), and [slide deck](https://www.microfinancegateway.org/library/digital-credit-revolution-kenya-assessment-market-demand-5-years). The objective of this report is to present a wider range of analyses from the survey as will as incorporate data and findings from other survey programs and studies. 
+
+After a discussion of the data sources used throughout this report, the results of the analysis herein are organized into 9 sections, each guided by an overarching question, followed by a conclusion which highlights some key takeaways and areas for further research. 
+
+* [Data sources](#sec2)
+* [Setting the stage: How rapidly is mobile banking being adopted in Kenya?](#sec3)
+* [Who are the main providers of digital credit?](#sec4)
+* [Which population segments are more likely to have adopted and used digital loans?](#sec5)
+* [Why do people take or avoid digital loans?](#sec6)
+* [How common are delinquent payments and defaults on digital loans?](#sec7)
+* [How do people repay their digital loans and why do they pay late?](#sec8)
+* [What are some of the more common experiences borrowers face as they use digital credit products?](#sec9)
+* [How do digital loans fit in the broader credit landscape?](#sec10)
+* [What are the key drivers of digital credit uptake, usage and repayment?](#sec11)
+* [Conclusions](#sec12)
+
+# 2. Data sources {#sec2 .sec}
+
+This report draws on data from available nationally representative demand-side surveys that touch on digital credit, including the 2013 and 2016 [FinAccess household survey](http://fsdkenya.org/knowledge-hub/dataset/) conducted by FSD Kenya, and the 2013 to 2016 [financial inclusion insights surveys](http://finclusion.org/data_fiinder/) conducted by Intermedia. However, the report most heavily draws on data from the 2017 FinAccess "tracker" survey, an exprimental mobile phone survey designed by FSD Kenya to obtain more frequent estimates of access to and usage of financial services among adults in Kenya. 
+
+The 2017 FinAccess tracker was conducted between January and March of 2017. A random sample of 4,500 individuals above the age of 18 was drawn from a sampling frame of 6,710 adults who had been interviewed in person during the 2016 FinAccess household survey and who had provided their mobile phone number in agreement to be contacted in the future. A total of 3,129 phone interviews were successfully completed, yielding an overall attrition rate of 31 percent. A large share of the unreachable sample was located in some of the more remote counties of Kenya: Wajir, Marsabit, Samburu, Mandera, Garissa, Elgeyo Marakwet, Lamu and Bomet. In these counties almost half of the sample could not be reached. 
+
+While the original intention of the survey was to create a sample that could be representative of all adults, the constraint in this case was that our sampling frame was comprised primarily of adults that owned a mobile phone - which, on average, looks different from the population of non-mobile phone owners. Overall, 77 percent of the 2015 FinAccess sample owned a mobile phone, 88 percent of the FinAccess tracker sample frame (adults in the 2015 FinAccess sample who consented to be contacted in the future AND who provided contact details) owned a mobile phone, and 89.6 percent of the final sample owned a mobile phone. **For this reason, the reference population used throughout this report are not all Kenyan adults above the age of 18, but the 77 percent of Kenyan adults above the age of 18 who own a mobile phone.** All survey estimates presented in this report are weighted to account for the sample methodology and non-random attrition and generalize to the mobile-owning population above the age of 18. 
+
+To explore variations in the patterns of the adoption, usage and repayment of digital loans, results are presented for various population sub-groups defined by demographic and livelihood variables. Three population subgroups frequently used throughout this report - the poorest 40%, middle 40% and top 20% in terms of wealth - are based on an index constructed using the types of assets a respondent's household owns, the quality of their housing materials, and availability of utilities (e.g. sewage, electricity and piped water). This asset index is designed to summarize in a single variable the relative *material well-being* position of a household. But unlike levels of income or spending which are measured in currency, the units of the weatlh index are not easily interpretable, so `r citef("wealthprofile_assets")` and `r citef("wealthprofile_income")` provide a profile to help readers develop a more concrete picture of these population subgroups. `r citef("segsize_loc")` and `r citef("segsize_age")` display the sizes of other mobile owning population sub-groups that are frequently referenced throughout the report. 
+
+### Figure: Characterizing groups defined by wealth {.tabset .tabset-fade}
+
+#### `r figs("wealthprofile_assets", "By asset ownership")`
+```{r wealthprofile_assets, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+
+## load the images from filenames
+npoints <-8 
+pics  <- vector(mode="list", length=npoints)
+image.file <- dir(imagedir, full.names=TRUE)
+image.file <- image.file[order(as.integer(sub("_.*","",sub(imagedir,"",image.file))))]
+for(i in 1:npoints) {
+  pics[[i]] <- EBImage::readImage(image.file[i])
+}
+names(pics) <- c("Brick wall", "Car", "Electricity", "Flush toilet", "Fridge", "Motorcycle", "Piped water", "TV")
+
+assetprofile <- FA2015 %>% 
+ select(probweights, wlthgroup, total_income, asset_flushtoilet, asset_pipedwater, asset_brickwall, asset_electricity, asset_tv, asset_fridge, asset_car, asset_motorcycle) %>% 
+ filter(!is.na(wlthgroup)) %>%
+ group_by(wlthgroup) %>% 
+ summarise(
+   asset_flushtoilet =  weighted.mean(asset_flushtoilet,  probweights, na.rm = TRUE), 
+   asset_pipedwater = weighted.mean(asset_pipedwater, probweights, na.rm=TRUE), 
+   asset_brickwall = weighted.mean(asset_brickwall, probweights, na.rm=TRUE), 
+   asset_electricity = weighted.mean(asset_electricity, probweights, na.rm=TRUE), 
+   asset_tv = weighted.mean(asset_tv, probweights, na.rm=TRUE), 
+   asset_fridge = weighted.mean(asset_fridge, probweights, na.rm=TRUE), 
+   asset_car = weighted.mean(asset_car, probweights, na.rm=TRUE), 
+   asset_motorcycle = weighted.mean(asset_motorcycle, probweights, na.rm=TRUE)
+   ) %>% 
+ gather(attributes, value, asset_flushtoilet, asset_pipedwater, asset_brickwall, asset_electricity, asset_tv, asset_fridge, asset_car, asset_motorcycle) %>% 
+ mutate(
+   value = pctclean(value), 
+   attributes = as.factor(attributes), 
+   attributes = plyr::revalue(attributes, 
+                        c("asset_brickwall" = "Brickwall", 
+                          "asset_car" = "Car", 
+                          "asset_electricity" = "Electricity", 
+                          "asset_flushtoilet" = "Flush toilet", 
+                          "asset_fridge" = "Fridge", 
+                          "asset_pipedwater" = "Piped water", 
+                          "asset_tv" = "TV", 
+                          "asset_motorcycle" = "Motorcycle")), 
+   attributes = ordered(attributes, levels=names(pics))
+   )
+
+title <- "Asset ownership and housing quality, by wealth group"
+caption_assets <- "Source: FinAccess 2016 household survey (FSD Kenya)"
+
+ggplot(assetprofile, mapping = aes(x = value, y = attributes)) + 
+  geom_point() + 
+  geom_text(assetprofile, mapping = aes(x = value, y = attributes, label = round(value,1)), nudge_x = 10, size = 3) + 
+  scale_y_discrete() + 
+  labs(
+        x = "Percent of adults [18+]", 
+        title = str_wrap(title, 75), 
+        caption = str_wrap(caption_assets, 100)
+      ) + 
+  theme(
+    axis.text.y  = my_axis(pics), 
+    axis.title.y = element_blank(), 
+    axis.text = element_text(size=9), 
+    plot.caption=element_text(hjust=0, color="#848b8c"), 
+    panel.background = element_rect(fill = "#f2f7fc")
+  ) + 
+  facet_wrap(~wlthgroup) 
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/wealthprofile_assets-1.png) 
+
+#### `r figs("wealthprofile_income", "By self reported income")`
+``` {r wealthprofile_income, fig.height = 5, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+incomeprofile <- FA2015 %>% 
+ select(probweights, wlthgroup, total_income) %>% 
+ filter(!is.na(wlthgroup) & total_income < 1000000) %>% 
+  mutate(
+    y = ifelse(wlthgroup=="Bottom 40%", 0.75, ifelse(wlthgroup == "Middle 40%", 0.4, 0.1))
+  )
+
+incomemeans <- incomeprofile %>% 
+  group_by(wlthgroup) %>% 
+  summarise(
+   total_income_mean =  weighted.mean(total_income,  probweights, na.rm = TRUE), 
+   total_income_median = median(total_income),
+   total_income_p25 = quantile(total_income, 0.25), 
+   total_income_p75 = quantile(total_income, 0.75)
+   ) %>% 
+  mutate( 
+    y = c(0.75, 0.4, 0.1)
+    )
+
+title <- "The distribution of self-reported monthly income by population sub-groups defined by asset wealth"
+caption_income <- "Source: 2016 FinAccess household survey (FSD Kenya). Notes: The boxplots overlaid on the density plot shows the position of the 25th percentile, median and 75th percentile of income for each of the wealth groups. The value of these statistics is labeled on the plot. While self-reported income is not considered a reliable measure of income in a setting where earnings are volatile, intermittent and derived from micro-businesses, they are displayed here to provide a rough sense of order of magnitude differences in income between wealth groups"
+
+ggplot(data = incomeprofile, mapping = aes(total_income, ..count.., fill = wlthgroup, color = wlthgroup)) +
+  geom_density(alpha = 0.1, position = "fill") + 
+  geom_boxploth(data = incomeprofile, aes(x = total_income, y = y, color=wlthgroup, fill=wlthgroup), outlier.shape = NA, coef = 0, alpha = 0.1, show.legend = FALSE) + 
+  geom_text(data = incomemeans, aes(x = total_income_median, y = y, label = comma(total_income_median)), vjust = -1, color='black', show.legend=FALSE) + 
+  geom_text(data = incomemeans, aes(x = total_income_p25, y = y, label = comma(total_income_p25)), vjust = 1.5, color='black', size = 2.5, show.legend=FALSE) + 
+  geom_text(data = incomemeans, aes(x = total_income_p75, y = y, label = comma(total_income_p75)), vjust = 1.5, color='black', size = 2.5, show.legend=FALSE) + 
+  scale_colour_discrete(name = "Wealth group:") + 
+  scale_fill_discrete(name = "Wealth group:") + 
+  scale_x_continuous(trans="log", breaks=c(500, 2000, 8000, 32000, 128000, 512000)) + 
+  labs(
+        x = "Self reported monthly income (Ksh) [log scale]", 
+        y = "Conditional density estimate", 
+        title = str_wrap(title,75), 
+        caption = str_wrap(caption_income, 100)
+      ) + 
+  theme(
+    axis.text = element_text(size=9), 
+    plot.caption=element_text(hjust=0, color="#848b8c"), 
+    panel.background = element_rect(fill = "#f2f7fc")
+  )
+  
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/wealthprofile_income-1.png) 
+
+### Figure: Reference population sizes, 2017 {.tabset .tabset-fade}
+
+#### `r figs("pop_trends", "Overall population")`
+```{r pop_trends, echo=FALSE, warning=FALSE}
+
+shapePal2 = c("Report reference year (2017)" = 21, "Last Kenya census (2009)" = 21, "Estimate" = 21)
+fillPal2 = c("Report reference year (2017)" = "white", "Last Kenya census (2009)" = "white", "Estimate" = "#848b8c")
+colPal2 = c("Report reference year (2017)" = "red", "Last Kenya census (2009)" = "blue", "Estimate" = "#848b8c")
+sizePal2 = c("Report reference year (2017)" = 3, "Last Kenya census (2009)"=2, "Estimate" = 1)
+ggplot(population_int, mapping=aes(x=x, y=y, shape=type, fill=type, colour=type, size=type)) + 
+  geom_line() + 
+  geom_point() + 
+  geom_text(aes(label = lab), color="black", size=3, hjust=1, nudge_x=-2) + 
+  geom_text(aes(label = lab2), color="black", size=4, hjust=0, nudge_x = 2) + 
+  geom_text(aes(label = lab3), color="#848b8c", size=2.3, vjust=1, nudge_y = +1.5) + 
+  scale_shape_manual(values=shapePal2) + 
+  scale_colour_manual(values=colPal2) + 
+  scale_fill_manual(values=fillPal2) + 
+  scale_size_manual(values=sizePal2) + 
+  scale_x_continuous(breaks = seq(1950,2020, 10)) + 
+  scale_y_continuous(breaks = seq(5,25, 5)) + 
+  labs(
+    title = "Kenya's adult population, 1955-2020", 
+    y = "Adult population (m) [18+]", 
+    caption = str_wrap("Source: United Nations population division, medium fertility variant. Notes: Values within 5-year periods are interpolated by author. Since UN population estimates are reported for 5-year age intervals, the population of 18-20 year olds is assumed to be half the population of 15-20 year olds.", 115)
+  ) + 
+  theme(
+    axis.title.x = element_blank(), 
+    axis.text = element_text(size=9), 
+    plot.title = element_text(size=11), 
+    plot.caption=element_text(hjust=0, color="#848b8c"), 
+    panel.background = element_rect(fill = "#f2f7fc"), 
+    legend.position = "none", 
+    axis.text.x = element_text(face="bold"), 
+    axis.line.x = element_line(colour="black", size=0.5, arrow=arrow(ends="both", length=unit(0.1, "inches")))
+  ) 
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/pop_trends-1.png) 
+
+#### `r figs("segsize_loc", "By location")`
+```{r segsize_loc, fig.width=8, fig.height=1.75, echo=FALSE, warning=FALSE}
+selectedSubgroupCats <- c("Residence: Nairobi", "Residence: Non-Nairobi urban", "Residence: Rural")
+popestsAll <<- NULL
+popit(Alldata, selectedSubgroupCats, year = 2015.6, grouplookup)
+circles(popestsAll[which(popestsAll$subgroupcat %in% selectedSubgroupCats), ], "popabs", str_wrap(selectedSubgroupCats,10), palette[selectedSubgroupCats], scale_factor, maxCats)
+```
+
+#### `r figs("segsize_dem", "By demographic group")`
+```{r segsize_dem, fig.width=8, fig.height=1.75, echo=FALSE, warning=FALSE}
+selectedSubgroupCats <- c("Rural, Females, Over-30", "Rural, Females, Under-30", "Rural, Males, Over-30", "Rural, Males, Under-30", "Urban, Females, Over-30", "Urban, Females, Under-30", "Urban, Males, Over-30", "Urban, Males, Under-30")
+popestsAll <<- NULL
+popit(Alldata, selectedSubgroupCats, year = 2015.6, grouplookup)
+circles(popestsAll[which(popestsAll$subgroupcat %in% selectedSubgroupCats), ], "popabs", str_wrap(selectedSubgroupCats,10), palette[selectedSubgroupCats], scale_factor, maxCats)
+```
+
+#### `r figs("segsize_liv", "By livelihood")`
+```{r segsize_liv, fig.width=8, fig.height=1.75, echo=FALSE, warning=FALSE}
+selectedSubgroupCats <- c("Livelihood: Employment", "Livelihood: Business owner", "Livelihood: Agriculture", "Livelihood: Casual worker")
+popestsAll <<- NULL
+popit(Alldata, selectedSubgroupCats, year = 2015.6, grouplookup)
+circles(popestsAll[which(popestsAll$subgroupcat %in% selectedSubgroupCats), ], "popabs", str_wrap(selectedSubgroupCats,10), palette[selectedSubgroupCats], scale_factor, maxCats)
+```
+
+#### `r figs("segsize_edu", "By education")`
+```{r segsize_edu, fig.width=8, fig.height=1.75, echo=FALSE, warning=FALSE}
+selectedSubgroupCats <- c("Educ: Primary or less", "Educ: Secondary", "Educ: Tertiary or more")
+popestsAll <<- NULL
+popit(Alldata, selectedSubgroupCats, year = 2015.6, grouplookup)
+circles(popestsAll[which(popestsAll$subgroupcat %in% selectedSubgroupCats), ], "popabs", str_wrap(selectedSubgroupCats,10), palette[selectedSubgroupCats], scale_factor, maxCats)
+```
+
+#### `r figs("segsize_age", "By age")`
+```{r segsize_age, fig.width=8, fig.height=1.75, echo=FALSE, warning=FALSE}
+selectedSubgroupCats <- c("Age: [18-25)", "Age: [25-45)","Age: [45-65)", "Age: [65+]")
+popestsAll <<- NULL
+popit(Alldata, selectedSubgroupCats, year = 2015.6, grouplookup)
+circles(popestsAll[which(popestsAll$subgroupcat %in% selectedSubgroupCats), ], "popabs", str_wrap(selectedSubgroupCats,10), palette[selectedSubgroupCats], scale_factor, maxCats)
+```
+
+# 3. Setting the stage: How has the adoption of mobile banking changed over time? {#sec3 .sec}
+
+The emergence of digital lending is part of a broader trend stemming both from widespread adoption of mobile technology by consumers to  facilitate their communication, payments, information and entertainment needs as well as by financial service providers to help lower delivery costs and reach untapped segments of the population. 
+
+**Between late 2013 and late 2017, the share of mobile-owning adults actively using either the savings or loan features of mobile banking more than doubled, increasing from 12.4 to 30.3 percent at an average annual rate of 24.4 percent (`r citef("trnd_wlth")`)**. Adoption of digital credit among the wealthiest 20% of the population, grew at almost twice the rate as among the poorest 40%. By 2017, almost 1 in 2 of Kenya's wealthiest mobile owners were using digital credit, compared to less than 1 in 5 of Kenya's poorest. 
+
+The evolution of mobile banking usage rates in Nairobi and other urban areas were similar (`r citef("trnd_loc")`), growing at an average annual rate of about 20 percent per year. In rural areas, the share of mobile-owning adults using mobile banking increased from 6 to 23.6 percent, at an average annual rate of 33.3 percent. 
+
+**In late 2013, men were about twice as likely as women to be using mobile banking, but in late 2017, with 33 percent of men and 27 percent of women using mobile banking, men were only 25 percent more likely to be using digital loans (`r citef("trnd_gnd")`).**
+
+Young adults in the 18-25 age bracket were initially quicker to adopt mobile banking than older prime working age adults in the 25-45 year age bracket, but by 2017, both groups were just as likely users of mobile banking (`r citef("trnd_age")`). Between 2013 and 2017 the rate of adoption of mobile banking among 18-25 year olds was about half that of other age groups, among which adoption grow at an average annual rate of approximately 30 percent per year. 
+
+In late 2013, about 1 in 4 business owners, employed workers and casual workers used mobile banking (`r citef("trnd_liv")`), compared to only 1 in 10 agriculture. In the subsequent years, usage of mobile banking grew notably among the employed and business workers, but not among casuals, such that by 2017 over 40% of the employed and business workers were using mobile banking, while the share of casual workers using digital credit remained at its 2013 level. 
+
+### Figure: Digital borrowing trends, by population subgroups, 2013-2017 {.tabset .tabset-fade}
+
+#### `r figs("trnd_wlth", "By wealth")` 
+```{r trnd_wlth, fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Digital borrowers, by wealth & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_mshwarikcb")
+selectedSubgroupCats <- c("Kenya", "Wealth: Poorest 40%", "Wealth: Top 20%")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes=notesTrnds)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_wlth-1.png)  
+
+#### `r figs("trnd_loc", "By location")`
+```{r trnd_loc,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Digital borrowers, by household location & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_mshwarikcb")
+selectedSubgroupCats <- c("Residence: Nairobi", "Residence: Non-Nairobi urban", "Residence: Rural")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, subtitle = subtitle, title = title, caption = captionTrnds, notes=notesTrnds)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_loc-1.png) 
+
+#### `r figs("trnd_gnd", "By gender")` 
+```{r trnd_gnd,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Digital borrowers, by gender & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_mshwarikcb")
+selectedSubgroupCats <- c("Gender: Men", "Gender: Women")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, subtitle = subtitle, title=title, caption = captionTrnds, notes=notesTrnds)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_gnd-1.png) 
+
+#### `r figs("trnd_age", "By age")`  
+```{r trnd_age,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Digital borrowers, by age & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_mshwarikcb")
+selectedSubgroupCats <- c("Age: [18-25)", "Age: [25-45)","Age: [45-65)", "Age: [65+]")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, subtitle = subtitle, title=title, caption = captionTrnds, notes=notesTrnds)
+
+#arrowplot(growthrates(svyestsAll, selectedSubgroupCats), palette[selectedSubgroupCats], maxCats)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_age-1.png) 
+
+#### `r figs("trnd_liv", "By livelihood")`  
+```{r trnd_liv,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+
+title <- "Digital borrowers, by livelihood & year"
+subtitle <- "Percent of adults [18+, mobile phone owners]"
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_mshwarikcb")
+selectedSubgroupCats <- c("Livelihood: Agriculture", "Livelihood: Business owner","Livelihood: Casual worker", "Livelihood: Employment")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, subtitle = subtitle, title=title, caption = captionTrnds, notes=notesTrnds)
+
+#arrowplot(growthrates(svyestsAll, selectedSubgroupCats), palette[selectedSubgroupCats], maxCats)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_liv-1.png) 
+
+# 4. How prevalent is digital borrowing and who provides the loans? {#sec4 .sec}
+
+```{r include=FALSE}
+
+pct_mpop_dcusers <- mobile_owners %>% summarise(weighted.mean(digital_borrower, probweights, na.rm=TRUE))
+pct_dcu_active <- digital_borrowers %>% 
+                      summarise(weighted.mean(active_borrower, probweights, na.rm=TRUE))
+
+```
+
+**`r cleannum(pct_mpop_dcusers)` percent of Kenya's adult, mobile phone owning population (approximately 7 million people) have used digital credit.** Among these borrowers, `r cleannum(pct_dcu_active)` percent are active: they either had an outstanding digital loan at the time of the survey, or had taken a loan in the 3 months prior to the survey. Individuals in rural areas represent both the majority of digital borrowers as well as the largest addressable market (individuals with mobile phones who have not used digital loans) `r citef("mshare_landscape")`. 
+
+**A dominant majority (over three quarters) of digital borrowers across both urban and rural-markets have taken loans provided by M-Shwari, around a third have taken loans from KCB M-PESA and about 1 in 10 have taken loans from Equity Eazzy.** The two leading app-based digital loan products (Tala & Branch) have jointly captured around 6.7% of the market (approximately 1.3 million adults) (`r citef("mshare_provider")`). The variation in market share by provider across rural and urban areas is minimal. 
+
+### Figure: The market landscape
+#### `r figs("mshare_landscape", "Share of population by mobile owning and digital borrowing status")`
+``` {r mshare_landscape, echo=FALSE, warning=FALSE}
+
+treemap(
+  landscape.df[landscape.df$geogroup != "All adults", ],
+  index=c("geogroup", "mobtype", "labels"), 
+  vSize="values", 
+  vColor = "geogroup", 
+  type = "categorical",
+  palette = colGeo, 
+  position.legend = "none", 
+  algorithm = "pivotSize", 
+  sortID = "-values", 
+  title = "", 
+  mirror.x = FALSE, 
+  align.labels = list(c("center", "top"), c("left", "top"), c("center", "center")), 
+  ymod.labels = c(0.115, -0.05, 0), 
+  border.col = 'white', 
+  border.lwds = c(12, 6, 1), 
+  fontsize.title = 10.5, 
+  fontsize.labels = c(10, 9, 9), 
+  bg.labels = 'white'
+)
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mshare_landscape-1.png) 
+
+### Figure: Primary provider of digital credit
+#### `r figs("mshare_provider", "Share of digital borrowers by provider and location")` 
+```{r mshare_provider, echo=FALSE, warning=FALSE}
+
+xlabs <- c("currpast_mshwari" = "M-Shwari", "currpast_kcb" = "KCB M-Pesa", "currpast_equity" = "Equity Eazzy", "currpast_mcoop" = "MCoop Cash", "currpast_branch" = "Branch", "currpast_tala" = "Tala", "currpast_other" = "Other provider", "currpast_none" = "Not a digital borrower")
+
+df <- matchby(digital_borrowers, "currpast", probweights, geogroup) %>% 
+    filter(y != "All adults" & x != "currpast_none") %>% 
+    mutate(x = as.character(x), 
+           name = xlabs[x], 
+           pop = ndb[y], 
+           value_n = value*pop, 
+           lab = paste(round(value*100,1), "%, \n", round(value_n,2),"m", sep=""), 
+           y=factor(y, levels=c("Rural", "Non-Nairobi Urban", "Nairobi"))
+           )
+
+ggplot(df, mapping = aes(x = reorder(name, value), y = value, fill=y)) + 
+  geom_bar(stat = 'identity', position='dodge') + 
+  geom_text(aes(label = lab), size = 2.75, nudge_y=.10) + 
+  facet_wrap(~y) + 
+  scale_y_continuous(breaks=c(1),labels=c("100%")) + 
+  scale_fill_manual(values = colGeo, name = "y") + 
+  coord_flip() + 
+    labs(
+        y = "Percent of digital borrowers", 
+        title = "", 
+        caption = str_wrap(paste(caption, "Notes: Borrowers may report using more than one provider, so columns do not add to 100%.", sep=" "), 90)
+      ) + 
+  theme(
+    axis.title.y = element_blank(), 
+    axis.title.x = element_text(hjust=-0.01, vjust=6, size=9, color="black", face="italic"), 
+    axis.text = element_text(size=9), 
+    plot.title = element_text(size=12), 
+    plot.caption=element_text(hjust=0, color="#848b8c"), 
+    panel.background = element_rect(fill = "#f2f7fc"), 
+    legend.position = "none", 
+    strip.background = element_rect(fill="white", colour="white"), 
+    strip.text.x = element_text(size = 10, face="bold")
+  ) 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mshare_provider-1.png) 
+
+# 5. Which population segments have been adopted mobile borrowing? {#sec5 .sec}
+
+Adoption of digital credit has been greatest among adults in urban areas (`r citef("mp_loc_bsg")`). **In Nairobi, about 1 in 2 mobile phone owners have used digital credit**. In urban areas outside of Nairobi, slightly fewer - about 45 percent - have borrowed from mobile loan providers. **Rural mobile phone owners are about half as likely as those in urban areas to have used digital credit**. 
+
+**Men are more likely to take mobile loans than women - especially in rural areas - but the differences are relatively small**. In rural areas, men are about 25 percent more likely to have taken a digital loan than women, while in Nairobi and other urban areas, the percent differences in borrowing are 7 and 11 percent, respectively (`r citef("db_loc_gnd")`). 
+
+`r citef("mp_dem_bsg")` displays the share of mobile phone owning digital borrowers for segments of the population defined by location, gender and age. The general pattern observed previously holds: urban areas have almost twice the mobile credit adoption rates and differences in adoption by gender are relatively small. **However, age differences in adoption are very pronounced among mobile-owning women in rural areas: women under the age of 30 are about 50 percent more likely to have used or be using digital credit compared to women over 30 years of age**. Rural women under the age of 30 are more active digital credit users than men of their same age cohort, whereas the opposite is true in urban areas. 
+
+`r citef("adb_dem")` shows the number of active digital borrowrs per 100 inactive digital borrowrs by demographic segment. A value of 100 means that there are equal numbers of active to inactive borrowers in a partciular segment. Overall, active borrowers outnumber inactive borrowrs across most population segments by close to a factor of 2. Three demographic groups have active borrowers that are more than double in size than inactive borrowers: urban, males *over* the age of 30, urban, females *under* the age of 30 and rural, females *over* the age of 30. **Rural, males under the age of 30 have the smallest share of active digital borrowers (9.2 active borrowers for every 10 inactive borrowers) across all demographic groups.** This may suggest that young men in rural areas have either had poor experiences with digital credit, mismanaged their first loans or have not found digital borrowing particularly value adding, relative to other groups. 
+
+Digital borrowing is most common among mobile owners who are wage employed or run their own business and least common among those in agriculture or who are dependent on social transfers (`r citef("mp_liv_bsg")`). **1 in 2 mobile owners who are wage employed use digital credit compared to only 1 in 4 mobile owners in agriculture.** It is worth noting that if the need for credit is related to income volatility (to bridge income shortfalls), one would expect to see higher usage rates for more vulnerable livelihoods such as agriculture and casual work. However, this is not the case. This pattern could be related to aspects of the automated credit scoring decisions and that data that feeds into those decisions that make it more difficut for these groups to gain access to loans. It may also be that the more volatile your income, the more you are afraid of taking loans as your ability to repay is uncertain. These factors are explored in [section 4](#sec4). 
+
+**In addition to being the most common users of digital credit, employed workers are by far the most active borrowers: Among employed workers, active digital borrowers outnumber inactive ones by a factor of 3**. Digital borrowers that depend on casual work or agriculture are the least active (`r citef("mp_liv_bsg")`). To the extent that frequent and repeated usage of digital credit requires a sustained ability to pay back the principle and interest on short term loans, this pattern is perhaps not surprising. But this is still puzzling in the sense that if workers with more stable income profiles need small value, short term credit less, on average, than workers with unstable incomes, why are they using digital credit so frequently? It may be that it is lower-skill, low-wage earners with limited savings capacity that are driving a large share of the demand for digital loans, perhaps as a salary advance, in order to make ends meet between paychecks. Some [anecdotal evidence](http://mobilemoneyafrica.com/content.php?id=2838) supports this argument. 
+
+**While 1 in 2 mobile owners in the wealthiest 20% of the population use digital credit, only 1 in 5 of the poorest 20% do.** (`r citef("mp_wlth_bsg")`). However, the number of active to inactive borrowers among the poorest and richest mobile owners are similar. With about twice the number of active to inactive borrowers, the middle 40% of the population in wealth terms is the most active segment (`r citef("adb_wlth")`).  
+
+**Educational attainment is strongly associated with digital borrowing and the relationship holds irrespective of the location or wealth of the household (`r citef("db_edu_loc")`, `r citef("db_edu_wlth")`)**. Overall, mobile owners who have some level of tertiary education are almost three times as likely to be digital borrowers than mobile owners with primary education or less. **The fact that education related differences persist when controlling for wealth suggests that digital borrowing is facilitated by skills or networks (not just the income flow) that more education makes possible.**
+
+Digital borrowing does not appear to be associated with the vulnerability[^5] of the mobile owner (`r citef("mp_vuln_bsg")`), even after controlling for their wealth (`r citef("db_vuln_wlth")`). If vulnerability is a proxy for the degree to which an individal faces more severe or frequent liquidity challenges (i.e. the ability to access cash-equivalents to meet short term needs), then the data suggests that digital credit is not a preferred instrument to alleviate those challenges. **The most vulnerable mobile owners are neither more common nor more active users of digital credit than the least vulnerable. Among the poorest 40% of the mobile owning population, more vulnerability is associated with less digital borrowing.** This could tie into risk aversion, in that people with more vulnerable livelihoods may be more reluctant to take on a strict repayment obligation that they themselves know they may not be able to honor, especially when terms are inflexible and not repaying carries uncertain risks or additional penalties. [Section 4](#sec4) examines the role of fear in driving avoidance of digital credit, even when a need for credit exists.  
+
+### Figure: Digital borrowing segments, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("mp_loc_bsg", "By location")` 
+```{r mp_loc_bsg, echo=FALSE}
+title <- "Digital borrowing segments, by location"
+#... Mobile phone owners, by livelihood & digital borrower segment
+triplot(cntby(mobile_owners, probweights, geogroup, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["geogroup"],  olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_loc_bsg-1.png) 
+
+#### `r figs("mp_dem_bsg", "By demographic group")`
+```{r mp_dem_bsg, echo=FALSE}
+#... Mobile phone owners, by demographic & digital borrower segment
+title <- 'Digital borrowing segments, by demographic group'
+triplot(cntby(mobile_owners, probweights, demogroup, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["demogroup"],  olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_dem_bsg-1.png) 
+
+#### `r figs("mp_liv_bsg", "By livelihood")`
+```{r mp_liv_bsg, echo=FALSE}
+title <- 'Digital borrowing segments, by livelihood'
+triplot(cntby(mobile_owners, probweights, livegroup4, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_liv_bsg-1.png) 
+
+#### `r figs("mp_wlth_bsg", "By wealth")`
+```{r mp_wlth_bsg, echo=FALSE}
+title <- 'Digital borrowing segments, by asset wealth'
+triplot(cntby(mobile_owners, probweights, wlthgroup, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["wlthgroup"],  olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_wlth_bsg-1.png) 
+
+#### `r figs("mp_edu_bsg", "By education")`
+```{r mp_edu_bsg, echo=FALSE}
+title <- 'Digital borrowing segments, by educational attainment'
+triplot(cntby(mobile_owners, probweights, edugroup, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["edugroup"],  
+        olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_edu_bsg-1.png) 
+
+#### `r figs("mp_vuln_bsg", "By vulnerability")`
+```{r mp_vuln_bsg, echo=FALSE}
+title <- 'Digital borrowing segments, by vulnerability'
+triplot(cntby(mobile_owners, probweights, vulnerable, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["vulnerable"],  olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_vuln_bsg-1.png) 
+
+#### `r figs("mp_acc_bsg", "By access strand")`
+```{r mp_acc_bsg, echo=FALSE}
+notes <- "Notes: Access strand represents the access strand the respondent would otherwise be assigned to if not for digital credit."
+title <- 'Digital borrowing segments, by access strand'
+triplot(cntby(mobile_owners, probweights, access_strand, digital_borrower_seg), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalUsgSeg, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["access_strand"],  olab = varlabels["digital_borrower_seg"], 
+        caption = caption, 
+        notes = notes, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mp_acc_bsg-1.png)
+
+### Figure: Digital borrowers, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_loc_gnd", "By location & gender")`
+```{r db_loc_gnd, echo=FALSE}
+notes <- 'Notes: Digital borrowers include anyone who has used digital credit in the past.'
+title <- "Digital borrowers, by location & gender"
+triplot(sumby(mobile_owners, digital_borrower, probweights, geogroup, gendergroup), 
+        pal = colGnd, 
+        ylab = varlabels["digital_borrower"],
+        xlab = varlabels["geogroup"],  olab = varlabels["gendergroup"], 
+        title = title,
+        caption = caption, 
+        notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_loc_gnd-1.png) 
+
+#### `r figs("db_edu_loc", "By education & location")`
+```{r db_edu_loc, echo=FALSE}
+title <- "Digital borrowers, by educational attainment & location"
+triplot(sumby(mobile_owners, digital_borrower, probweights, edugroup, geogroup), 
+        pal = colGeo, 
+        ylab = varlabels["digital_borrower"],
+        xlab = varlabels["edugroup"],  
+        olab = varlabels["geogroup"], 
+        title = title, 
+        caption = caption, 
+        notest = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_edu_loc-1.png) 
+
+#### `r figs("db_edu_wlth", "By education & wealth")`
+```{r db_edu_wlth, echo=FALSE}
+title <- "Digital borrowers, by educational attainment & wealth"
+triplot(sumby(mobile_owners, digital_borrower, probweights, edugroup, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["digital_borrower"],
+        xlab = varlabels["edugroup"],  
+        olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        title = title, 
+        notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_edu_wlth-1.png) 
+
+#### `r figs("db_vuln_wlth", "By vulnerability & wealth")`
+```{r db_vuln_wlth, echo=FALSE}
+title <- "Digital borrowers, by vulnerability & wealth"
+triplot(sumby(mobile_owners, digital_borrower, probweights, vulnerable, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["digital_borrower"],
+        xlab = varlabels["vulnerable"],  
+        olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        title = title, 
+        notest = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_vuln_wlth-1.png) 
+
+#### `r figs("db_wlth_acc", "By wealth & access strand")`
+```{r db_wlth_acc, echo=FALSE}
+notes <- "Notes: Digital borrowers include anyone who has used digital credit in the past. Access strand represents the access strand the respondent would otherwise be assigned to if not for digital credit."
+title <- "Digital borrowrs, by wealth & access strand"
+triplot(sumby(mobile_owners, digital_borrower, probweights, access_strand, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["digital_borrower"],
+        xlab = varlabels["access_strand"],  olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        title = title,
+        notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_wlth_acc-1.png) 
+
+### Figure: Active per 100 inactive digital borrowers, by population subgroups, 2017 {.tabset .tabset-fade}
+
+```{r, include = FALSE}
+  df <- cntby(digital_borrowers, probweights, demogroup, digital_borrower_seg) %>% 
+  filter(o=="90-day active user" | o == "Inactive user") %>% 
+  select(x, o, rcount, value) %>%
+  mutate(inactive = lag(value), active = lead(value)) %>%
+  group_by(x) %>% 
+  mutate(count = sum(rcount), active = mean(active, na.rm=TRUE), inactive = mean(inactive, na.rm=TRUE), n = seq(n())) %>%
+  filter(n == 1) %>% 
+  select(x, count, active, inactive) %>% 
+  mutate(value = (active/inactive)*100)
+```
+
+#### `r figs("adb_dem", "By demographic group")`
+```{r adb_dem, echo=FALSE}
+title <- "Active per 100 inactive digital borrowers, by demographic group"
+uniplot(df,
+        horz=TRUE, 
+        pal = colUni, 
+        xlab = "Number of active digital credit users per 100 inactive users",
+        ylab = varlabels["demogroup"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/adb_dem-1.png) 
+
+```{r, include = FALSE}
+  df <- cntby(digital_borrowers, probweights, livegroup4, digital_borrower_seg) %>% 
+  filter(o=="90-day active user" | o == "Inactive user") %>% 
+  select(x, o, rcount, value) %>%
+  mutate(inactive = lag(value), active = lead(value)) %>%
+  group_by(x) %>% 
+  mutate(count = sum(rcount), active = mean(active, na.rm=TRUE), inactive = mean(inactive, na.rm=TRUE), n = seq(n())) %>%
+  filter(n == 1) %>% 
+  select(x, count, active, inactive) %>% 
+  mutate(value = (active/inactive)*100)
+```
+
+#### `r figs("adb_liv", "By livelihood")`
+```{r adb_liv, echo=FALSE}
+title <- "Active per 100 inactive digital borrowers, by livelihood"
+uniplot(df,
+        horz=TRUE, 
+        pal = colUni, 
+        xlab = "Number of active digital credit users per 100 inactive users",
+        ylab = varlabels["livegroup4"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/adb_liv-1.png) 
+
+```{r, include = FALSE}
+  df <- cntby(digital_borrowers, probweights, wlthgroup, digital_borrower_seg) %>% 
+  filter(o=="90-day active user" | o == "Inactive user") %>% 
+  select(x, o, rcount, value) %>%
+  mutate(inactive = lag(value), active = lead(value)) %>%
+  group_by(x) %>% 
+  mutate(count = sum(rcount), active = mean(active, na.rm=TRUE), inactive = mean(inactive, na.rm=TRUE), n = seq(n())) %>%
+  filter(n == 1) %>% 
+  select(x, count, active, inactive) %>% 
+  mutate(value = (active/inactive)*100)
+```
+
+#### `r figs("adb_wlth", "By wealth")`
+```{r adb_wlth, echo=FALSE}
+title <- "Active per 100 inactive digital borrowers, by wealth"
+uniplot(df,
+        horz=TRUE, 
+        pal = colUni, 
+        xlab = "Number of active digital credit users per 100 inactive users",
+        ylab = varlabels["wlthgroup"], 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/adb_wlth-1.png)
+
+### Figure: Concurrent digital borrowing, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("ndl_geo_gnd", "By location and gender")`
+```{r ndl_geo_gnd, echo=FALSE}
+title <- "Current digital borrowers with more than one loan, by location and gender"
+triplot(sumby(digital_borrowers, pct_digloanso1, probweights, geogroup, gendergroup), 
+        pal = colGnd, 
+        ylab = varlabels["pct_digloanso1"],
+        xlab = varlabels["geogroup"],  
+        olab = varlabels["gendergroup"], 
+        caption = caption, 
+        title = title, 
+        bar = FALSE, 
+        horz = TRUE, 
+        connect = FALSE)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndl_geo_gnd-1.png) 
+
+#### `r figs("ndl_dem", "By demographic group")`
+```{r ndl_dem, echo=FALSE}
+title <- 'Current digital borrowers with more than one loan, by demographic group'
+biplot(sumbyone(digital_borrowers, pct_digloanso1, probweights, demogroup), 
+        pal = colUni, 
+        ylab = varlabels["pct_digloanso1"],
+        xlab = varlabels["demogroup"],  
+        caption = caption, 
+       title = title, 
+       bar = FALSE,
+       horz = TRUE, 
+       connect = FALSE)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndl_dem-1.png) 
+
+#### `r figs("ndl_liv_gnd", "By livelihood and gender")`
+```{r ndl_liv_gnd, echo=FALSE}
+title <- 'Current digital borrowers with more than one loan, by livelihood and gender'
+triplot(sumby(digital_borrowers, pct_digloanso1, probweights, livegroup4, gendergroup), 
+        pal = colGnd, 
+        ylab = varlabels["pct_digloanso1"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["gendergroup"], 
+        caption = caption, 
+        title = title, 
+        bar = FALSE,
+        horz = TRUE, 
+        stack = FALSE, 
+        connect = FALSE)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndl_liv_gnd-1.png) 
+
+#### `r figs("ndl_vuln_wlth", "By vulnerability and wealth")`
+```{r ndl_vuln_wlth, echo=FALSE}
+title <- 'Current digital borrowers with more than one loan, by vulnerability and wealth'
+triplot(sumby(digital_borrowers, pct_digloanso1, probweights, vulnerable, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["pct_digloanso1"],
+        xlab = varlabels["vulnerable"],  
+        olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        bar = FALSE,
+        horz = TRUE, 
+        stack = FALSE, 
+        connect = FALSE)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndl_vuln_wlth-1.png) 
+
+# 6. Why do people take or avoid digital loans? {#sec6 .sec}
+
+```{r include=FALSE}
+notes <- "Multiple responses were allowed."
+x_labels <- c("I fear taking loans", "I do not need a loan", "I lack awareness that the loans exist", "I do/did not qualify for a loan", "The loans are too expensive", "There are other product features I do not like (loan size, period, menu)", "I do not trust the providers", "I do not have a mobile money account or other account needed")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+#### BOX 2: Early adopters of M-Shwari were motivated by curiousity and the desire to borrow {.box2 #box2}
+
+In 2012, FSD Kenya in collaboration with BFA and Digital Divide Data, conducted the [Kenya Financial Diaries study](http://www.fsdkenya.org/financialdiaries). Towards the end of the study, about 9% of the 298 households that participated had adopted M-Shwari, but only a third were able to access a loan. Interviews with these early adopters revealed that the possibility of accessing to credit, rather than the savings features, as well as curiousity motivated their decision to register for the service. 
+
+We asked M-Shwari customers why they had opened an account, their answers included: "[I] thought it would be handy to get quick loans when needed", "to borrow a loan", "to access its loan services", "to get a loan when I need it", "to experiment", "to experience a new financial instrument". 
+
+A member of the research team also noted how one borrower had discovered, through experimentation, how to increase the loan limit: “Eli has also learned how to go about the product. To increase his credit rating, whenever he is paid by M-PESA, he first of all takes it all to his M-shwari account and then withdraws it a few minutes later. He tells me ‘They will look at how much and how many times I deposit, so ihave to do it.’ He then requests a loan, and he is given. His loan limit currently has been increased from Ksh2,000 to Ksh2,300.”
+
+[`r icon::fa("external-link")` Read more about the Kenya Financial Diaries study](http://www.fsdkenya.org/financial-diaries)  
+
+#### {.empty}
+
+**Fear of loans, lack of need and lack of awareness are the three most common reasons that mobile owners do not borrow digitally.** The three least common reasons were dislike of certain product features (such as the size of the loan or the loan period), lack of trust and lack of account requirements (such as not having a mobile money account). 
+
+**Women were about 35 percent more likely than men to cite fear as a reason for not borrowing (`r citef("ndb_reas_dem")`).** Agricultural and casual workers were also substantially more likely to cite fear as a reason for avoiding digital loans than employed workers (`r citef("ndb_reas_liv")`). In addition, individuals with greater vulnerabilitywere also more likely to cite fear and lack of awareness as key reasons they avoided using digital credit compared to less vulnerable (`r citef("ndb_reas_vuln")`). 
+
+Not needing a loan was a key reason young, urban men, the employed and the wealthiest mobile owners avoided digital credit. Lack of awareness was a key reason mobile owners in rural areas (with the exception of men under the age of 30), the poorest 40% and agricultural workers had not used digital credit (`r citef("ndb_reas_wlth")`, `r citef("ndb_reas_liv")`).
+
+**About 1 in 4 rural, males under the age of 30 cited that not qualifying was a reason they had not taken a digital loan (`r citef("ndb_reas_dem")`) suggesting that this group may be more likely labeled as ineligible for loans by the credit scoring mechanisms used to determine creditworthiness**. 
+
+**Convenience and disbursement speed are the two primary reasons digital borrowers prefer digital loans to other types of loans. These perceived advantages are consistent across most population segments.** Overall, close to 3 in 4 digital borrowers cited convenience as a key advantage of digital credit, while 41 percent cited disbursement speed. The three least commonly reported advantages, were fees, loan size and privacy (`r citef("db_pref_dem")`). With almost 9 in 10 citing convenience, urban females under the age of 30 appeared to particularly value the ease with which they could access credit, relative to other groups. Rural youth, on the other hand, seem to disproportionately value disbursement speed as a key advantage of digital credit. 
+
+### Figure: Reasons people avoid digital credit, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("ndb_reas_dem", "By demographic group")`
+```{r ndb_reas_dem, fig.height = 5, echo=FALSE, warning=FALSE}
+title <- "Reasons for not taking digital loans, by demographic group"
+heatplot(matchby(neverused_dc, "nodc", probweights, demogroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of mobile phone owners [18+] who have never used digital credit")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndb_reas_dem-1.png) 
+
+#### `r figs("ndb_reas_wlth", "By wealth")`
+```{r ndb_reas_wlth, fig.height = 5, echo=FALSE, warning=FALSE}
+title <- "Reasons for not taking digital loans, by asset wealth"
+heatplot(matchby(neverused_dc, "nodc", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["wlthgroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of mobile phone owners [18+] who have never used digital credit")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndb_reas_wlth-1.png) 
+
+#### `r figs("ndb_reas_liv", "By livelihood")`
+```{r ndb_reas_liv, fig.height = 5, echo=FALSE, warning=FALSE}
+title <- "Reasons for not taking digital loans, by livelihood"
+heatplot(matchby(neverused_dc, "nodc", probweights, livegroup4), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["livegroup4"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes, 
+         subtitle = "Percent of mobile phone owners [18+] who have never used digital credit")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndb_reas_liv-1.png) 
+
+#### `r figs("ndb_reas_vuln", "By vulnerability")`
+```{r ndb_reas_vuln, fig.height = 5, echo=FALSE, warning=FALSE}
+title <- "Reasons for not taking digital loans, by vulnerability"
+heatplot(matchby(neverused_dc, "nodc", probweights, vulnerable), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["vulnerable"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes, 
+         subtitle = "Percent of mobile phone owners [18+] who have never used digital credit")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndb_reas_vuln-1.png) 
+
+```{r include=FALSE}
+x_labels <- c("Convenience", "Disbursement speed", "Interest rate", "Trust", "Collections practices", "Privacy", "Loan size", "Fees")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+### Figure: Reasons mobile loans are preferred to loans from other providers, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_pref_dem", "By demographic group")`
+```{r db_pref_dem, echo=FALSE, warning=FALSE}
+title <- 'Advantages of mobile loans, by demographic group'
+heatplot(matchby(digital_borrowers, "adv_", probweights, demogroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitlte = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_pref_dem-1.png) 
+
+#### `r figs("db_pref_wlth", "By wealth")`
+```{r db_pref_wlth, echo=FALSE, warning=FALSE}
+title <- "Advantages of mobile loans, by wealth"
+heatplot(matchby(digital_borrowers, "adv_", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["wlthgroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_pref_wlth-1.png) 
+
+#### `r figs("db_pref_liv", "By livelihood")`
+```{r db_pref_liv, echo=FALSE, warning=FALSE}
+title <- "Advantages of mobile loans, by livelihood"
+heatplot(matchby(digital_borrowers, "adv_", probweights, livegroup4), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["livegroup4"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_pref_liv-1.png)
+
+#### `r figs("db_pref_dlp", "By digital loan provider")`
+```{r db_pref_dlp, echo=FALSE, warning=FALSE}
+title <- "Advantages of mobile loans, by digital loan provider"
+heatplot(matchby(digital_borrowers, "adv_", probweights, digloanprov_mr), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["digloanprov_mr"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_pref_dlp-1.png)
+
+```{r include=FALSE}
+notes <- "Multiple responses were allowed."
+x_labels <- c("To use in business or farm", "To meet day to day ordinary needs", "To pay for education", "To purchase airtime", "To purchase personal or household goods", "To pay a utility bill", "To pay for medical needs, including emergencies", "To try out the loan", "To pay off other debts", "To on-lend", "To contribute to my chama", "To bet", "To cope with other emergency")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+### {#empty}
+
+**Just over one in three digital borrowers reportedly used their most recent digital loan for a business or farm application or to meet ordinary day to day needs (`r citef("db_lnprp_dem")`).** The next most likely uses were to pay for education or to purchase airtime. The least commonly reported uses of digital loans was to cope with non-medical emergencies and to bet. 
+
+Using the most recent digital loan for meeting day to day needs was most common for urban, men under the age of 30 (45 percent), while a business or farm application was most commonly cited among urban, women over the age of 30 (`r citef("db_lnprp_dem")`). **Rural, women over the age of 30 were relatively more likely to use their most recent digital laon to purchase airtime.** Urban men and women under the age of 30 reported the most diverse set of use-cases for their most recent loan. 
+
+**The poorest digital borrowers were more likely to report using their last digital loan for education and personal or household goods, relative to other wealth groups (`r citef("db_lnprp_wlth")`).** 
+
+**M-Shwari loans are more likely used to support ordinary day to day needs and less likely to support business or farm activities than loans from other providers** (`r citef("db_lnprp_dlp")`). This could relate to the higher average loan size or longer loan terms available from other providers and their suitability for investment in higher value assets. 
+
+### Figure: Uses of digital loans, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_lnprp_dem", "By demographic segment")`
+```{r db_lnprp_dem, fig.height = 5, echo=FALSE, fig.width=8.5, warning=FALSE}
+title <- 'Reasons for taking most recent mobile loan, by demographic segment'
+heatplot(matchby(mobile_owners, "lnus", probweights, demogroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_lnprp_dem-1.png)
+
+#### `r figs("db_lnprp_wlth", "By wealth")`
+```{r db_lnprp_wlth, fig.height = 5, echo=FALSE, fig.width=8.5, warning=FALSE}
+title <- "Reasons for taking most recent mobile loan, by wealth"
+heatplot(matchby(mobile_owners, "lnus", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["wlthgroup"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_lnprp_wlth-1.png)
+
+#### `r figs("db_lnprp_liv", "By livelihood")`
+```{r db_lnprp_liv, fig.height = 5, echo=FALSE, fig.width=8.5, warning=FALSE}
+title <- "Reasons for taking most recent mobile loan, by livelihood"
+heatplot(matchby(mobile_owners, "lnus", probweights, livegroup4), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["livegroup4"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_lnprp_liv-1.png)
+
+#### `r figs("db_lnprp_dlp", "By digital loan provider")`
+```{r db_lnprp_dlp, fig.height = 5, echo=FALSE, warning=FALSE}
+title <- "Reasons for taking most recent mobile loan, by digital loan provider"
+heatplot(matchby(digital_borrowers, "lnus", probweights, digloanprov_mr), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["digloanprov_mr"],
+         xlab = "",  
+         caption = caption, 
+         notes = notes, 
+         title = title, 
+         subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_lnprp_dlp-1.png)
+
+# 7. How common is late payment & default on digital loans? {#sec7 .sec}
+
+#### BOX 3: What happens when you default on a digital loan? {.box2 #box3}
+
+One of the emerging concerns with digital credit stems from the observation that of 10.6 million borrowers listed with [TransUnion](http://www.transunionnipashe.co.ke/) - one of Kenya's three licensed credit reference bureaus (CRB) - 2.7 million are negative, in that lenders have submitted the names of those borrowers to the CRB due to a non-performing loan (NPL). CRB reporting varies by lender. An M-Shwari loan, for example, is repayable within 30 days, if the loan isn't repaid by day 30, the outstanding amount is automatically rolled over for 30 more days and an additional 'roll-over fee' is incurred [^6]. CBA pursues a series of strategies to encourage repayment, including sending SMS warnings that the borrower will be reported to the CRB, but the borrower will not be listed until 120 days after the loan was taken.
+
+In Kenya, the act of submitting a report based on an NPL is known, somewhat threatiningly, as *blacklisting*. Of the 2.7 million negative reports on digital loans in TransUnion's database, 400,000 are for loans of less than USD 2 [^7]. The trouble for borrowers is that the presence of even a single negative report can adversely affect their chances of borrowing from any lender, regardless of their overall borrowing history [^8]. 
+
+One of the challenges with the way CRB data has historically been used by lenders is its use as a binary check for red-flags, rather than using the borrower's overall credit performance (say based on a credit score) using both positive and negative listings. Most banks require potential borrowers with negative listings to first pay outstanding amounts on listed loans, and to then obtain a clearance certificate from the CRB to prove to the lender that outstanding debts have been settled. A clearance certificate from one of Kenya's CRBs runs at Ksh 2,200 (or about USD 22) which can is twenty times the size of M-Shwari's lowest loan limit of Ksh 200. 
+
+[`r icon::fa("external-link")` Read more about how Kenya's credit reference and information sharing works from the Credit information sharing association of Kenya (CIS Kenya)](http://www.ciskenya.co.ke/publications)  
+
+#### {.empty}
+
+It is worth noting that default and non-repayment are likely to be systematically under-reported by survey respondents since non-repayment on debt can be shameful to admit for some, and therefore survey-based estimates of non-repayment and default are likely to underestimate the true rates. The degree of this bias is unknown, but comparisons of survey-based default rates with default rates obtained from provider data could shed light on how off-the mark the survey estimates in this section are. 
+
+**Overall, about 1 in 2 digital borrowers reported to have paid a loan late while 12.5 percent reported to have defaulted on a loan.** `r citef("db_dem_rps")` divides digital borrowers into three mutually exclusive groups: borrowers who never repaid late or defaulted, borrowers who repaid late but did not default and borrowers who defaulted. 
+
+**About 60 percent of rural females over the age of 30 have never repaid late or defaulted, the best performance of any demographic group. However, this group also has the second highest default rate - 15.8 percent of digital borrowers in the group - of the eight demographic segments in (`r citef("db_dem_rps")`).** The demographic segment with the poorest repayment performance are rural males under the age of 30, among which 2 in 3 digital borrowers have either defaulted or paid late (almost 1 in 5 have defaulted). The segment with the lowest default rate - 6.3 percent - are urban males under the age of 30. 
+
+**While default rates decrease with more wealth, overall late repayment rates increase.** For example, while 14 percent of digital borrowers that belong to the poorest 40% of the population have defaulted on a loan, 29 percent paid late but did not default. For digital borrowers in the richest 20% of the population, 10 percent defaulted - lower than their poorer counterparts, but 39 percent paid late without defaulting - about 50 percent more than the digital borrowers in the poorest 40% of the population (`r citef("db_wlth_rps")`). 
+
+Default and late repayment do not vary significantly across livelihoods (`r citef("db_liv_rps")`), there is some variation in the default rates which are slightly higher for digital borrowers who depend on agriculture or casual work, but the differences are small and not statistically significant. 
+
+M-Shwari borrowers are about 30 percent more likely to pay late or default than borrowers of digital loans from other providers. Among digital borrowers whose last loan was M-Shwari, close to 14 percent reporting having defaulted on a digital loan compared to 8 percent of digital borrowers whose last loan was from another provider (`r citef("db_liv_rps")`).
+
+### Figure: Digital borrower repayment segments, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_dem_rps", "By demographic group")`
+```{r db_dem_rps, echo=FALSE}
+title <- 'Digital borrowers, by demographic & repayment segment'
+triplot(cntby(digital_borrowers, probweights, demogroup, repay_segment), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalRepSeg, 
+        ylab = varlabels["propdig"],
+        xlab = varlabels["demogroup"],  
+        olab = varlabels["repay_segment"], 
+        caption = caption, 
+        title = title, 
+        subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_dem_rps-1.png)
+
+#### `r figs("db_wlth_rps", "By wealth")`
+```{r db_wlth_rps, echo=FALSE}
+title <- "Digital borrowers, by wealth & repayment segment"
+triplot(cntby(digital_borrowers, probweights, wlthgroup, repay_segment), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalRepSeg, 
+        ylab = varlabels["propdig"],
+        xlab = varlabels["wlthgroup"],  
+        olab = varlabels["repay_segment"], 
+        caption = caption, 
+        subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_wlth_rps-1.png)
+
+#### `r figs("db_liv_rps", "By livelihood")`
+```{r db_liv_rps, echo=FALSE}
+title <- "Digital borrowers, by livelihood & repayment segment"
+triplot(cntby(digital_borrowers, probweights, livegroup4, repay_segment), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalRepSeg, 
+        ylab = varlabels["propdig"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["repay_segment"], 
+        caption = caption, 
+        title = title, 
+        subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_liv_rps-1.png)
+
+#### `r figs("db_prov_rps", "By digital loan provider")`
+```{r db_prov_rps, echo=FALSE}
+title <- "Digital borrowers, by loan provider & repayment segment"
+triplot(cntby(digital_borrowers, probweights, digloanprov_mr, repay_segment), 
+        bar = TRUE, 
+        horz = TRUE, 
+        pal = colPalRepSeg, 
+        ylab = varlabels["propdig"],
+        xlab = varlabels["digloanprov_mr"],  
+        olab = varlabels["repay_segment"], 
+        caption = caption, 
+        title = title, 
+        subtitle = "Percent of digital borrowers [18+]")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_prov_rps-1.png)
+
+### Figure: Late digital loan repayers, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("lp_edu_rps", "By education & wealth")`
+```{r lp_edu_rps, echo=FALSE}
+title <- "Late payers, by educational attainment & wealth"
+triplot(sumby(digital_borrowers, defaultorlate, probweights, edugroup, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaultorlate"],
+        xlab = varlabels["edugroup"],  
+        olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        connect = FALSE, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_edu_rps-1.png)
+
+#### `r figs("lp_vuln_wlth", "By vulnerability & wealth")`
+```{r lp_vuln_wlth, echo=FALSE}
+title <- "Late payers, by vulnerability & wealth"
+triplot(sumby(digital_borrowers, defaultorlate, probweights, vulnerable, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaultorlate"],
+        xlab = varlabels["vulnerable"],  
+        olab = varlabels["wlthgroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_vuln_wlth-1.png)
+
+#### `r figs("lp_liv_wlth", "By livelihood & wealth")`
+```{r lp_liv_wlth, echo=FALSE}
+title <- "Late payers, by livelihood & wealth"
+triplot(sumby(digital_borrowers, defaultorlate, probweights, livegroup4, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaultorlate"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["wlthgroup"], 
+        caption = caption, 
+        connect = FALSE, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_liv_wlth-1.png)
+
+### Figure: Digital loan defaulters, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("def_dem_rps", "By education & wealth")`
+```{r def_dem_rps, echo=FALSE}
+title <- "Defaulters, by educational attainment & wealth"
+triplot(sumby(digital_borrowers, defaulted, probweights, edugroup, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaulted"],
+        xlab = varlabels["edugroup"],  
+        olab = varlabels["wlthgroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/def_dem_rps-1.png)
+
+#### `r figs("def_vuln_wlth", "By vulnerability & wealth")`
+```{r def_vuln_wlth, echo=FALSE}
+title <- "Defaulters, by vulnerability & wealth"
+triplot(sumby(digital_borrowers, defaulted, probweights, vulnerable, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaulted"],
+        xlab = varlabels["vulnerable"],  
+        olab = varlabels["wlthgroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/def_vuln_wlth-1.png)
+
+#### `r figs("def_liv_wlth", "By livelihood & wealth")`
+```{r def_liv_wlth, echo=FALSE}
+title <- "Defaulters, by livelihood & wealth"
+triplot(sumby(digital_borrowers, defaulted, probweights, livegroup4, wlthgroup), 
+        pal = colWlth, 
+        ylab = varlabels["defaultorlate"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["wlthgroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/def_liv_wlth-1.png)
+
+# 8. How do people repay their digital loans and why do they pay late? {#sec8 .sec}
+
+**Over two-thirds of digital borrowers report having had to use funds from sources other than current income to repay a digital loan.** About half of digital borrowers report having had to use their savings and about one in three digital borrowers reported having had to use one or more potentially adverse repayment strategies: borrow more, reduce food purchases, skip a school fee payment, sell assets or forego medical treatment. Of these, the most common are reducing food purchases (1 in 5 digital borrowers) and borrowing more money (16 percent of digital borrowers). Individuals who have never repaid late or defaulted are the most likely to have used current income to repay a loan. The data also suggests that a key factor dictating whether someone repays a loan late versus defaulting is the ability to draw on a reserve of funds. Late payers who have not defaulted are about 12 percent more likely to use savings to repay a loan and about 20 percent likely to reduce food purchases, borrow more or pursue other adverse repayment strategies (`r citef("db_rep_rsg")`). 
+
+Looking at repayment modalities across demographic groups (`r citef("db_rep_dem")`) reveals that urban males above the age of 30 are most likely current income to repay their digital loans, while urban females over the age of 30 and rural females under the age of 30 are the most likely to have used non-income, non-savings strategies to repay digital loans. 
+
+While the  top 20% of borrowers in terms of asset wealth are more likely to report having used savings to repay a digital loan, the likelihood of using funds other than from savings or current income to repay digital loans is not influenced by asset wealth (`r citef("db_rep_wlth")`). This is not the case with vulnerability. **About 1 in 2 of the most severely vulnerable digital borrowers reported reducing food purchases, borrowing money, skipping school fee payments, selling assets or foregoing medical expenses in order to repay a digital loan, compared with only 1 in 3 of moderately vulnerable digital borrowers and 1 in 7 low vulnerability borrowers.** 
+
+The four most common reason digital borrowers who had paid a loan late gave for late repayment was poor business performance (21%), losing a job or source of income (19%), not planning well enough (17%) and saying that funds were tied up with more important expenditures (16%) (`r citef("lp_rslt_dem")`). 
+
+However the reasons vary significantly by demographic groups, wealth groups and vulnerability groups. For example, for urban males, losing a job was the most common reason for paying late, whereas for urban females, poor business performance and prioritizing basic needs were. For rural males, not planning well enough was the most common response and rural females were almost twice as likely than any other demographic group to offer "No particular reason" as the primary reason they paid late. 
+
+```{r include=FALSE}
+notes <- "Multiple responses were allowed. *Used current income is an inferred response category for individuals who reported that they had never used savings, reduced food purchases, borrowed money, skipped school fee payments, sold assets or forewent medical expenses to repay a digital loan."
+x_labels <- c("Used savings", "Used current income*", "Reduced food purchases", "Borrowed money", "Skipped paying school fees", "Sold assets or belongings", "Forewent paying medical expenses")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+### Figure: Modes of repayment, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_rep_rsg", "By repayment segment")`
+```{r db_rep_rsg, echo=FALSE}
+title <- "Modes of repayment, by repayment segment"
+heatplot(matchby(digital_borrowers, "rep_", probweights, repay_segment), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["repay_segment"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of digital borrowers", 
+         caption = caption, 
+         notes = notes, 
+         strwraplen = 12)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_rep_rsg-1.png)
+
+#### `r figs("db_rep_dem", "By demographic segment")`
+```{r db_rep_dem, echo=FALSE}
+title <- "Modes of repayment, by demographic segment"
+heatplot(matchby(digital_borrowers, "rep_", probweights, demogroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of digital borrowers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_rep_dem-1.png)
+
+#### `r figs("db_rep_wlth", "By wealth")`
+```{r db_rep_wlth, echo=FALSE}
+title <- "Modes of repayment, by asset wealth"
+heatplot(matchby(digital_borrowers, "rep_", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of digital borrowers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_rep_wlth-1.png)
+
+#### `r figs("db_rep_vuln", "By vulnerability")`
+```{r db_rep_vuln, echo=FALSE}
+title <- "Modes of repayment, by vulnerability"
+heatplot(matchby(digital_borrowers, "rep_", probweights, vulnerable), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["vulnerable"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of digital borrowers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_rep_vuln-1.png)
+
+```{r include=FALSE}
+notes <- "Multiple responses were allowed."
+x_labels <- c("Poor business performance", "Lost my job/source of income", "Did not plan well enough (including payment was more than expected)", "All my money went to basic needs (eg. food, school fees)", "Unexpected emergency (medical or non-medcal)", "No particular reason", "Money was tied up with other loans")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+### Figure: Reasons for paying digital loans back late, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("lp_rslt_dem", "By demographic segment")`
+```{r lp_rslt_dem, echo=FALSE}
+title <- "Primary reason for late repayment, by demographic segment"
+heatplot(matchby(digital_borrowers, "norep", probweights, demogroup2), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of late loan repayers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_rslt_dem-1.png)
+
+#### `r figs("lp_rslt_wlth", "By wealth")`
+```{r lp_rslt_wlth, echo=FALSE}
+title <- "Primary reason for late repayment, by asset wealth"
+heatplot(matchby(digital_borrowers, "norep", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["wlthgroup"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of late loan repayers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_rslt_wlth-1.png)
+
+#### `r figs("lp_rslt_vuln", "By vulnerability")`
+```{r lp_rslt_vuln, echo=FALSE}
+title <- "Primary reason for late repayment, by vulnerability"
+heatplot(matchby(digital_borrowers, "norep", probweights, vulnerable), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["vulnerable"],
+         xlab = "",  
+         title = title, 
+         subtitle = "Percent of late loan repayers", 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lp_rslt_vuln-1.png)
+
+# 9. What are common customer experiences & perceptions with digital loans? {#sec9 .sec} 
+
+The relatively high rates of late repayment on digital loans seen in section 8 are reflected in the common reference to receiving calls and SMS messages from lenders to encourage repayemnt on an overdue balance as part of the borrowing experience (`r citef("db_exp_dem")`). **About 1 in 4 digital borrowers felt the repayment period was too short, 14 percent reported that the lender unexpectedly charged fees or withdrew money from their savings account or mobile money wallet and 10 percent felt that the cost of the loan was too high**. Around 8 percent were either reported to the credit bureau, did not fully understand the loan terms or needed to contact customer care but could not figure out how. 
+
+These findings were fairly consistent among digital borrowers across demographic groups with a few exceptions. Urban males were the most likely to report getting hit with unexpected fees or withdrawals and **rural males under the age of 30 were the most likely to cite getting reported to the credit bureau by the lender.** 
+
+**Individuals with primary schooling or less were almost twice as likely to cite having difficulty understanding loan term or contacting customer care (`r citef("db_exp_edu")`) compared to individuals with secondary or tertiary educational attainment.** They were also more likely to feel that they repayment period was too short. Interestingly the variation in these experiences by digital borrower segments defined by education are greater than those defined by wealth (`r citef("db_exp_wlth")`). 
+
+
+```{r include=FALSE}
+notes <- "Multiple responses were allowed."
+x_labels <- c("Received call or SMS from lender to encourage repayment on overdue balance", "Felt repayment period was too short", "Charged unexpected fees or lender withdrew money from mobile savings", "Felt that the cost of the loan was too high", "Was reported to the credit bureau", "Did not fully understand the costs or fees associated with the loan", "Needed to contact customer care but could not figure out how")
+x_labels <- str_wrap(x_labels, strwrapdef)
+```
+
+### Figure: Experiences with digital loans, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("db_exp_dem", "By demographic group")`
+```{r db_exp_dem, echo=FALSE, warning=FALSE}
+title <- "Experiences with digital loans, by demographic group"
+heatplot(matchby(digital_borrowers, "neg", probweights, demogroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["demogroup"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](#) 
+
+#### `r figs("db_exp_edu", "By education attainment")`
+```{r db_exp_edu, echo=FALSE, warning=FALSE}
+title <- "Experiences with digital loans, by education attainment"
+heatplot(matchby(digital_borrowers, "neg", probweights, edugroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["edugroup"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_exp_edu-1.png)
+
+#### `r figs("db_exp_wlth", "By wealth")`
+```{r db_exp_wlth, echo=FALSE, warning=FALSE}
+title <- "Experiences with digital loans, by wealth"
+heatplot(matchby(digital_borrowers, "neg", probweights, wlthgroup), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["wlthgroup"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_exp_wlth-1.png)
+
+#### `r figs("db_exp_dlp", "By digital loan provider")`
+```{r Figure 6.4, echo=FALSE, warning=FALSE}
+title <- "Experiences with digital loans, by digital loan provider"
+heatplot(matchby(digital_borrowers, "neg", probweights, digloanprov_mr), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["digloanprov_mr"],
+         xlab = "",  
+         title = title, 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_exp_dlp-1.png)
+
+#### `r figs("db_exp_rsg", "By repayment segment")`
+```{r db_exp_rsg, echo=FALSE, warning=FALSE}
+title <- "Experiences with digital loans, by repayment segment"
+heatplot(matchby(digital_borrowers, "neg", probweights, repay_segment), 
+         switch = TRUE, 
+         xlabs = x_labels, 
+         ylab = varlabels["repay_segment"],
+         xlab = "",
+         title = title, 
+         caption = caption, 
+         notes = notes)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/db_exp_rsg-1.png)
+
+# 10. How have digital loans influenced the broader credit landscape? {#sec10 .sec} 
+
+Looking at the overall credit landscape (`r citef("lns_prov_use")`), mobile loans seem to have taken the position of an all-purpose borrowing tool with broad appeal. **With close to 19 percent of mobile owners currently using them (at the time the survey was conducted), mobile loans, alongside loans from the social network (friends, family, neighbors and other associates) are now the most common types of loans in use.** The 'use case' profile of mobile loans most closely resembles loans from the social network which are used for a diverse set purposes: mostly for day to day needs, working capital and education payments, but also for emergencies, personal consumption and other payments. Other sources of loans, such as those from a shopkeeper, savings group or bank, are used for a more concentrated set of use cases. For the largest-value use cases, such as buying land, a house or a vehicle, only bank, SACCO and MFI loans are used. 
+
+Mobile loans are more frequently used to pay utility bills, airtime (both of which are most conveniently paid for with a mobile money account). For these use cases there is a natural fit: use digitial money to pay for a good or service which accepts (perhaps exclusively) digital payments. This does raise the question of whether unnecessary or excessive borrowing might occur if people aren't in the habit of saving digitally (in a mobile money or mobile banking account) yet need to purchase items or pay bills electronically. The adoption of smartphones and expansion of e-commerce will likely increase the demand for digital lending in the years to come. 
+
+
+```{r, include = FALSE}
+
+ylabs <- c("phone" = "Mobile loan", 
+           "sn" = "Social network (friends, family, neighbor, employer)", 
+           "shpkp" = "Shopkeeper", 
+           "chama" = "Savings group (chama)", 
+           "sacco" = "SACCO", 
+           "bank" = "Commercial bank", 
+           "inml" = "Informal moneylender (eg. shylock)", 
+           "mfi" = "Microfinance institution or bank (MFI/MFB)", 
+           "any" = "Any provider"
+)
+
+names <- names(ylabs)
+y_labels <- str_wrap(ylabs, 20)
+names(y_labels) <- names
+
+xlabs <-c("air" = "To purchase airtime", 
+          "ord" = "To meet day to day ordinary needs",  
+          "bet" = "To bet", 
+          "bill" = "To pay a utility bill", 
+          "med" = "To pay for medical needs, including emergencies", 
+          "oem" = "To cope with other emergency", 
+          "per" = "To purchase personal or household goods", 
+          "edu" = "To pay for education", 
+          "bus" = "To use in business or farm", 
+          "dbt" = "To pay off other debts", 
+          "lnd" = "To on-lend", 
+          "lan" = "To buy land, a house or vehicle", 
+          "soc" = "For social reasons", 
+          "bcusg" = "Currently using a loan from...", 
+          "aeusg" = "Ever used a loan from...")
+
+names <- names(xlabs)
+x_labels <- str_wrap(xlabs, 6)
+names(x_labels) <- names
+
+eb <- mobile_owners %>% 
+  select(probweights, contains("eul"))  %>% 
+  summarise_at(
+    vars(contains("eul")), 
+    funs(weighted.mean(., probweights, na.rm=TRUE))
+  ) %>% 
+  gather(contains("eul"), key="string", value="value") %>% 
+  mutate(
+    y = str_split_fixed(string, "_", 3)[,2], 
+    x = "aeusg", 
+    type = "Borrowing prevalence (% of mobile phone owners)"
+  ) %>% 
+  arrange(desc(value))
+
+cb <- mobile_owners %>% 
+  select(probweights, contains("cul"))  %>% 
+  summarise_at(
+    vars(contains("cul")), 
+    funs(weighted.mean(., probweights, na.rm=TRUE))
+  ) %>% 
+  gather(contains("cul"), key="string", value="value") %>% 
+  mutate(
+    y = str_split_fixed(string, "_", 3)[,2], 
+    x = "bcusg", 
+    type = "Borrowing prevalence (% of mobile phone owners)"
+  ) %>% 
+  arrange(desc(value))
+
+yordervars <- cb %>% 
+  select(value, y) %>% 
+  rename(yorder = value)
+  
+uc <- mobile_owners %>% 
+  select(probweights, contains("lnprp"))  %>% 
+  summarise_at(
+    vars(contains("lnprp")), 
+    funs(weighted.mean(., probweights, na.rm=TRUE))
+  ) %>% 
+  gather(contains("lnprp"), key="string", value="value") %>% 
+  mutate(
+    y = str_split_fixed(string, "_", 3)[,2], 
+    x = str_split_fixed(string, "_", 3)[, 3], 
+    type = "Reported loan use cases (% of current borrowers)"
+    )  %>% 
+  filter(
+    x != "ag" & x!= "hse" & x != "veh"
+  )
+
+xordervars <- uc %>% 
+    filter(y == "any") %>% 
+    select(value, x) %>% 
+    arrange(desc(value)) %>%
+    rename(xorder = value)
+  
+df <- rbind(eb, cb, uc)
+df <- merge(df, yordervars, by="y")
+df <- merge(df, xordervars, by="x", all=TRUE)
+```
+
+### Figure: Prevalance of borrowing and uses of current loans, 2017 {.tabset .tabset-fade}
+#### `r figs("lns_prov_use", "By loan provider and use case")`
+```{r lns_prov_use, fig.height = 6, fig.wdth = 12, echo=FALSE, warning=FALSE}
+heatplot2(df, x_labels, subtitle = "", ylabs = y_labels, switch = FALSE, cutoff = 0.05) + 
+  facet_grid(.~type, drop=TRUE, scales="free_x", space="free_x", labeller=labeller(type = label_wrap_gen(15))) + 
+  theme(strip.placement = "outside") 
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/lns_prov_use-1.png)
+
+As mentioned earlier, the impact of digital loans on access to credit has been significant. `r citef("trnd_lnany_db")` shows trends in the percent of adults currently using any kind of loan (from either a formal or informal provider) by digital borrowing status. In early 2013, 1 in 3 mobile owners were using a loan, by mid-2017, almost 1 in 2 mobile owners were using a mobile loan. The trend line for mobile owners who never borrowed digitally provides a rough counterfactual for loan usage had digital lending not emerged, suggesting that **digital lending expanded access to loans for an additional 13 percent of mobile phone owners, amounting to 2.55 million people who might not have otherwise used credit.** 
+
+The emergence of digital credit does not seem to have diminished the likelihood of people taking informal loans (`r citef("trnd_lnformalany_db")`). Both of these analyses suggest that for the most part digital credit has expanded total access to credit rather than shifted people away from other sources of loans.   
+
+### Figure: The relationship between digital borrowing and the probability of using different types of credit, 2006-2017 {.tabset .tabset-fade}
+
+#### `r figs("trnd_lnany_db", "Probability of using any loan (formal or informal)")`
+```{r trnd_lnany_db,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+title <- "Probability of using any loan, by digital borrowing status & year"
+subtitle <- "Percent of adults [18+, own mobile phone]"
+
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_any")
+selectedSubgroupCats <- c("Kenya", "Digital borrower", "Not a digital borrower")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes="")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_lnany_db-1.png) 
+
+#### `r figs("trnd_lnformalany_db", "Probability of using any formal loan")`
+```{r trnd_lnformalany_db,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+title <- "Probability of using any formal loan, by digital borrowing status & year"
+subtitle <- "Percent of adults [18+, own mobile phone]"
+
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_formal_any")
+selectedSubgroupCats <- c("Kenya", "Digital borrower", "Not a digital borrower")
+minyear <- 2006 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title =title, subtitle = subtitle, caption = captionTrnds, notes="")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_lnformalany_db-1.png) 
+
+#### `r figs("trnd_lninformalany_db", "Probability of using any informal loan")`
+```{r trnd_lninformalany_db,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+title <- "Probability of using any informal loan, by digital borrowing status & year"
+subtitle <- "Percent of adults [18+, own mobile phone]"
+
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_informal_any")
+selectedSubgroupCats <- c("Kenya", "Digital borrower", "Not a digital borrower")
+minyear <- 2013 
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes="")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_lninformalany_db-1.png) 
+
+#### `r figs("trnd_lninformalshpk_db", "Probability of using shopkeeper credit")`
+```{r trnd_lninformalshpk_db,  fig.height = 4.75, echo=FALSE, warning=FALSE}
+title <- "Probability of using a shopkeeper credit, by digital borrowing status & year"
+subtitle <- "Percent of adults [18+, own mobile phone]"
+
+# Computing trends 
+# Creating empty objects to accomodate simulations and survey estimates 
+simsAll <<- NULL 
+svyestsAll <<- NULL 
+
+selectedIndicators <- c("fst_loans_shopcredit")
+selectedSubgroupCats <- c("Kenya", "Digital borrower", "Not a digital borrower")
+minyear <- 2006
+maxyear <- 2018
+
+trendit(Alldata, selectedIndicators, selectedSubgroupCats,
+            nsims = 100, simstep = 0.25, grouplookup, datasources)
+
+sims.graph <- simsAll[which(simsAll[, "subgroupcat"] %in% selectedSubgroupCats), ]
+sims.graph <- sims.graph[sims.graph$year >= (minyear - 0.25) & sims.graph$year <= (maxyear + 0.25), ]
+
+svys.graph <- svyestsAll[which(svyestsAll[ , "subgroupcat"] %in% selectedSubgroupCats), ]
+svys.graph <- svys.graph[svys.graph$year >= minyear & svys.graph$year <= maxyear, ]
+svys.graph$label <- round(svys.graph$value*100, 1)
+
+trendplot(svys.graph, sim.graph, datasources, "subgroupcat", selectedSubgroupCats, title = title, subtitle = subtitle, caption = captionTrnds, notes="")
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/trnd_lninformalshpk_db-1.png) 
+
+# 11. What are the key drivers of digital credit usage and repayment? {#sec11 .sec} 
+
+The analyses presented in Sections 1 through 8, explored descriptive differences in the patterns of usage and repayment of digital credit. This section uses a multivariate regression framework to try and identify the factors which are independently important in driving digital credit behavior.
+
+`r citef("mfx_panel1")` and `r citef("mfx_panel2")` show the marginal effects of individual socio-economic, personal and behavioral characteristics on the probability of 7 different digitial credit behaviors, holding all other characteristics constant. To clarify how these effects are intepreted, lets take an example from Model 1 which explores the influence of a range of factors on the probability of using digital credit among adult mobile phone owners. The effect associated with primary education is -14.6 percent. This means that having attained enough schooling to have at most completed primary education, is associated with a 31.6 percent (not percentage point) reduction in the probability of using digital credit relative to someone with tertiary education. The model's average predicted probability for a mobile phone owner to use digital credit is 29.1 percent (refered to as the base probabilty in the figure). 
+
+The probability of uptake of digital credit (having taken a mobile loan at least once at some point in the past) for mobile phone owners decreases for people above the age of 55 , lower levels of educational attainment, lower levels of household wealth and location in a rural area (`r citef("mfx_panel1")` - Model 1). It also decreases for people who are dependent on transfers as a source of livelihood. The probability increases for casual workers (relative to employed workers), being able to correctly divide (evidence of greater numeracy), having had a bank loan in the past (which may suggest experience with formal credit gives people greater security, knowledge to try new credit modalities) and having used mobile betting in the past (which may suggest that betting pulls some people to digital credit). Prior use of mobile betting has the largest effect (in terms of magnitude). There does not seem to be a relationship between uptake of digital credit and vulnerability. 
+
+The factors most strongly related to 90-day active usage and 7-day active usage are different ). Having moderate or high vulnerability, having used a bank or chama loan before and being above the age of 55, are the factors that increase the probability of 90-day usage among digital borrowers by 10 to 15 percent (`r citef("mfx_panel1")` - Models 2 & 3). With the exception of digital borrowers with primary or less education and those who depend primarily on casual work, there are no statistically signficant predictors of 7-day usage. This could be related to the nature of needs driving the most recent usage, which if urgent and unexpected, might be essentially random. 
+
+The predicted probability that someone who has never used digital credit offers fear as a reason for avoiding mobile loans is 31.9%. The probability of citing fear increases by close to 20% for people who depend on agriculture for income and declines for people who have used mobile betting previously, all else equal (`r citef("mfx_panel1")` - Model 4). 
+
+Models 5 through 7 explore the drivers of how digital loans are used for specific purposes. Using the most recent digital loaon for meeting ordinary day to day needs, is less likely among business owners and people who are saving purposefully. Using the most recent loan for financing education is also less likely among business owners, but more likely for people saving purposefully and for people who have used a bank loan before. There are no statistically significant factors influencing the usage of digital loans for medical emergencies which may be due the random nature of severe health shocks. 
+
+The probability of paying late or defaulting is about 30 percent less likely among people above the age of 55, and between 20 and 45 percent more likely for people exhbiting signs of moderate or severe vulnerability (`r citef("mfx_panel2")` - Model 8 & 9). People who have used mobile betting recently are around 24 percent more likely to have paid late or defaulted. There are no statistically significant factors related to defaulting on a digital loan.  
+
+### Figure: The marginal effect of socio-economic, personal and behavioral characteristics on usage and repayment of digital loans, 2017 {.tabset .tabset-fade}
+
+
+#### `r figs("mfx_panel1", "Panel 1: Drivers of uptake and usage")`
+```{r mfx_panel1, fig.height = 6, fig.wdth = 14, echo=FALSE, warning=FALSE}
+
+depvars <- depvars <- c('digital_borrower', 'active_borrower', 'active7d_borrower', 'nodc_fear') 
+
+i <- 1
+  for (depvar in depvars) { 
+    if (depvar == "digital_borrower") { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = mdata)
+    } else if (depvar == "nodc_fear") { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = filter(mdata, digital_borrower == 0))
+    } else { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = filter(mdata, digital_borrower == 1))
+      }
+    if (i == 1) { 
+      models <- compilemfx(survey.design, 
+                           depvar,
+                           depvarlabs, 
+                           indepvars, 
+                           indepvarlabs, 
+                           i)
+    } 
+    else { 
+      results <- compilemfx(survey.design, 
+                            depvar,
+                            depvarlabs, 
+                            indepvars, 
+                            indepvarlabs, 
+                            i)
+      models <- rbind(models, results)
+      }
+    i <- i + 1
+  }
+
+caption <- "Notes: This chart displays the marginal effects of different demographic, socio-economic and behavioral characteristics on the propensity to use and repay digital credit based on a multivariate logit regression model. The marginal effects shown on the chart represent the percent difference in the probability of, for example, using digital credit (Model 1) for a given characteristic, such as having primary education. To use this example from Model 1, having primary or less education, decreases the probability of using digital credit by 16.4 percent, all other characteristics held constant. The base probability is the survey weighted average of the model's predicted probability for each adult in the sample."
+
+ggplot(data = models, 
+       mapping = aes(x = dfdx, y=fct_rev(fct_inorder(indepvar)), color=dfdx, alpha=significant)) + 
+  geom_point() + 
+  geom_errorbarh(aes(xmin = lci , xmax = uci), height=.1, show.legend = FALSE) + 
+  geom_vline(aes(xintercept=0), color="red", alpha=0.5) + 
+  geom_hline(aes(yintercept=19.5), color="black") + 
+  geom_text(aes(label = round(label,1)), color="black", size=2.75, vjust = -1, show.legend=FALSE, na.rm=TRUE) + 
+  geom_label(aes(label = round(baseprob*100,1)), color = "black", fontface="bold", show.legend=FALSE, na.rm=TRUE) + 
+  facet_grid(.~depvar) + 
+  scale_colour_gradient(low = "red", high = "blue") + 
+  scale_alpha_manual(values = c("Yes" = 1, "No" = 0.25)) + 
+  guides(
+    alpha = guide_legend(title = str_wrap("Statistically significant at 95% level?", 8)), 
+    color = guide_legend(title = str_wrap("Marginal effect size", 8))
+  ) + 
+  labs(
+    x = "Difference in probability (%)", 
+    y = "", 
+    title = "", 
+    subtitle = "", 
+    caption = str_wrap(paste(caption, sep=" "),170)
+  ) + 
+  theme(
+    axis.text = element_text(size=8), 
+    plot.caption=element_text(hjust=0, color="#848b8c", size = 8.5), 
+    panel.background = element_rect(fill = "#f2f7fc"), 
+    strip.background = element_rect(fill = "white"), 
+    plot.margin = margin(1, 1, 1, 1)
+  ) 
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mfx_panel1-1.png) 
+
+
+#### `r figs("mfx_panel2", "Panel 2: Drivers of types of usage & repayment")`
+```{r mfx_panel2, fig.height = 6, fig.wdth = 14, echo=FALSE, warning=FALSE}
+
+depvars <- c('lnus_ord', 'lnus_med', 'lnus_edu', 'defaultorlate', 'defaulted')
+
+i <- 1
+  for (depvar in depvars) { 
+    if (depvar == "digital_borrower") { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = mdata)
+    } else if (depvar == "nodc_fear") { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = filter(mdata, digital_borrower == 0))
+    } else { 
+      survey.design <- svydesign(ids = ~clusters + sbjnum, probs = ~probweights, data = filter(mdata, digital_borrower == 1))
+      }
+    if (i == 1) { 
+      models <- compilemfx(survey.design, 
+                           depvar,
+                           depvarlabs, 
+                           indepvars, 
+                           indepvarlabs, 
+                           i)
+    } 
+    else { 
+      results <- compilemfx(survey.design, 
+                            depvar,
+                            depvarlabs, 
+                            indepvars, 
+                            indepvarlabs, 
+                            i)
+      models <- rbind(models, results)
+      }
+    i <- i + 1
+  }
+
+caption <- "Notes: This chart displays the marginal effects of different demographic, socio-economic and behavioral characteristics on the propensity to use and repay digital credit based on a multivariate logit regression model. The marginal effects shown on the chart represent the percent difference in the probability of, for example, using digital credit (Model 1) for a given characteristic, such as having primary education. To use this example from Model 1, having primary or less education, decreases the probability of using digital credit by 16.4 percent, all other characteristics held constant. The base probability is the survey weighted average of the model's predicted probability for each adult in the sample."
+
+ggplot(data = models, 
+       mapping = aes(x = dfdx, y=fct_rev(fct_inorder(indepvar)), color=dfdx, alpha=significant)) + 
+  geom_point() + 
+  geom_errorbarh(aes(xmin = lci , xmax = uci), height=.1, show.legend = FALSE) + 
+  geom_vline(aes(xintercept=0), color="red", alpha=0.5) + 
+  geom_hline(aes(yintercept=19.5), color="black") + 
+  geom_text(aes(label = round(label,1)), color="black", size=2.75, vjust = -1, show.legend=FALSE, na.rm=TRUE) + 
+  geom_label(aes(label = round(baseprob*100,1)), color = "black", fontface="bold", show.legend=FALSE, na.rm=TRUE) + 
+  facet_grid(.~depvar) + 
+  scale_colour_gradient(low = "red", high = "blue") + 
+  scale_alpha_manual(values = c("Yes" = 1, "No" = 0.25)) + 
+  guides(
+    alpha = guide_legend(title = str_wrap("Statistically significant at 95% level?", 8)), 
+    color = guide_legend(title = str_wrap("Marginal effect size", 8))
+  ) + 
+  labs(
+    x = "Difference in probability (%)", 
+    y = "", 
+    title = "", 
+    subtitle = "", 
+    caption = str_wrap(paste(caption, sep=" "),170)
+  ) + 
+  theme(
+    axis.text = element_text(size=8), 
+    plot.caption=element_text(hjust=0, color="#848b8c", size = 8.5), 
+    panel.background = element_rect(fill = "#f2f7fc"), 
+    strip.background = element_rect(fill = "white"), 
+    plot.margin = margin(1, 1, 1, 1)
+  ) 
+
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mfx_panel2-1.png) 
+
+
+# 12. Conclusions {#sec12 .sec} 
+
+
+# References {.tabset .tabset-fade}
+## Digital credit products 
+
+The 2017 FinAccess tracker survey asked whether individuals used one or more digital loans from 27 different digital loan providers. The table below, adaopted from the CGAP blog ["Digital credit in Kenya: Time for celebration or concern?"](http://www.cgap.org/blog/digital-credit-kenya-time-celebration-or-concern) provides additional details about the terms of the digital loans available from market leaders.
+
+```{r echo=FALSE, results='asis'}
+kable(products)
+```
+
+## Publications
+
+Links to reports, blogs and other publications that discuss different elements of the provision, regulation, usage and impact of digital credit are provided below: 
+
+Overview and framing of key issues in digital credit:  
+[`r icon::fa("file-pdf-o")` Digital credit: A snapshot of the current landscape and open research questions (Digital credit observatory)](https://people.ucsc.edu/~jmrtwo/digital_credit_landscape.pdf)  
+[`r icon::fa("comment-o")` Instant, Automated, Remote: The Key Attributes of Digital Credit)](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
+[`r icon::fa("file-pdf-o")` How M-Shwari works, the story so far (CGAP & FSD Kenya)](http://fsdkenya.org/publication/how-m-shwari-works-the-story-so-far/)  
+[`r icon::fa("file-pdf-o")` Big data, small credit (Omidyar network)](https://www.omidyar.com/sites/default/files/file_archive/insights/Big%20Data,%20Small%20Credit%20Report%202015/BDSC_Digital%20Final_RV.pdf/)  
+[`r icon::fa("comment-o")` Digital credit's evolving lanscape: 3 things you need to know (CGAP)](http://www.cgap.org/blog/digital-credit%E2%80%99s-evolving-landscape-3-things-you-need-know)  
+
+Competition and product comparisons:   
+[`r icon::fa("comment-o")` M-Shwari vs KCB M-Pesa: convergence or divergence? (FSD Kenya)](http://fsdkenya.org/blog/m-shwari-vs-kcb-m-pesa-convergence-or-divergence/)   
+[`r icon::fa("comment-o")` Competition in the Kenyan digital financial market (3 part series) (Helix Institute for Digital Finance)](http://www.helix-institute.com/blog/competition-kenyan-digital-finance-market-mobile-money-part-1-3)  
+
+Consumer protection issues:    
+[`r icon::fa("file-pdf-o")` Consumer protection in digital credit (CGAP)](http://www.cgap.org/sites/default/files/Focus-Note-Consumer-Protection-in-digital-Credit-Aug-2017.pdf)  
+[`r icon::fa("comment-o")` Digital credit in Kenya: Time for celebration or concern? (CGAP)](http://www.cgap.org/blog/digital-credit-kenya-time-celebration-or-concern) 
+
+Demand-side survey findings:   
+[`r icon::fa("comment-o")` Kenya's digital credit revolution five years on (CGAP & FSD Kenya)](http://www.cgap.org/blog/kenya%E2%80%99s-digital-credit-revolution-five-years)  
+[`r icon::fa("file-pdf-o")` Quickights report fourth annual FII tracker survey (InterMedia)](http://finclusion.org/uploads/file/reports/2016%20Data%20at%20a%20Glance%20Financial%20Inclusion%20in%20Kenya.pdf)  
+[`r icon::fa("file-pdf-o")` Value added financial services in Kenya: M-Shwari (InterMedia)](http://finclusion.org/uploads/file/reports/FII-Kenya-M-Shwari-Report.pdf)  
+[`r icon::fa("file-pdf-o")` Where credit is due - customer experience of digital credit in Kenya (Microsave)](http://www.microsave.net/resource/where_credit_is_due_customer_experience_of_digital_credit_in_kenya)
+
+Impact evaluations:  
+[`r icon::fa("external-link")` Forthcoming: Can digital loans deliver? Take up and impacts of digital loans in Kenya (MIT & FSD Kenya)]()
+
+# Footnotes {#footnotes}
+
+[^1]: The degree to which Kenya's credit bureau and information sharing system facilitated the spread of digital credit is an open question but the existence of institutions that can discourage default on unsecured lending does play an important role in the delivery of digital credit in Kenya. 
+[^2]: See for example Microsave's blog [Key new year resolutions for the success of digital financial services](http://blog.microsave.net/key-new-year-resolutions-for-the-success-of-digital-financial-services/)
+[^3]: [Evidence from round 1 of the M-PESA panel survey conducted by MIT and FSD Kenya ](http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2015/11/30093548/FSD-Lecture-Slides-Final.pdf)
+[^4]: See for example: [Mobile lending app Tala closes Sh6.5b investment, to expand to India and Mexico](https://www.capitalfm.co.ke/business/2018/04/mobile-lending-app-tala-closes-sh6-5b-investment-to-expand-to-india-and-mexico/), [Virtual lender Branch Kenya loans hit Sh3.6 billion](https://www.nation.co.ke/business/Virtual-lender-Branch-Kenya-loans/996-4040104-gi2bnj/index.html)
+[^5]: To explore whether vulnerability is associated with the propensity to borrow digitally, a variable based on five of the questionnaire items was created: (1) I often have trouble making money last between the times I get money, (2) Over the last year you had to sell some assets or borrow to repay a loan, (3) In the last 12 months your family has gone without enough often or sometimes, (4) In the last 12 months your family has gone without medicine often or sometimes, (5) I cannot obtain approximately one month of income within three days in the case of an emergency. If 3 or more of these statements are true, a respondent is classified as having "severe" vulnerability, if 1 or 2 of these statements are true, a respondent is classified as having "moderate"" vulnerability, if none of these statements is true, a respondent is classified as having "low" vulnerability. 
+[^6]: [M-Shwari terms and condiitons](http://cbagroup.com/wp-content/uploads/2014/05/M-SHWARI_TERMS_AND_CONDITIONS.pdf)
+[^7]: Microsave blog: [Are We Really Financially Excluding 2.7 Million With Digital Credit in Kenya?](https://www.linkedin.com/pulse/we-really-financially-excluding-27-million-digital-credit-wright)
+[^8]: Daily nation article: [Pain of Kenyans blacklisted for amounts as small as Sh100 in mobile loans, bank fees](https://www.nation.co.ke/business/Pain-of-Kenyans-blacklisted-for-amounts-as-small-as-Sh100/996-3374952-k2dkdvz/index.html)

@@ -1,0 +1,15 @@
+name: data-in-deoth
+navbar:
+  type: inverse
+  title: Data in depth
+  right:
+  - text: About
+    href: about.html
+output:
+  html_document:
+    theme: yeti
+    lib_dir: site_libs
+    self_contained: no
+    css: styles.css
+output_dir: "."
+exclude: ["*.rda", "*.csv"]

@@ -1,0 +1,49 @@
+
+.about { 
+  color: black;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 50px;
+}
+
+#intro_band {
+  width: 80%;
+  margin: 1em auto;
+  padding: 1em 5%;
+  position: relative;
+}
+
+#intro_band::after {
+  content: "";
+  background: #fff;
+  background: url("assets/index/wpexplorer.svg"); 
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+.proj_band { 
+  padding: 8px;
+}
+
+.img_container { 
+  height: 200px;
+  width: 300px;
+}
+
+#proj1_img { 
+  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg") center;  
+  background-size: cover;
+}
+
+#proj2_img { 
+  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/13145230/Cash-Money.jpg") center;  
+  background-size: cover;
+}

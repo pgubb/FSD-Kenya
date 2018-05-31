@@ -1,0 +1,129 @@
+
+#header { 
+  background: linear-gradient(213deg, rgba(27, 206, 223, 0.8) 0%, rgba(91, 36, 122, 0.8) 90%), url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg") center;  
+  height: 300px;
+  color: white;
+  padding: 80px 10px 10px 30px;
+}
+
+#header h1 { 
+  font-weight: 600;
+}
+
+#sec1 h1 { 
+  border-left: 15px solid #1bcedf;
+}
+
+#sec2 h1 { 
+  border-left: 15px solid #23b8d2;
+}
+
+#sec3 h1 { 
+  border-left: 15px solid #2BA3C5;
+}
+
+#sec4 h1 { 
+  border-left: 15px solid #338EB9;
+}
+
+#sec5 h1 { 
+  border-left: 15px solid #3B79AC;
+}
+
+#sec6 h1 { 
+  border-left: 15px solid #43639F;
+}
+
+#sec7 h1 { 
+  border-left: 15px solid #43639F;
+}
+
+#sec8 h1 { 
+  border-left: 15px solid #533986;
+}
+
+#sec9 h1 { 
+  border-left: 15px solid #5B247A;
+}
+
+.highlight { 
+  background-color: #f1eef6;
+}
+
+.sec h1 { 
+  padding-left: 10px;
+  font-size: 200%;
+}
+
+.sec h2 { 
+  font-size: 160%;
+}
+
+h3 { 
+  font-size: 135%;
+  padding-top: 12px;
+} 
+
+.tocify-header { 
+  font-size: 85%; 
+  font-weight: 600;
+}
+
+h4 { 
+  font-size: 80%;
+}
+
+.nav-tabs li { 
+  font-size: 80%;
+}
+
+.tab-content { 
+  border-bottom: 1px solid #dddddd;
+}
+
+[data-tag="3"] { 
+  /* font-style: italic; */ 
+  font-weight: 450;
+  /* color: #3690c0; */ 
+  padding-left: 5px;
+}
+
+.box { 
+    font-size: 85%;
+      width: 42%;
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      box-shadow: 5px 5px 5px #eee;
+      padding: 10px;
+      float: left;
+      margin: 11px;
+}
+
+.box2 { 
+    font-size: 85%;
+      width: 42%;
+      background: #f8f8f8;
+      border: 1px solid #ddd;
+      box-shadow: 5px 5px 5px #eee;
+      padding: 10px;
+      float: right;
+      margin: 11px;
+}
+
+.empty h4 { 
+  height: 0px;
+}
+
+.box h4 { 
+  font-size: 125%;
+  padding-top: 0px;
+} 
+
+.box2 h4 { 
+  font-size: 125%;
+  padding-top: 0px;
+} 
+
+#footnotes { 
+  font-size: 85%;
+}
