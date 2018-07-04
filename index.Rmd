@@ -6,7 +6,7 @@ output: html_document
 <div id="intro_band"> 
 
 <div class="about">
-Data in depth leverages Kenya's vast array of demand-side data to explore themes that are relevant to financial inclusion and development.
+Data in depth leverages available demand-side data to explore financial inclusion and development in Kenya.
 </div> 
 
 </div> 
@@ -43,3 +43,18 @@ This interactive note provides a preliminary take on Gallup's recent survey of f
 
 </div> 
 
+<div class = "row proj_band"> 
+
+<div class="col-sm-5">
+<div class="img_container" id = "proj3_img"> </div>
+</div> 
+
+<div class="col-sm-7" class = "proj_details">
+
+#[A snapshot of the market for credit in Kenya: evidence from KIHBS-II](https://fsdkenya.shinyapps.io/kihbs_credit/)
+
+A look into the market for credit using the Kenya's latest integrated household budget survey. 
+
+</div> 
+
+</div> 

@@ -1,4 +1,20 @@
 
+/* NAVBAR ------------------ */ 
+
+.navbar img { 
+  height: 40px;
+}
+
+.navbar-brand { 
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+/* _________________ */ 
+
 #header { 
   background: linear-gradient(213deg, rgba(27, 206, 223, 0.8) 0%, rgba(91, 36, 122, 0.8) 90%), url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg") center;  
   height: 300px;
@@ -55,6 +71,21 @@
   margin-top: 40px;
 }
 
+#sec10 h1 { 
+  border-left: 15px solid #5B247A;
+  margin-top: 40px;
+}
+
+#sec11 h1 { 
+  border-left: 15px solid #5B247A;
+  margin-top: 40px;
+}
+
+#sec12 h1 { 
+  border-left: 15px solid #5B247A;
+  margin-top: 40px;
+}
+
 .highlight { 
   background-color: #f1eef6;
 }
@@ -72,6 +103,8 @@
 
 h3 { 
   font-size: 135%;
+  font-weight: 500;
+  color: #247BA0;
 } 
 
 .tocify-header { 

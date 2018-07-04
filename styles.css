@@ -6,8 +6,24 @@
   padding: 50px;
 }
 
+/* NAVBAR ------------------ */ 
+
+.navbar img { 
+  height: 40px;
+}
+
+.navbar-brand { 
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+/* -------------------- */ 
+
 #intro_band {
-  width: 80%;
+  width: 100%;
   margin: 1em auto;
   padding: 1em 5%;
   position: relative;
@@ -15,7 +31,6 @@
 
 #intro_band::after {
   content: "";
-  background: #fff;
   background: url("assets/index/wpexplorer.svg"); 
   background-size: auto;
   background-repeat: no-repeat;
@@ -45,5 +60,10 @@
 
 #proj2_img { 
   background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/13145230/Cash-Money.jpg") center;  
+  background-size: cover;
+}
+
+#proj3_img { 
+  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/06/05093128/Digital-Mobile-Women.png") center;  
   background-size: cover;
 }

@@ -1,15 +1,12 @@
-name: data-in-deoth
-navbar:
-  type: inverse
-  title: Data in depth
-  right:
-  - text: About
-    href: about.html
+name: data-in-depth
 output:
   html_document:
     theme: yeti
+    css: styles.css
     lib_dir: site_libs
     self_contained: no
-    css: styles.css
-output_dir: "."
-exclude: ["*.rda", "*.csv"]
+output_dir: '.'
+exclude:
+- '*.rda'
+- '*.csv'
+
