@@ -1,8 +1,11 @@
 
+body { 
+  background-color: #F4FFFE;
+}
+
 .about { 
-  color: black;
-  font-size: 1.5em;
   text-align: center;
+  font-weight: 400; 
   padding: 50px;
 }
 
@@ -20,6 +23,14 @@
   margin-top: 6px;
 }
 
+.d-inline-block {
+    display: inline-block!important;
+}
+
+.align-top {
+    vertical-align: top!important;
+}
+
 /* -------------------- */ 
 
 #intro_band {
@@ -31,7 +42,9 @@
 
 #intro_band::after {
   content: "";
-  background: url("assets/index/wpexplorer.svg"); 
+  background-color: #008cba;
+  -webkit-mask: url("assets/index/wpexplorer.svg") no-repeat 50% 50%; 
+  mask-image: url("assets/index/wpexplorer.svg") no-repeat 50% 50%; 
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -53,6 +66,28 @@
   width: 300px;
 }
 
+.card { 
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-body { 
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-body h2 { 
+  margin-top: 0;
+}
+
+.card-img-top { 
+  height: 200px;
+  object-fit: cover;
+  
+}
 #proj1_img { 
   background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg") center;  
   background-size: cover;

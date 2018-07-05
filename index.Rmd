@@ -3,16 +3,91 @@ title: ""
 output: html_document
 ---
 
-<div id="intro_band"> 
+<div id="intro_band" class="fluid-row"> 
 
 <div class="about">
-Data in depth leverages available demand-side data to explore financial inclusion and development in Kenya.
+##Data in depth uses demand-side data to explore financial inclusion and development in Kenya.
 </div> 
 
 </div> 
 
-<div class="row proj_band">
+<div class="row">
 
+<!-- first project --> 
+<div class="card-group"> 
+
+<div class="col-sm-4">
+<div class="card">
+
+<img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg" alt="Card image cap">
+  
+<div class="card-body">
+
+<small class="text-muted">July 10, 2018</small>
+
+##[Digital credit in Kenya](digitalcredit.html)
+<p class="card-text"> This report explores emerging questions about the growth, adoption and usage of digital credit. </p>
+
+<div class="card-footer">
+<small class="text-muted">Featured datasets:</small>
+<a href="#" class="btn btn-outline-primary btn-sm">FinAccess</a>
+</div>
+
+
+</div> <!-- closes card body --> 
+</div> <!-- closes card -->
+</div> <!-- closes column --> 
+
+<!-- second project --> 
+
+<div class="col-sm-4">
+<div class="card">
+<img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/13145230/Cash-Money.jpg" alt="Card image cap">
+  
+<div class="card-body">
+<small class="text-muted">July 10, 2018</small>
+
+##[Financial health, control & resilience](https://fsdkenya.shinyapps.io/gallup_global_financial_health/)
+
+<p class="card-text"> This interactive note examines the Gallup & MetLife foundation survey of financial health in Kenya.</p>
+
+<div class="card-footer">
+<small class="text-muted">Featured datasets:</small>
+<a href="#" class="btn btn-outline-primary btn-sm">Gallup finhealth</a>
+</div>
+
+</div> <!-- closes card body --> 
+</div> <!-- closes card -->
+</div> <!-- closes column --> 
+
+<!-- third project --> 
+
+<div class="col-sm-4">
+<div class="card">
+<img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/06/05093128/Digital-Mobile-Women.png" alt="Card image cap">
+  
+<div class="card-body">
+<small class="text-muted">July 10, 2018</small>
+
+##[A snapshot of the market for credit](https://fsdkenya.shinyapps.io/kihbs_credit/)
+
+<p class="card-text"> A look into the market for credit using the Kenya's latest integrated household budget survey.</p>
+
+<div class="card-footer">
+<small class="text-muted">Featured datasets:</small>
+<a href="#" class="btn btn-outline-primary btn-sm">KIHBS-II</a>
+</div>
+
+
+</div> <!-- closes card body --> 
+</div> <!-- closes card -->
+</div> <!-- closes column --> 
+
+</div> 
+
+</div> <!-- closes row --> 
+
+<!--
 <div class="col-sm-5">
 <div class="img_container" id = "proj1_img"> </div>
 </div> 
@@ -58,3 +133,5 @@ A look into the market for credit using the Kenya's latest integrated household 
 </div> 
 
 </div> 
+
+--> 
