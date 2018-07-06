@@ -140,12 +140,12 @@ createf("mfx_panel3")
 
 In the past five years digital loans have transformed the credit landscape in Kenya. Mobile phones, identity-linked digital footprints, automated credit scoring, agent networks and credit information sharing[^1] - the building blocks of digital credit - have enabled providers to deliver loans quickly and at scale. For millions of adults, the possibility of borrowing from their phones has opened the door to private, formal consumer credit for the first time. Yet the pricing, marketing and potential misuse of these products coupled with the extensive 'blacklisting' (see [Box 3](#box3)) of borrowers who have failed to repay these relatively small loans has raised a growing chorus of concern about their design and the adverse impacts they have on borrowers and the financial system more broadly [^2]. 
 
-#### BOX 1: What are digital loans? {.box2 #box1}
+#### `r icon::fa("box-open")` BOX 1: What are digital loans? {.box2 #box1}
 In 2006, getting a consumer loan from a bank in Kenya, would have required traveling about 9km to the nearest branch [^3], speaking to a loan officer, gathering together documents, submitting an application and hoping for the best. Putting interest rates and often unattainable collateral requirements aside, the process was costly for the average earner, it took days (the latest KIHBS found that on average - across all loan types - borrowers needed 11 days to secure a loan) and involved out-of-pocket costs such as paying for transportation. For a bank, extending these kind of loans was also costly. It required having staff who could screen an applicant and gather information or collateral in order to make a judgement about their creditworthiness. Digital loans have transformed the process for both borrowers and lenders. 
 
 As opposed to conventional credit, borrowers do not have to wait to receive a decision on whether the loan was granted after application. Digital loans are *instant* since loan-eligibility decisions are *automated* based on a set of rules applied to available data, and not on human judgement applied on a case by case basis. Another distinguishing factor of digital credit is that information, loan disbursements and repayments are managed *remotely*, without the need for customers to visit bank branches. 
 
-[`r icon::fa("external-link")` Find out more about the attributes of digital credit from CGAP](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
+[`r icon::fa("external-link-alt")` Find out more about the attributes of digital credit from CGAP](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
 
 #### {.empty}
 
@@ -1184,6 +1184,64 @@ triplot(sumby(digital_borrowers, pct_digloanso1, probweights, vulnerable, wlthgr
 ```
 [`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ndl_vuln_wlth-1.png) 
 
+### Adoption of digital credit conditional on need, by population subgroups, 2017 {.tabset .tabset-fade}
+
+#### `r figs("need_liv_gnd", "By livelihood and gender")`
+```{r need_liv_gnd, echo=FALSE}
+title <- "Need for credit, by educational attainment & wealth"
+triplot(sumby(mobile_owners, needs_credit, probweights, livegroup4, gendergroup), 
+        pal = colGnd, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["gendergroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/need_liv_gnd-1.png) 
+
+#### `r figs("need_liv_vuln", "By livelihood and vulnerability")`
+```{r need_liv_vuln, echo=FALSE}
+title <- "Need for credit, by livelihood & vulnerability"
+triplot(sumby(mobile_owners, needs_credit, probweights, livegroup4, vulnerable2), 
+        pal = colVul2, 
+        ylab = varlabels["propmob"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["vulnerable"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/need_liv_vuln-1.png) 
+
+#### `r figs("ec_liv_gnd", "By livelihood and gender")`
+```{r ec_liv_gnd, echo=FALSE}
+title <- "Effective digital credit coverage, by educational attainment & wealth"
+triplot(sumby(mobile_owners, effective_coverage, probweights, livegroup4, gendergroup), 
+        pal = colGnd, 
+        ylab = varlabels["effective_coverage"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["gendergroup"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ec_liv_gnd-1.png) 
+
+#### `r figs("ec_liv_vuln", "By livelihood and vulnerability")`
+```{r ec_liv_vuln, echo=FALSE}
+title <- "Effective digital credit coverage, by livelihood & vulnerability"
+triplot(sumby(mobile_owners, effective_coverage, probweights, livegroup4, vulnerable2), 
+        pal = colVul2, 
+        ylab = varlabels["effective_coverage"],
+        xlab = varlabels["livegroup4"],  
+        olab = varlabels["vulnerable"], 
+        connect = FALSE, 
+        caption = caption, 
+        title = title)
+```
+[`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/ec_liv_vuln-1.png) 
+
 # 6. Why do people take or avoid digital loans? {#sec6 .sec}
 
 ```{r include=FALSE}
@@ -1200,7 +1258,7 @@ We asked M-Shwari customers why they had opened an account, their answers includ
 
 A member of the research team also noted how one borrower had discovered, through experimentation, how to increase the loan limit: “Eli has also learned how to go about the product. To increase his credit rating, whenever he is paid by M-PESA, he first of all takes it all to his M-shwari account and then withdraws it a few minutes later. He tells me ‘They will look at how much and how many times I deposit, so I have to do it.’ He then requests a loan, and he is given. His loan limit currently has been increased from Ksh2,000 to Ksh2,300.”
 
-[`r icon::fa("external-link")` Read more about the Kenya Financial Diaries study](http://www.fsdkenya.org/financial-diaries)  
+[`r icon::fa("external-link-alt")` Read more about the Kenya Financial Diaries study](http://www.fsdkenya.org/financial-diaries)  
 
 #### {.empty}
 
@@ -1429,9 +1487,9 @@ One of the emerging concerns with digital credit stems from the observation that
 
 In Kenya, the act of submitting a report based on an NPL is known, somewhat threateningly, as *blacklisting*. Of the 2.7 million negative reports on digital loans in TransUnion's database, 400,000 are for loans of less than USD 2 [^7]. The trouble for borrowers is that the presence of even a single negative report can adversely affect their chances of borrowing from any lender, regardless of their overall borrowing history [^8]. 
 
-One of the challenges with the way CRB data has historically been used by lenders is its use as a binary check for red-flags, rather than using the borrower's overall credit performance (say based on a credit score) using both positive and negative listings. Most banks require potential borrowers with negative listings to first pay outstanding amounts on listed loans, and to then obtain a clearance certificate from the CRB to prove to the lender that outstanding debts have been settled. A clearance certificate from one of Kenya's CRBs runs at Ksh 2,200 (or about USD 22) which can is twenty times the size of M-Shwari's lowest loan limit of Ksh 200. 
+One of the challenges with the way CRB data has historically been used by lenders is its use as a binary check for red-flags, rather than using the borrower's overall credit performance (say based on a credit score) using both positive and negative listings. Most banks require potential borrowers with negative listings to first pay outstanding amounts on listed loans, and to then obtain a clearance certificate from the CRB to prove to the lender that outstanding debts have been settled. A clearance certificate from one of Kenya's CRBs runs at Ksh 2,200 (or about USD 22) which is twenty times the size of M-Shwari's lowest loan limit of Ksh 100. 
 
-[`r icon::fa("external-link")` Read more about how Kenya's credit reference and information sharing works from the Credit information sharing association of Kenya (CIS Kenya)](http://www.ciskenya.co.ke/publications)  
+[`r icon::fa("external-link-alt")` Read more about how Kenya's credit reference and information sharing works from the Credit information sharing association of Kenya (CIS Kenya)](http://www.ciskenya.co.ke/publications)  
 
 #### {.empty}
 
@@ -2224,7 +2282,7 @@ ggplot(data = models,
 #### `r figs("mfx_panel3", "Drivers of repayment and default")`
 ```{r mfx_panel3, fig.height = 6, fig.wdth = 14, echo=FALSE, warning=FALSE}
 
-depvars <- c('defaultorlate', 'adverse_repayment')
+depvars <- c('nodefaultorlate', 'defaultorlate', 'adverse_repayment')
 
 i <- 1
   for (depvar in depvars) { 
@@ -2291,7 +2349,7 @@ ggplot(data = models,
 [`r icon::fa("arrow-circle-down")` Download](digitalcredit_files/figure-html/mfx_panel3-1.png) 
 
 
-# 12. Conclusions {#sec12 .sec} 
+# 12. Discussion {#sec12 .sec} 
 
 * **The long-run outlook for the adoption of digital credit will rest on the degree to which providers can address people's fears and needs.**  The growth of digital borrowing has been impressive - in the 4 years since 2013, the percentage of the adult mobile owning population who have ever used digital loans shot up from less than 5 percent to 35 percent. It seems unlikely that growth of the user base will continue at this pace and future growth may depend on whether providers place greater emphasis on understanding people's aversions to borrowing and financial needs. In 2017, two thirds of Kenya's mobile owning adult population had never used digital credit. Of these potential digital credit users, just over a third cited fear as a reason they do not take digital loans and nearly another third cited lack of need for loans. Individuals who depend on agriculture are especially likely to be fearful of digital credit. Unfortunately the FinAccess tracker survey did not shed much light on the nature of this fear, whether it is a fear of borrowing generally, a fear of technology, a misunderstanding of consequences or some other reason. Deeper qualitative research would be better positioned to give greater insight into this fear of digital credit, the kinds of stories that circulate related to its risks and what can be done to alleviate concerns and actually protect borrowers from excessive harm or disporoportionate penalties. It would be similarly useful to unpack what people who have avoided digital borrowing mean when the say "I do not need a loan". Is this because they do not tend to have mismatches between cash flows and expenditure obligations, have sufficient savings to smooth consumption or really mean that they have no need for a KShs 2,000 digital loan but could really use KShs 50,000 loan for a large investment? 
 
@@ -2334,6 +2392,89 @@ heatplot(matchby(mobile_owners, "aggus", probweights, vulnerable),
 
 ### {.empty}
 
+#13. Ideas & recommendations {#sec13 .sec} 
+
+The adaptation and evolution of digital credit products needs to start on the principle that the average borrower has a vulnerable economic profile (e.g. faces cash flow challenges but not necessarily poor or destitute). As such lenders need to be more sensitive to the uncertainty and volatility that borrowers face. Doing so will strengthen the value proposition of digital credit for both current and potential borrowers. 
+
+<div class="row">
+
+<div class="card-group"> 
+
+<!-- first recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title"> `r icon::fa("hands-helping")` Provide a warm welcome </h5>
+<h6 class="card-subtitle mb-2 text-muted">Establish a learning window for new borrowers</h6>
+<p class="card-text">Many potential customers who are aware of digital credit and need credit, don’t use it out of fear. Providers can help interested borrowers overcome this fear by offering a ‘reduced’ risk trial for one or two loan cycles during which a higher level of customer engagement, negotiability and support is offered. This would also be an opportunity for lenders to learn more about the profile and needs of new borrowers and use that data to offer greater customization down the line.</p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column --> 
+
+<!-- second recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">`r icon::fa("calendar-alt")` Accomodate, do not exacerbate, vulnerability </h5>
+<h6 class="card-subtitle mb-2 text-muted">Experiment with longer default repayment periods or provide more flexible, less punitive, repayment terms.</h6>
+<p class="card-text">1 in 4 digital borrowers found the repayment period too short. For existing borrowers, this will help reduce delinquency rates and reduce total borrowing costs. For potential borrowers, flexibility will help reduce aversion to borrowing and likely draw in new customers.</p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column --> 
+
+<!-- third recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">`r icon::fa("lightbulb")` Communicate with clarity</h5>
+<h6 class="card-subtitle mb-2 text-muted">Simplify disclosure of pricing, fees and other loan costs and find ways to help customers comprehend terms and conditions.</h6>
+<p class="card-text"> Nearly 1 in 5 digital borrowers reported being charged unexpected fees or not fully understanding the costs of loans. Controlling for other factors, individuals with limited numeracy are less likely to use digital credit. Instituting simple and effective disclosure strategies will help reduce late repayment and negative customer experiences.</p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column -->
+
+</div> <!-- closes card group --> 
+</div> <!-- closes row --> 
+
+<div class="row">
+
+<div class="card-group"> 
+
+<!-- first recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title"> `r icon::fa("piggy-bank")` Encourage investment </h5>
+<h6 class="card-subtitle mb-2 text-muted">Encourage the use of digital loans for investment by rewarding disciplined digital savers and small producers with a good track record, with higher value loans, longer repayment periods or lower interest rates. </h6>
+<p class="card-text"></p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column --> 
+
+<!-- second recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">`r icon::fa("thermometer-half")` Measure </h5>
+<h6 class="card-subtitle mb-2 text-muted">Measure and monitor the debt and financial health of borrowers</h6>
+<p class="card-text"></p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column --> 
+
+<!-- third recommendation --> 
+<div class="col-sm-4">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">`r icon::fa("piggy-bank")` </h5>
+<h6 class="card-subtitle mb-2 text-muted"></h6>
+<p class="card-text"></p>
+</div>
+</div> <!-- closes card --> 
+</div> <!-- closes column -->
+
+</div> <!-- closes card group --> 
+</div> <!-- closes row --> 
 
 # References {.tabset .tabset-fade}
 ## Digital credit products 
@@ -2349,28 +2490,28 @@ kable(products)
 Links to reports, blogs and other publications that discuss different elements of the provision, regulation, usage and impact of digital credit are provided below: 
 
 Overview and framing of key issues in digital credit:  
-[`r icon::fa("file-pdf-o")` Digital credit: A snapshot of the current landscape and open research questions (Digital credit observatory)](https://people.ucsc.edu/~jmrtwo/digital_credit_landscape.pdf)  
-[`r icon::fa("comment-o")` Instant, Automated, Remote: The Key Attributes of Digital Credit)](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
-[`r icon::fa("file-pdf-o")` How M-Shwari works, the story so far (CGAP & FSD Kenya)](http://fsdkenya.org/publication/how-m-shwari-works-the-story-so-far/)  
-[`r icon::fa("file-pdf-o")` Big data, small credit (Omidyar network)](https://www.omidyar.com/sites/default/files/file_archive/insights/Big%20Data,%20Small%20Credit%20Report%202015/BDSC_Digital%20Final_RV.pdf/)  
-[`r icon::fa("comment-o")` Digital credit's evolving lanscape: 3 things you need to know (CGAP)](http://www.cgap.org/blog/digital-credit%E2%80%99s-evolving-landscape-3-things-you-need-know)  
+[`r icon::fa("file-pdf")` Digital credit: A snapshot of the current landscape and open research questions (Digital credit observatory)](https://people.ucsc.edu/~jmrtwo/digital_credit_landscape.pdf)  
+[`r icon::fa("comment")` Instant, Automated, Remote: The Key Attributes of Digital Credit)](http://www.cgap.org/blog/instant-automated-remote-key-attributes-digital-credit)  
+[`r icon::fa("file-pdf")` How M-Shwari works, the story so far (CGAP & FSD Kenya)](http://fsdkenya.org/publication/how-m-shwari-works-the-story-so-far/)  
+[`r icon::fa("file-pdf")` Big data, small credit (Omidyar network)](https://www.omidyar.com/sites/default/files/file_archive/insights/Big%20Data,%20Small%20Credit%20Report%202015/BDSC_Digital%20Final_RV.pdf/)  
+[`r icon::fa("comment")` Digital credit's evolving lanscape: 3 things you need to know (CGAP)](http://www.cgap.org/blog/digital-credit%E2%80%99s-evolving-landscape-3-things-you-need-know)  
 
 Competition and product comparisons:   
-[`r icon::fa("comment-o")` M-Shwari vs KCB M-Pesa: convergence or divergence? (FSD Kenya)](http://fsdkenya.org/blog/m-shwari-vs-kcb-m-pesa-convergence-or-divergence/)   
-[`r icon::fa("comment-o")` Competition in the Kenyan digital financial market (3 part series) (Helix Institute for Digital Finance)](http://www.helix-institute.com/blog/competition-kenyan-digital-finance-market-mobile-money-part-1-3)  
+[`r icon::fa("comment")` M-Shwari vs KCB M-Pesa: convergence or divergence? (FSD Kenya)](http://fsdkenya.org/blog/m-shwari-vs-kcb-m-pesa-convergence-or-divergence/)   
+[`r icon::fa("comment")` Competition in the Kenyan digital financial market (3 part series) (Helix Institute for Digital Finance)](http://www.helix-institute.com/blog/competition-kenyan-digital-finance-market-mobile-money-part-1-3)  
 
 Consumer protection issues:    
-[`r icon::fa("file-pdf-o")` Consumer protection in digital credit (CGAP)](http://www.cgap.org/sites/default/files/Focus-Note-Consumer-Protection-in-digital-Credit-Aug-2017.pdf)  
-[`r icon::fa("comment-o")` Digital credit in Kenya: Time for celebration or concern? (CGAP)](http://www.cgap.org/blog/digital-credit-kenya-time-celebration-or-concern) 
+[`r icon::fa("file-pdf")` Consumer protection in digital credit (CGAP)](http://www.cgap.org/sites/default/files/Focus-Note-Consumer-Protection-in-digital-Credit-Aug-2017.pdf)  
+[`r icon::fa("comment")` Digital credit in Kenya: Time for celebration or concern? (CGAP)](http://www.cgap.org/blog/digital-credit-kenya-time-celebration-or-concern) 
 
 Demand-side survey findings:   
-[`r icon::fa("comment-o")` Kenya's digital credit revolution five years on (CGAP & FSD Kenya)](http://www.cgap.org/blog/kenya%E2%80%99s-digital-credit-revolution-five-years)  
-[`r icon::fa("file-pdf-o")` Quickights report fourth annual FII tracker survey (InterMedia)](http://finclusion.org/uploads/file/reports/2016%20Data%20at%20a%20Glance%20Financial%20Inclusion%20in%20Kenya.pdf)  
-[`r icon::fa("file-pdf-o")` Value added financial services in Kenya: M-Shwari (InterMedia)](http://finclusion.org/uploads/file/reports/FII-Kenya-M-Shwari-Report.pdf)  
-[`r icon::fa("file-pdf-o")` Where credit is due - customer experience of digital credit in Kenya (Microsave)](http://www.microsave.net/resource/where_credit_is_due_customer_experience_of_digital_credit_in_kenya)
+[`r icon::fa("comment")` Kenya's digital credit revolution five years on (CGAP & FSD Kenya)](http://www.cgap.org/blog/kenya%E2%80%99s-digital-credit-revolution-five-years)  
+[`r icon::fa("file-pdf")` Quickights report fourth annual FII tracker survey (InterMedia)](http://finclusion.org/uploads/file/reports/2016%20Data%20at%20a%20Glance%20Financial%20Inclusion%20in%20Kenya.pdf)  
+[`r icon::fa("file-pdf")` Value added financial services in Kenya: M-Shwari (InterMedia)](http://finclusion.org/uploads/file/reports/FII-Kenya-M-Shwari-Report.pdf)  
+[`r icon::fa("file-pdf")` Where credit is due - customer experience of digital credit in Kenya (Microsave)](http://www.microsave.net/resource/where_credit_is_due_customer_experience_of_digital_credit_in_kenya)
 
 Impact evaluations:  
-[`r icon::fa("external-link")` Forthcoming: Can digital loans deliver? Take up and impacts of digital loans in Kenya (MIT & FSD Kenya)]()
+[`r icon::fa("external-link-alt")` Forthcoming: Can digital loans deliver? Take up and impacts of digital loans in Kenya (MIT & FSD Kenya)]()
 
 # Footnotes {#footnotes}
 

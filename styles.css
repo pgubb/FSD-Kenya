@@ -86,19 +86,5 @@ body {
 .card-img-top { 
   height: 200px;
   object-fit: cover;
-  
-}
-#proj1_img { 
-  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/26104521/26th-March-640x427.jpg") center;  
-  background-size: cover;
 }
 
-#proj2_img { 
-  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/13145230/Cash-Money.jpg") center;  
-  background-size: cover;
-}
-
-#proj3_img { 
-  background: url("http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/06/05093128/Digital-Mobile-Women.png") center;  
-  background-size: cover;
-}
