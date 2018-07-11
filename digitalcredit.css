@@ -173,11 +173,29 @@ h4 {
 }
 
 .card { 
-    background-color: #F4FFFE;
+  background-color: #EFF7FF;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
 }
 
+.providers { 
+  background-color: #FFF5CC;
+}
+
+.regulators {
+ background-color: #EFF7FF; 
+}
+
+.card-subtitle { 
+  color: #939196;
+  font-weight: 400;
+}
+
+#rec-key li { 
+  display: inline-block;
+  padding: 5px;
+  margin: 3px;
+}
 .card-body { 
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
