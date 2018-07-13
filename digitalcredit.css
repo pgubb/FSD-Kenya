@@ -86,6 +86,11 @@
   margin-top: 40px;
 }
 
+#sec13 h1 { 
+  border-left: 15px solid #5B247A;
+  margin-top: 40px;
+}
+
 .highlight { 
   background-color: #f1eef6;
 }
