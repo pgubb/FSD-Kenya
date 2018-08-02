@@ -12,7 +12,6 @@
   font-size: 30px;
   margin-top: 6px;
 }
-
 /* _________________ */ 
 
 #header { 
@@ -26,6 +25,7 @@
   font-weight: 600;
 }
 
+/*
 #sec1 h1 { 
   border-left: 15px solid #1bcedf;
   margin-top: 40px;
@@ -90,26 +90,35 @@
   border-left: 15px solid #5B247A;
   margin-top: 40px;
 }
+*/ 
 
 .highlight { 
   background-color: #f1eef6;
 }
 
+
 .sec h1 { 
-  padding-left: 10px;
-  font-size: 200%;
+  /* padding-left: 10px;
+  font-size: 200%; */ 
+  padding-top: 20px;
   margin-bottom: 20px;
-  
+  font-weight: 600;
 }
+
 
 .sec h2 { 
   font-size: 160%;
 }
 
+.tabset { 
+  padding-top: 20px; 
+}
+
 h3 { 
-  font-size: 135%;
-  font-weight: 500;
-  color: #247BA0;
+  line-height: 125%;
+  /* font-size: 155%; */ 
+  /* color: #6f6f6f; */ 
+  font-weight: 300;
 } 
 
 .tocify-header { 
@@ -184,11 +193,11 @@ h4 {
 }
 
 .providers { 
-  background-color: #FFF5CC;
+  background-color: #FFF5CC; 
 }
 
 .regulators {
- background-color: #EFF7FF; 
+ background-color: #EFF7FF;  
 }
 
 .card-subtitle { 
