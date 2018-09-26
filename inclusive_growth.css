@@ -1,0 +1,200 @@
+
+/* NAVBAR ------------------ */ 
+
+.navbar img { 
+  height: 40px;
+}
+
+.navbar-brand { 
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 30px;
+  margin-top: 6px;
+}
+
+/* _________________ */ 
+
+body .main-container {
+  max-width: 100%; 
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+} 
+
+.center2 { 
+  margin: auto;
+  width: 50%;
+  text-align: justify; 
+}
+
+.center2 h1 { 
+  text-align: center;
+}
+
+.center-pills { display: inline-block; }
+
+.center3 {
+    margin: auto;
+    width: 55%;
+} 
+
+.indicator-section {
+    border-top: 1px solid black;
+    /* margin-top: 15px; */ 
+} 
+
+.main-section { 
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* ----------- Main nav */ 
+
+.topnav a {
+ border-bottom: 2px solid transparent;
+}
+
+.topnav a:hover {
+  border-bottom: 2px solid #14BDEB;
+}
+
+/* ------ LANDING SECTION ---------- */ 
+
+.title { 
+    font-size: 40px;
+    line-height: 28px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.65);
+    color: black;
+} 
+
+.blurb { 
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    background-color: rgba(255, 255, 255, 0.65);
+    color: black;
+} 
+
+.country { 
+    font-size: 30px;
+    line-height: 28px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.65);
+    color: black;
+} 
+
+
+.landing {
+  color: #fff;
+  position: relative;
+  margin: 0;
+  padding: 0;
+} 
+
+.landing figure { 
+  background: url(http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2017/09/27125308/KELDK33-_MG_7578.jpg) no-repeat center left;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0; 
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-shadow: 0px 0px 1px rgba(0,0,0,0.5);
+  height: 650px;
+}
+
+.landing figure {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.landing figcaption {
+    position: absolute;
+    text-align: left;
+    left: 8%;
+    bottom: 45%;
+    width: 50%;
+    font-size: 1.5em; 
+  }
+  
+.landing p {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 0.5em;
+  }
+
+/* ------ INTRO SECTION ---------- */ 
+
+.intro0 { 
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+
+
+/* ------- DIVDERS ------------- */ 
+
+.surv-divider { 
+  margin-top: 15px;
+  border-top: 8px solid #96BDC6;
+}
+
+.school-divider { 
+  margin-top: 15px;
+  border-top: 8px solid #81968F;
+}
+
+.health-divider { 
+  margin-top: 15px;
+  border-top: 8px solid #84ACCE;
+}
+
+.hci-divider { 
+  margin-top: 15px;
+  border-top: 8px solid #F4AC45;
+}
+
+/* ------ PANEL/ CARD ELEMENTS ---------- */ 
+
+.card { 
+  max-width: 800px;
+  box-shadow: 0px 0px 3px 1px #CECACC;
+}
+
+.smalltxt { 
+ font-size: 55%; 
+}
+
+.references {
+  font-size: 70%;
+}
+
+.smalltxt2 { 
+ padding-top: 18px;
+ font-size: 53%; 
+}
+
+.metadata{
+  font-size: 75%;
+}
+
+.label { 
+  background-color: #fafafa;
+  font-weight: 600;
+  color: black;
+}
+
+.jumbotron {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
