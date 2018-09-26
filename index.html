@@ -111,7 +111,6 @@ body {
   padding-top: 50px;
   margin-top: -50px;
 }
-
 .section h2 {
   padding-top: 50px;
   margin-top: -50px;
@@ -131,6 +130,43 @@ body {
 .section h6 {
   padding-top: 50px;
   margin-top: -50px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -152,18 +188,77 @@ $(document).ready(function () {
 });
 </script>
 
-
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
 </script>
 
 <!-- code folding -->
-
 
 
 
@@ -259,54 +354,29 @@ A look into the market for credit using the Kenya’s latest integrated househol
 </div>
 </div>
 <p><!-- closes row --></p>
-<!--
-<div class="col-sm-5">
-<div class="img_container" id = "proj1_img"> </div>
-</div> 
+<div class="row">
 
-<div class="col-sm-7" class = "proj_details">
-
-#[Digital credit in Kenya](digitalcredit.html)
-
-This report explores emerging questions about the growth, adoption and usage of digital credit in Kenya using a host of demand-side survey data, including a 2017 mobile phone survey. 
-
-</div> 
-
-</div> 
-
-<div class = "row proj_band"> 
-
-<div class="col-sm-5">
-<div class="img_container" id = "proj2_img"> </div>
-</div> 
-
-<div class="col-sm-7" class = "proj_details">
-
-#[Exploring Gallup's 2018 financial health survey](https://fsdkenya.shinyapps.io/gallup_global_financial_health/)
-
-This interactive note provides a preliminary take on Gallup's recent survey of financial health in Kenya. 
-
-</div> 
-
-</div> 
-
-<div class = "row proj_band"> 
-
-<div class="col-sm-5">
-<div class="img_container" id = "proj3_img"> </div>
-</div> 
-
-<div class="col-sm-7" class = "proj_details">
-
-#[A snapshot of the market for credit in Kenya: evidence from KIHBS-II](https://fsdkenya.shinyapps.io/kihbs_credit/)
-
-A look into the market for credit using the Kenya's latest integrated household budget survey. 
-
-</div> 
-
-</div> 
-
--->
+<!-- first project -->
+<div class="card-group">
+<div class="col-sm-4">
+<div class="card">
+<p><img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2017/09/27125308/KELDK33-_MG_7578.jpg" alt="Card image cap"></p>
+<div class="card-body">
+<p><small class="text-muted">September 26, 2018</small></p>
+<h2 id="examining-the-trajectory-of-growth-and-development-in-kenya"><a href="inclusive_growth.html">Examining the trajectory of growth and development in Kenya</a></h2>
+<p class="card-text">
+</p>
+<div class="card-footer">
+<p><small class="text-muted">Featured datasets:</small> <a href="#" class="btn btn-outline-primary btn-sm">World Development Indicators, KIHBS-II</a></p>
+</div>
+</div>
+<p><!-- closes card body --></p>
+</div>
+<p><!-- closes card --></p>
+</div>
+<p><!-- closes column --></p>
+</div>
+<p><!-- closes row --></p>
 
 
 
