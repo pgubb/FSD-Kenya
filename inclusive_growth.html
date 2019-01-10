@@ -75,9 +75,6 @@ img {
 .tabbed-pane {
   padding-top: 12px;
 }
-.html-widget {
-  margin-bottom: 20px;
-}
 button.code-folding-btn:focus {
   outline: none;
 }
@@ -95,6 +92,7 @@ body {
   padding-top: 50px;
   margin-top: -50px;
 }
+
 .section h2 {
   padding-top: 50px;
   margin-top: -50px;
@@ -114,43 +112,6 @@ body {
 .section h6 {
   padding-top: 50px;
   margin-top: -50px;
-}
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -172,77 +133,18 @@ $(document).ready(function () {
 });
 </script>
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
 <script>
 $(document).ready(function () {
   window.buildTabsets("TOC");
 });
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
 </script>
 
 <!-- code folding -->
+
 
 
 
@@ -282,19 +184,16 @@ $(document).ready(function () {
 <div class="col-md-12 text-center">
 <ul class="topnav nav nav-pills center-pills">
 <li role="presentation">
-<a href="#growth">Economy &amp; growth </a>
+<a href="#intro"> Introduction </a>
 </li>
 <li role="presentation">
-<a href="#poverty">Poverty</a>
+<a href="#growth-vel"> Growth velocity </a>
 </li>
 <li role="presentation">
-<a href="#agriculture">Agriculture &amp; rural development</a>
+<a href="#growth-ori"> Growth origins </a>
 </li>
 <li role="presentation">
-<a href="#employment">Employment</a>
-</li>
-<li role="presentation">
-<a href="#humancapital">Human capital</a>
+<a href="#tech"> Technology &amp; economic complexity </a>
 </li>
 </ul>
 </div>
@@ -302,139 +201,131 @@ $(document).ready(function () {
 <div id="section" class="section level1 surv-divider">
 <h1></h1>
 </div>
-<div id="growth" class="section level1 center2 main-section">
-<h1><strong>Economic performance</strong></h1>
-</div>
-<div id="gdp" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Output and growth</h1>
+<div id="growth" class="section level1 center main-section">
+<h1><strong>Kenya’s growth story</strong></h1>
 <div class="row">
-<div class="col-md-9">
+<div class="col-md-6">
 <!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="intro">Introduction</h4>
+<p><span class="references"> <!-- FIGURES LINK SECTION --></p>
+<p></span></p>
+<p><span class="references"> <!-- REFERENCES SECTION --> References: <br> <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2018"><em>Maddison project database</em> Bolt et al (2018).</a> <br><br> <a href="https://press.princeton.edu/titles/10544.html"><em>The rise and fall of American growth</em> Gordon (2016).</a> <br><br> <a href="https://williameasterly.files.wordpress.com/2010/08/33_easterly_levine_itsnotfactoraccumulation_prp.pdf"><em>Its not factor accumulation: Stylized facts and growth models</em> Easterly and Levine (2001)</a> <br><br> <a href="https://www.cgdev.org/sites/default/files/knowledge-or-its-adoption.pdf"><em>Knowledge or its adoption?</em> Pritchett (2017).</a> <br><br> <a href="https://www.brookings.edu/wp-content/uploads/2003/06/2003b_bpea_bosworth.pdf"><em>The empirics of growth: An update</em> Bosworth and Collins (2003).</a> <br><br> <a href="https://www.brookings.edu/wp-content/uploads/2003/06/2003b_bpea_bosworth.pdf"><em>Technology in the great divergence</em> Clark and Feenstra (2001).</a> <br><br> <a href="https://www.brookings.edu/wp-content/uploads/2003/06/2003b_bpea_bosworth.pdf"><em>If technology has arrived everywhwere, why has income diverged?</em> Comin and Mestieri (2013).</a> <br><br> <a href="https://growthlab.cid.harvard.edu/publications/what-are-challenges-economic-growth"><em>What are the challenges of economic growth</em> Hausmann (2015)</a> <br><br> </span></p>
 </div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-<p><a href="https://www.afdb.org/fileadmin/uploads/afdb/Documents/Generic-Documents/country_notes/Kenya_country_note.pdf">2018 African Economic Outlook: Kenya country note</a></p>
+<p><!-- closes margin row --></p>
+<div class="col-md-10">
+<p>Kenyans have an average living standard today that is about one twentieth of the one enjoyed by Americans (average income per person adjusted for differences in prices is USD 3,285 in Kenya vs. USD 59,531 in the United States). You have to go all the way back to 1855 to find the year in which Americans had an estimated living standard equivalent to the one Kenyans have today (Bolt et al, 2018). As argued by Robert Gordon in his book “The rise and fall of American growth”, America’s growth story begins 15 years later, in 1870. Gordon designates the next 100 years a “special century” for the United States (US), one that brought about an economic revolution that:</p>
+<blockquote>
+<p>freed households from an unremitting daily grind of painful manual labor, household drudgery, darkness, isolation, and early death. Only one hundred years later, daily life had changed beyond recognition. Manual outdoor jobs were replaced by work in air-conditioned environments, housework was increasingly performed by electric appliances, darkness was replaced by light, and isolation was replaced not just by travel, but also by color television images bringing the world into the living room. Most important, a newborn infant could expect to live not to age forty-five, but to age seventy-two.</p>
+</blockquote>
+<p>Driving these transformational changes in welfare were the ideas and inventions that put the US at the cutting-edge of technology and growth. Between 1870 and 1970, the invention and adoption of electricity, the internal combustion engine, public waterworks, modern communication, anesthetics, antibiotics and other chemicals and pharmaceuticals, transformed how things got made and how people’s daily lives unfolded.</p>
+<p>In the 65 years since its independence in 1963, Kenya’s purchasing power per person grew at an average rate of 0.67 percent per year, less than half the rate at which livings standards grew in the US during its special century. And unlike the US’s mostly consistent growth, Kenya’s growth trajectory has been unstable and at times stagnant. For most of the 1980s and 90s, average living standards did not progress. Despite acceleration in the growth of average income since 2000, many people’s daily lives in Kenya are shaped by hardship in ways that resemble life in the US in 1870. In 2016, 40 percent of adults reported farming or working as farm day-laborers as their primary income source, about half of households did not have electricity in their home, nearly three quarters used firewood or charcoal for cooking, only 1 in 4 households were connected to a piped water supply and less than 1 in 10 had a flush toilet connected to sewerage.</p>
+<p>In one domain, however, a large majority of Kenyans use a frontier technology which has opened up new possibilities. Over three in four adults own a mobile phone, giving them the capability to communicate; and with the innovation of mobile money, transfer funds instantly and affordably. And for businesses, the capability to connect to the internet at high speeds <a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> has supported the emergence of a growing digital economy <a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Perhaps no better illustration of this changing technological landscape is Safaricom. With a market capitalziation of USD 20.5 billion (the most valued company on the Nairobi Securities Exchange), Safaricom’s valuation derives directly from its ability to leverage cutting edge communications technologies and infrastructure. Technology spillovers have also benefitted Kenyans in ways that aren’t captured fully in GDP. For example, between 1960 and 2017, with the aid of basic health technologies like bed-nets and antibiotics, under-5 mortality fell from 197 to 46 deaths per 1,000 live births.</p>
+<p>But despite improvements in the mobility of financial capital, goods and technology, absolute living standards in Kenya relative to the US are diverging. Between 1963 and 2016 the ratio of gdp per capita (PPP) between the US and Kenya rose from 12 to 17. Kenya is not unique in this regard. Over the long run, living standards between rich and poor nations have diverged. Between 1820 and 1992, the ratio of average incomes between the richest and poorest fifth of countries rose from 6 to 70 (Easterly and Levine, 2001). The emprical observation that rich countries have historically grown faster than poor countries is at odds with the predictions of the earliest growth models which explained the dynamics of growth in terms of the high initial returns that would accrue to poorer countries investing in factors of production (such as machinery, factories and education to raise the skill-level of the workforace) and predicted convergence between countries. These models suggested that a country like Kenya would grow (and “catch-up”&quot; to rich countries) primarily by mobilizing resources from domestic and foreign savings towards investments in physical and human capital. Given a low capital stock (and abundant labor), additional capital investment would produce high returns, generating more output and the resources for additional investment until reaching a steady state where the country needed to use all of its investment resources to maintain or replace depreciated capital stock.</p>
+<p>However, in synthesizing the evidence from several growth accounting studies, Easterly and Levine (2001) conclude that ‘when comparing growth experiences across many countries, “something else” – besides factor accumulation – plays a prominent role in explaining differences in economic performance’. That ‘something else’ is total factor productivity (TFP) or the part of output per person growth that is unexplained by growth in physical or human capital <a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>. Clark and Feenstra (2001) expand on this and argue that diverging incomes across countries since 1800 are a result of divergence in the TFP of economies resulting from technology - not an inability to get access to it - but differences in the efficiency in how new technologies are used. Bosworth and Collins (2003) show that between 1960 and 2000, TFP grew significantly more slowly in three developing country regions (Latin America, the Africa and the Middle East) than in industrial countries between 1960 and 2000. More recently, Comin and Mestieri (2017) explore whether the dynamics of technolgy can account for the long run divergence in incomes between countries and look specifically at the relative contribution of the rate at which new technologies arrive in a country and the rate at which technologies diffuse throughout the economy. The authors find that while technology adoption rates are converging (it takes less time today for new technologies to arrive in countries than they did 200 years ago), technology penetration rates have diverged and that these patterns of technology adoption and diffusion account for the majority of cross-country evolution of income growth. It is important to recognize, however, that factor accumulation is not irrelevant for growth everywhere and at all times. Available evidence suggests that factor accumulation, particularly physical capital, played a greater role than TFP in driving the more rapid rates of growth in South and East Asia relative to the industrial countries since 1960 (Pritchett 2017).</p>
+<p>Ricardo Hausmann’s work on complexity economics provides a related take on the dynamics of growth. Like others, Hausman attributes differences between rich and poor countries to technology but differentiates technology into tools (such as a mobile phone), codifiable knowledge (such as the computer program that runs the mobile phone’s operating system) and know-how (the tacit knowledge that cannot be easily written down). He argues that while tools and code are quick to move, know-how isn’t and conceptualizes the process of development and growth as the process of incrementally accumulating more know-how and expressing it through production of a more diverse and complex set of products:</p>
+<blockquote>
+<p>In the economic growth process, countries in the developing world do not grow by making more of the same. In fact, more of the same is not the way rich countries grow either. In the process of economic growth, countries change what they do. They change what they’re good at. They evolve their comparative advantage. So while Israel used to export oranges, now they export IPOs of high-tech firms. Turkey used to export olive oil. Now they export cars and electronics. They do this because they acquire new productive capabilities; they acquire know-how and technology that allows them to do more diverse and valuable things. Some industries are better stepping-stones than other industries for this process. So if a country is good at producing tea or at oil extraction, these industries don’t naturally prepare it for the next thing. But there’s a much more parsimonious path if you’re moving from garments, to textiles, to toys, to electronics, and to cars, because each new industry can build on the capabilities that were acquired for the previous industry.</p>
+</blockquote>
+<p>These new lines of research suggest that a key factor in long run growth is the ability of countries to embed and widely diffuse existing technologies and know-how in their economies and use those technologies to expand their productive capabilities. It follows that to understand the role of the financial sector in the long run productivity and growth of Kenya’s economy requires understanding (1) the pattern and evolution of technology adoption and diffusion in Kenya (i.e. what technologies have changed the economic possibilities for households and businesses) and (2) the links between finance and the process of technology adoption and diffusion. Has the financial sector enabled or hindered the aggregate acquisition of know-how and production capabilities? A further line of inquiry has to do with the distributional impacts of Kenya’s growth dynamics: are they creating economic opportunities for the majority of Kenyans living in livelihoods characterized by either poverty, vulnerability or both? Are the technological changes in Kenya’s economy creating demand for low-skilled labor?</p>
+<p>An observation made in the sections that follow is that while most of the fundamental tools and technologies of the late 19th and early 20th century were slowly adopted in Kenya, very few diffused rapidly or widely. And while many of the advanced technologies of the 21st century in transportation, healthcare, electronics and energy are now available in Kenya, only a narrow subset of them - particularly consumer technologies in ICT - have been embedded throughout the economy in households and businesses. A natural question that follows is: what are the conditions that allowed certain technologies to take off in Kenya? What was the role of the financial sector in those cases and what kinds of capabilities and opportunities are those technologies enabling for individuals and businesses?</p>
+<p>This note proceeds as follows. It first describes using available data different facets of Kenya’s economic growth, complexity and technology landscape, with a focus on their evolution in the past 20-30 years and contrasts Kenya’s experience with of a group of comparison countries. Secondly, it looks at changes in the financial sector and examines the links between the financial sector, real sector growth and technological change.</p>
 </div>
 </div>
-<p><!-- closes row --></p>
-<div id="gdp-ppp-constant-2011-international" class="section level2">
-<h2>GDP, PPP (constant 2011 international $)</h2>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="growth-vel">Growth velocity</h4>
+<p><span class="references"> <!-- FIGURES LINK SECTION --> Figures: <br> <a href="#fig-1">Figure 1</a> <br> <a href="#fig-2">Figure 2</a> <br> <a href="#fig-3">Figure 3</a> <br> <a href="#fig-4">Figure 4</a> <br> <a href="#fig-5">Figure 5</a> <br> </span></p>
+<p><span class="references"> <!-- REFERENCES SECTION --> References: <br> <a href="https://www.afdb.org/fileadmin/uploads/afdb/Documents/Generic-Documents/country_notes/Kenya_country_note.pdf">2018 African Economic Outlook: Kenya country note</a> </span></p>
+</div>
+<p><!-- closes margin row --></p>
+<div class="col-md-10">
+<p>Since its independence in 1963, Kenya’s economic performance has been uneven (<a href="#fig-1">Figure 1</a>) and its growth has been punctured by volatility, evidence of Kenya’s vulnerability to external and domestic shocks - importantly its continued dependence on under-capitalized, rain-fed agriculture. The economy has not sustained a growth rate of greater than 5 percent per year for more than 4 years. For Kenya to reach upper middle income status by 2030 will require GDP growth of about 7 percent per year. Historically, Kenya has only achieved more than 7 percent growth in only 4 years.</p>
+<p>Countries that transformed average living standards for their populations in the span of a generation were able to sustain high - but not necessarily double digit - growth over long periods (<a href="#fig-2">Figure 2</a>). Thailand for example sustained a spell of growth of over 4 percent per year during the 1960s, 70s and 80s - its income per capita rose from USD 571 in 1960 to USD 2,283 in 1989. Even more impressive was Korea’s transformation from a low to a high income country in the 40 years between 1960 and 2000, wherein income per capita increased by a factor of 16 from USD 944 to USD 15,104. Economic transformation during this period wasn’t limited to Asian countries, in Sub-Saharan Africa, Botswana lifted average incomes from USD 391 in 1960 to USD 3,718 in 1990, becoming an upper middle income country in the span of 30 years.</p>
+<p>By contrast, the Kenyan economy hasn’t meaningfully lifted average living standards until recently. There was a modest improvement in the period shortly after independence when GDP per capita rose from USD 538 in 1960 to USD 820 in 1974, but for the rest of the period, average living standards were stagnant and even declined in the 1990s (<a href="#fig-3">Figure 3</a>). Kenya’s economy began to shift gears in 2003 when growth rates reach into the 5 and 6 percent per year range and begin to pull up GDP per capita around 2007 to its current level of USD 1,169 per capita.</p>
+<p>Despite the fact that Kenya has been growing at an average rate of 4.9 percent per year since 2000, its growth has been slow compared to a group of 13 regional and global peers with similar GDP per capita in 2000 (<a href="#fig-4">Figure 4</a>). Between 2000 and 2017, most of its regional neighbors grew faster, for example Ethiopia grew at an average rate of 9.5 percent per year, Rwanda at 7.3 percent and Uganda and Tanzania at 6.5 percent. From this perspective East Africa’s largest economy is under-performing and has been hobbled by domestic shocks - such as the wave of violence that followed the 2007 elections and more recently drought, as well as international shocks.</p>
+<p>A similar picture emerges looking at the evolution of GDP per capita since 2000. Among its peers, only Senegal and Pakistan had slower rates of GDP per capita growth. India and Vietnam - who were poorer than Kenya in 2000 in per-capita terms - are now 60% richer. Other countries - such as Cambodia and Bangladesh have closed the gap with Kenya, despite being significantly poorer than Kenya in 2000.</p>
+</div>
+</div>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="growth-ori">Sectoral and demand side origins of recent growth</h4>
+<p><span class="references"> <!-- FIGURES LINK SECTION --> Figures: <br> <a href="#fig-1">Figure 6</a> <br> <a href="#fig-2">Figure 7</a> <br> <a href="#fig-3">Figure 8</a> <br> <a href="#fig-4">Figure 9</a> <br> <a href="#fig-5">Figure 10</a> <br> <a href="#fig-6">Figure 11</a> <br> <a href="#fig-7">Figure 12</a> <br> </span></p>
+<p><span class="references"> <!-- REFERENCES SECTION --></p>
+<p></span></p>
+</div>
+<div class="col-md-10">
+<p>Industrialization - the process by which the profile of country’s economic output shifts away from agriculture towards manufacturing and other industrial activities and then later towards services - characterized the development trajectory of Europe, North America and successful countries in Asia (such as Japan, China, Taiwan and Korea). Kenya’s growth since 1960 has not followed this path, though agriculture has declined in importance in both output, and to a lesser degree, employment.</p>
+<p>In 1960, agriculture made up 44 percent of GDP. By 2017, its share declined by almost half to 25 percent of GDP with the services sector increasing in importance to 55 percent of Kenya’s domestic output. While industry grew in importance in the 1970’s (rising from 15 to 22 percent of GDP between 1970 and 1980) its share has remained more or less constant since then, with manufacturing’s share in GDP also remaining constant at 11 percent.</p>
+<p>Similar to the experience of many of its peer countries, the services sector has accounted for much of Kenya’s recent growth (<a href="#fig-7">Figure 7</a>). Between 2000 and 2017, Kenya’s GDP doubled and services accounted for 58 percent of this expansion. Services also contributed to more than 55 percent of growth in Rwanda, India, Zambia, Uganda, Senegal, Ghana and Pakistan. The contribution of industry to Kenya’s growth, however, was only 22.5 percent betwen 2000 and 2017. In contrast industry contributed more than 35 percent of GDP growth in Vietnam, Bangladesh, Cambodia and Zambia.</p>
+<p>In the 1990s and 2000s, annual growth in services averaged 3.5 percent. In the 8 years since the start of 2010, average annual growth jumped to 5.8 percent. Driving this recent acceleration has been the information and communicaitons sub-sector (+10.9 percent per year on average since 2009), finance and insurance (+7.4 percent per year), education (+7.1 percent per year) and wholesale and retail trade (+6.5 percent per year). Between 2009 and 2017, the share of service sector GDP originating from the information and communication subsector increased from 5.2 to 8 percent, while the share originating from financial services increased from 10.7 to 12.1 percent.</p>
+<p>The rate of growth in industry has also accelerated. In the 1990s indsutrial activity (as measured by GDP) increased by only 1.5 percent per year on average, in the 2000s it increased to 4.3 percent and since 2010, industry has been growing by 5.6 percent per year. The primary driver of industrial growth since 2009 has been construction, which grew at an average rate of 9.9 percent per year, increasing its share of industry sector GDP from 20 percent in 2009 to 29 percent in 2017. The electricity and water sector also grew rapidly at 7.4 percent per year, while manufacturing grew at 3.2 percent per year with its share in industrial GDP falling from 63.8 to 51.5 percent.</p>
+</div>
+</div>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="growth-ori">Technology and economic complexity</h4>
+</div>
+<div class="col-md-10">
+<p><a href="#fig-14">Figure 14</a> shows the relative intensity of a set of 16 technologies and tools in Kenya’s economy between 1980 and 2017. Of these, the majority more or less remained a the same level of intensity relative to the size of the economy while seven increased markedly over this time period: Mobile cellular subscriptions, mobile money accounts, fixed broadband subscriptions, bank accounts and loan accounts and motorcycles. Notably, production technologies in agriculture including fertilizer, irrigated land, tractors, harvesters and fertilizer consumption have not risen in intensity.</p>
+<p>Key transportation infrastucture such as the railway network and bitumen road have also not diffused widely. For example, the Uganda railway <a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> completed in 1901 came almost 100 years after the the world’s first steam powered journey took place, giving Kenya 930 km of track from Mombasa to Kisumu. After the British added several branch lines and links to Tanzania and Uganda throughout the 1920s, 30s and 40s, by the time of Kenya’s independence, the total system had about 2,700km of track which remained unchanged through 2016.</p>
+<p>As mentioned previously <a href="#fig-14">Figure 14</a> gives the broad impression that older technologies failed to spread while newer technologies spread quickly. There is one exception to this: the internal combustion engine, but not those founds in cars or trucks. Between 2006 and 2007, registration of new motorcylces more than doubled from 6,250 to 16,293. In 2008, new registrations tripled to 51,412 and by 2017, new registrations hit 191,501. The total stock of motorcycles is now approaching the total stock of all other motor vehicles combined.</p>
+<p>The spread of low cost mobile phones (and cell towers) behind the remarkable rise of mobile cellular subscriptions enabled new innovations and possibilities. The most obvious example of this is the invention and refinement of mobile money. Apart from benefiting the telecommunications sector, the spillovers from the widespread availability of mobile communications has been particularly important to the efficiency of the financial sector. Banks for example, have successfully turned mobile phones and mobile money into accounts and delivery platforms for loans.</p>
+<p><a href="#fig-15">Figure 15</a> shows the economic complexity score of Kenya and its peer countries between 1995 and 2016. Economic complexity is a measure of the knowledge in a society as expressed in the products it makes. The economic complexity of a country is calculated based on the diversity of exports a country produces and their ubiquity, or the number of the countries able to produce them <a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>. Among its peer countries, Kenya’s economic complexity did not change significantly over time, especially contrasted with countries like Vietnam, Uganda and Cambodia whose economic complexity grew rapidly. [NEED TO EXPAND ON THIS with charts looking at composition of goods and service exports for Kenya over time].</p>
+</div>
+</div>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="employment">Employment</h4>
+</div>
+<div class="col-md-10">
+
+</div>
+</div>
+<hr />
+<div class="row">
+<div class="col-md-2">
+<h4 id="poverty-well-being">Poverty &amp; well-being</h4>
+</div>
+<div class="col-md-10">
+
+</div>
+</div>
+</div>
+<p><!-- closes text section --></p>
+<div class="col-md-6">
+<!-- CHARTS SECTION -->
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-1">Figure 1. Long term changes in per-capita purchasing power, Kenya and the US</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gdp_abs_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_kevusa_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">PPP GDP is gross domestic product converted to international dollars using purchasing power parity rates. An international dollar has the same purchasing power over GDP as the U.S. dollar has in the United States. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2011 international dollars.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata"></span> <br/></p>
 </div>
 <div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank, International Comparison Program database.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NY.GDP.MKTP.PP.KD</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">194</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
+<p><span class="label">Source:</span> <span class="metadata"></span> <br/></p>
 </div>
 <p><div class="collapse" id="gdp_meta">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gdp_abs_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/gdp_growthtrends_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="gdp-growth-annual" class="section level2">
-<h2>GDP growth (annual %)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-2">Figure 2. Kenya’s annual GDP growth rate since independence</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gdp_yoy_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Annual percentage growth rate of GDP at market prices based on constant local currency. Aggregates are based on constant 2010 U.S. dollars. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. </span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NY.GDP.MKTP.KD.ZG</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">208</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gdp_yoy_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="gdp-per-capita-ppp-constant-2011-international" class="section level2">
-<h2>GDP per capita, PPP (constant 2011 international $)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gdppc_abs_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">GDP per capita based on purchasing power parity (PPP). PPP GDP is gross domestic product converted to international dollars using purchasing power parity rates. An international dollar has the same purchasing power over GDP as the U.S. dollar has in the United States. GDP at purchaser’s prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2011 international dollars.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank, International Comparison Program database.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NY.GDP.PCAP.PP.KD</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">194</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gdppc_abs_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="gdp-per-capita-growth-annual" class="section level2">
-<h2>GDP per capita growth (annual %)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gdppc_yoy_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_growthtrends_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
@@ -443,416 +334,264 @@ $(document).ready(function () {
 <div>
 <p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NY.GDP.PCAP.KD.ZG</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">208</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="gdp_meta">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gdppc_yoy_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/gdp_growthtrends_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="gdp-per-person-employed-constant-2011-ppp" class="section level2">
-<h2>GDP per person employed (constant 2011 PPP $)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-3">Figure 3. Countries with more than 25 years of 5% growth since 1960</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gdppemp_abs_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_growthspells_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">GDP per person employed is gross domestic product (GDP) divided by total employment in the economy. Purchasing power parity (PPP) GDP is GDP converted to 2011 constant international dollars using PPP rates. An international dollar has the same purchasing power over GDP that a U.S. dollar has in the United States.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.GDP.PCAP.EM.KD</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">183</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gdppemp_abs_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="soe" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Structure of the economy</h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-<p><a href="http://documents.worldbank.org/curated/en/133031468272710384/pdf/PUB3350000Keny0eport0Vol0100010of02.pdf">Kenya growth &amp; structural change (World Bank, 1983)</a></p>
-<p><a href="https://www.brookings.edu/blog/africa-in-focus/2017/10/30/pathways-to-structural-transformation-in-africa/">Pathways to structural transformation in Africa (Brookings, 2017)</a></p>
-<p><a href="https://set.odi.org/the-role-of-services-in-economic-transformation-with-an-application-to-kenya/">The role of services in economic transfromation with an application to Kenya (SET, 2016)</a></p>
-<p><a href="https://set.odi.org/10-priorities-transforming-manufacturing-jobs-kenya/">Ten policy priorities for transforming manufacturing and creating jobs in Kenya (SET, 2017)</a></p>
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="agriculture-forestry-and-fishing-value-added-of-gdp" class="section level2">
-<h2>Agriculture, forestry, and fishing, value added (% of GDP)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ag_gdp_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Agriculture corresponds to ISIC divisions 1-5 and includes forestry, hunting, and fishing, as well as cultivation of crops and livestock production. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3 or 4.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata">GDP per capita is gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2010 U.S. dollars.</span> <br/></p>
 </div>
 <div>
 <p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.AGR.TOTL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">197</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="gdp_meta">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ag_gdp_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/gdp_growthtrends_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="agriculture-forestry-and-fishing-value-added-annual-growth" class="section level2">
-<h2>Agriculture, forestry, and fishing, value added (annual % growth)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-4">Figure 4. Kenya’s per-capita GDP compared to regional &amp; global peers</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ag_gdp_yoy_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_growthtrendspc_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">Annual growth rate for agricultural value added based on constant local currency. Aggregates are based on constant 2010 U.S. dollars. Agriculture corresponds to ISIC divisions 1-5 and includes forestry, hunting, and fishing, as well as cultivation of crops and livestock production. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3 or 4.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata">GDP per capita is gross domestic product divided by midyear population. GDP is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2010 U.S. dollars.</span> <br/></p>
 </div>
 <div>
 <p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.AGR.TOTL.KD.ZG</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">189</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="gdp_meta">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ag_gdp_yoy_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/gdp_growthtrendspc_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="industry-including-construction-value-added-of-gdp" class="section level2">
-<h2>Industry (including construction), value added (% of GDP)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-5">Figure 5. Kenya’s GDP growth compared to regional &amp; global peers</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ind_gdp_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_growthtrends_sr-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">Industry corresponds to ISIC divisions 10-45 and includes manufacturing (ISIC divisions 15-37). It comprises value added in mining, manufacturing (also reported as a separate subgroup), construction, electricity, water, and gas. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3 or 4.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata">GDP at purchaser’s prices is the sum of gross value added by all resident producers in the economy plus any product taxes and minus any subsidies not included in the value of the products. It is calculated without making deductions for depreciation of fabricated assets or for depletion and degradation of natural resources. Data are in constant 2010 U.S. dollars. Dollar figures for GDP are converted from domestic currencies using 2010 official exchange rates. For a few countries where the official exchange rate does not reflect the rate effectively applied to actual foreign exchange transactions, an alternative conversion factor is used.</span> <br/></p>
 </div>
 <div>
 <p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.IND.TOTL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">196</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="gdp_meta">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ind_gdp_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/gdp_growthtrends_sr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="industry-including-construction-value-added-annual-growth" class="section level2">
-<h2>Industry (including construction), value added (annual % growth)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-6">Figure 6. Kenya’s GDP by sector</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ind_gdp_yoy_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/gdp_growthtrends_lr_bysector-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_growthtrends_lr_bysector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-7">Figure 7. Annual growth by sector, Kenya 1960-2017</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_growthtrends_lr_bysector_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_growthtrends_lr_bysector_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-8">Figure 8. The sectoral contribution to growth in GDP between 2000 and 2017, by country</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_growthcontrib_sr_bysector_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_growthcontrib_sr_bysector_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-9">Figure 9. GDP by sector, Kenya, 2009-2017</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_composition_sr_bysubsector-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_composition_sr_bysubsector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-10">Figure 10. GDP by sector, Kenya, 2009-2017</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_growth_sr_bysubsector-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_composition_sr_bysubsector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-11">Figure 11. Composition of GDP</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_composition_lr_bycomp-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_composition_lr_bycomp-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-12">Figure 12. The demand-side contribution to growth in GDP between 2000 and 2017, by country</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_composition_sr_bycomp_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_composition_sr_bycomp_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-13">Figure 13. The demand-side contribution to growth in GDP between 2000 and 2017, by country</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdp_growthcontrib_sr_bycomp_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdp_growthcontrib_sr_bycomp_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-14">Figure 14. Technology diffusion</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/tech_adoption_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/merch_exports_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-15">Figure 15. Economic complexity</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/eci_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/pov190_hpc_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-15">Figure 15. The composition of service exports</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/srv_exports_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/srv_exports_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-16">Figure 16. The composition of merchandise exports</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/merch_exports_lr-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/merch_exports_lr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-17">Figure 17. Formal wage jobs, 2000-2017</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/wpopemp_growth_sr-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/wpopemp_growth_sr-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-18">Figure 18. Employment &amp; GDP by sector, 2009-2017</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/gdpemp_growth_sr_bysubsector-1.png" width="768" style="display: block; margin: auto;" /></p>
+</div>
+<div class="panel-footer">
+<p><a href="inclusive_growth_files/figure-html/gdpemp_growth_sr_bysubsector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-19">Figure 19. Growth elasticity of poverty</h4>
+</div>
+<div class="panel-body">
+<p><img src="inclusive_growth_files/figure-html/pov190_gep-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">Annual growth rate for industrial value added based on constant local currency. Aggregates are based on constant 2010 U.S. dollars. Industry corresponds to ISIC divisions 10-45 and includes manufacturing (ISIC divisions 15-37). It comprises value added in mining, manufacturing (also reported as a separate subgroup), construction, electricity, water, and gas. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata">Poverty headcount ratio at $1.90 a day is the percentage of the population living on less than $1.90 a day at 2011 international prices. As a result of revisions in PPP exchange rates, poverty rates for individual countries cannot be compared with poverty rates reported in earlier editions.</span> <br/></p>
 </div>
 <div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
+<p><span class="label">Source:</span> <span class="metadata">World Bank, Development Research Group. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are from the Luxembourg Income Study database. For more information and methodology, please see PovcalNet</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.IND.TOTL.KD.ZG</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">190</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="poverty">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ind_gdp_yoy_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/pov190_gep-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="services-value-added-of-gdp" class="section level2">
-<h2>Services, value added (% of GDP)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-20">Figure 20. Poverty</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/srv_gdp_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/pov190_hpc_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
 <div>
-<p><span class="label">Description:</span> <span class="metadata">Services correspond to ISIC divisions 50-99 and they include value added in wholesale and retail trade (including hotels and restaurants), transport, and government, financial, professional, and personal services such as education, health care, and real estate services. Also included are imputed bank service charges, import duties, and any statistical discrepancies noted by national compilers as well as discrepancies arising from rescaling. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The industrial origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3 or 4.</span> <br/></p>
+<p><span class="label">Description:</span> <span class="metadata">Poverty headcount ratio at $1.90 a day is the percentage of the population living on less than $1.90 a day at 2011 international prices. As a result of revisions in PPP exchange rates, poverty rates for individual countries cannot be compared with poverty rates reported in earlier editions.</span> <br/></p>
 </div>
 <div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
+<p><span class="label">Source:</span> <span class="metadata">World Bank, Development Research Group. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are from the Luxembourg Income Study database. For more information and methodology, please see PovcalNet</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.SRV.TOTL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">172</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">28</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
+<p><div class="collapse" id="poverty">
 <div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/srv_gdp_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+</div> <a href="inclusive_growth_files/figure-html/pov190_hpc_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="services-value-added-annual-growth" class="section level2">
-<h2>Services, value added (annual % growth)</h2>
 <div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/srv_gdp_yoy_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<div class="panel-heading">
+<h4 id="fig-21">Figure 21. Poverty</h4>
 </div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Annual growth rate for value added in services based on constant local currency. Aggregates are based on constant 2010 U.S. dollars. Services correspond to ISIC divisions 50-99. They include value added in wholesale and retail trade (including hotels and restaurants), transport, and government, financial, professional, and personal services such as education, health care, and real estate services. Also included are imputed bank service charges, import duties, and any statistical discrepancies noted by national compilers as well as discrepancies arising from rescaling. Value added is the net output of a sector after adding up all outputs and subtracting intermediate inputs. It is calculated without making deductions for depreciation of fabricated assets or depletion and degradation of natural resources. The industrial origin of value added is determined by the International Standard Industrial Classification (ISIC), revision 3 or 4.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank national accounts data, and OECD National Accounts data files.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">NV.SRV.TOTL.KD.ZG</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">189</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdppc_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/srv_gdp_yoy_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="section-1" class="section level1 surv-divider">
-<h1></h1>
-</div>
-<div id="poverty" class="section level1 center2 main-section">
-<h1><strong>Poverty</strong></h1>
-</div>
-<div id="headcount" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Consumption</h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-<p><a href="http://www.worldbank.org/content/dam/Worldbank/document/Africa/Kenya/kenya-economic-update-june-2013.pdf">Kenya Economic update: Poverty special focus (World Bank, 2013)</a></p>
-<p><a href="http://documents.worldbank.org/curated/en/327691523276540220/pdf/125056-WP-P162368-PUBLIC-KenyaEconomicUpdateFINAL.pdf">Kenya Economic update: special focus 1: Assessing poverty reduction in Kenya gainst international benchmark 1 (World Bank, 2018)</a></p>
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="kenya-distribution-of-total-monthly-per-capita-household-consumption-2006-2016" class="section level2">
-<h2>Kenya: Distribution of total monthly per-capita household consumption, 2006 &amp; 2016</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<pre><code>## Processing indicator:  padqexp_cons for group:  year</code></pre>
-<p><img src="inclusive_growth_files/figure-html/cons_dist_kenya-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/cons_dist_kenya-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="kenya-growth-incidence-analysis" class="section level2">
-<h2>Kenya: Growth incidence analysis</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/grwth_inci_kenya-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/grwth_inci_kenya-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="rural-population-distribution-of-total-monthly-per-capita-household-consumption-2006-2016" class="section level2">
-<h2>Rural population: Distribution of total monthly per-capita household consumption, 2006 &amp; 2016</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<pre><code>## Processing indicator:  padqexp_cons for group:  year</code></pre>
-<p><img src="inclusive_growth_files/figure-html/cons_dist_rural-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/cons_dist_rural-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="rural-growth-incidence-analysis" class="section level2">
-<h2>Rural: Growth incidence analysis</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/grwth_inci_rural-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/grwth_inci_rural-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="nairobi-population-distribution-of-total-monthly-per-capita-household-consumption-2006-2016" class="section level2">
-<h2>Nairobi population: Distribution of total monthly per-capita household consumption, 2006 &amp; 2016</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<pre><code>## Processing indicator:  padqexp_cons for group:  year</code></pre>
-<p><img src="inclusive_growth_files/figure-html/cons_dist_nbo-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/cons_dist_nbo-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="other-urban-population-distribution-of-total-monthly-per-capita-household-consumption-2006-2016" class="section level2">
-<h2>Other urban population: Distribution of total monthly per-capita household consumption, 2006 &amp; 2016</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<pre><code>## Processing indicator:  padqexp_cons for group:  year</code></pre>
-<p><img src="inclusive_growth_files/figure-html/cons_dist_ourb-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/cons_dist_ourb-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="headcount" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Poverty &amp; inequality</h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="poverty-headcount-ratio-at-1.90-a-day-2011-ppp-of-population" class="section level2">
-<h2>Poverty headcount ratio at $1.90 a day (2011 PPP) (% of population)</h2>
-<div class="panel panel-default">
 <div class="panel-body">
 <p><img src="inclusive_growth_files/figure-html/pov190_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
@@ -863,818 +602,60 @@ $(document).ready(function () {
 <div>
 <p><span class="label">Source:</span> <span class="metadata">World Bank, Development Research Group. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are from the Luxembourg Income Study database. For more information and methodology, please see PovcalNet</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SI.POV.DDAY</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">160</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1992-2015</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">5</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
+<p><div class="collapse" id="poverty">
 <div class="well"></div>
 </div> <a href="inclusive_growth_files/figure-html/pov190_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="poverty-headcount-ratio-at-3.20-a-day-2011-ppp-of-population" class="section level2">
-<h2>Poverty headcount ratio at $3.20 a day (2011 PPP) (% of population)</h2>
 <div class="panel panel-default">
+<div class="panel-heading">
+<h4 id="fig-22">Figure 22. Domestic credit to private sector</h4>
+</div>
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/pov320_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/domcredit_sr_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Poverty headcount ratio at $3.20 a day is the percentage of the population living on less than $3.20 a day at 2011 international prices. As a result of revisions in PPP exchange rates, poverty rates for individual countries cannot be compared with poverty rates reported in earlier editions.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank, Development Research Group. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. Data for high-income economies are from the Luxembourg Income Study database. For more information and methodology, please see PovcalNet</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SI.POV.LMIC</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">160</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1992-2015</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">5</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/pov320_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+<p><a href="inclusive_growth_files/figure-html/domcredit_sr_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-<div id="gini-index-world-bank-estimate" class="section level2">
-<h2>GINI index (World Bank estimate)</h2>
 <div class="panel panel-default">
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/gini_trends-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/domcreditvgdppc_sr_bycountry-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Gini index measures the extent to which the distribution of income (or, in some cases, consumption expenditure) among individuals or households within an economy deviates from a perfectly equal distribution. A Lorenz curve plots the cumulative percentages of total income received against the cumulative number of recipients, starting with the poorest individual or household. The Gini index measures the area between the Lorenz curve and a hypothetical line of absolute equality, expressed as a percentage of the maximum area under the line. Thus a Gini index of 0 represents perfect equality, while an index of 100 implies perfect inequality.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank, Development Research Group. Data are based on primary household survey data obtained from government statistical agencies and World Bank country departments. For more information and methodology, please see PovcalNet</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SI.POV.GINI</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">160</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1992-2015</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">5</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/gini_trends-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+<p><a href="inclusive_growth_files/figure-html/domcreditvgdppc_sr_bycountry-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-</div>
-<div id="section-2" class="section level1 surv-divider">
-<h1></h1>
-</div>
-<div id="agriculture" class="section level1 center2 main-section">
-<h1><strong>Agriculture &amp; rural development</strong></h1>
-</div>
-<div id="ag_production" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Production</h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="cereal-production-metric-tons" class="section level2">
-<h2>Cereal production (metric tons)</h2>
 <div class="panel panel-default">
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ag_cereal_prod-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/grossloans_sr_bysubsector-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Production data on cereals relate to crops harvested for dry grain only. Cereal crops harvested for hay or harvested green for food, feed, or silage and those used for grazing are excluded.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">Food and Agriculture Organization, electronic files and web site.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">AG.PRD.CREL.MT</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">180</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ag_cereal_prod-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
+<p><a href="inclusive_growth_files/figure-html/grossloans_sr_bysubsector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
 </div>
-</div>
-</div>
-<div id="ag_welfare" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Welfare</h1>
-<div class="row">
-<div class="col-md-10">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-2 references">
-<!-- REFERENCES SECTION -->
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="access-to-electricity-rural-of-rural-population" class="section level2">
-<h2>Access to electricity, rural (% of rural population)</h2>
 <div class="panel panel-default">
 <div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/ag_electricity-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="inclusive_growth_files/figure-html/grossnpls_sr_bysubsector-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Access to electricity, rural is the percentage of rural population with access to electricity</span> <br/></p>
+<p><a href="inclusive_growth_files/figure-html/grossnpls_sr_bysubsector-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
 </div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">World Bank, Sustainable Energy for All ( SE4ALL ) database from the SE4ALL Global Tracking Framework led jointly by the World Bank, International Energy Agency, and the Energy Sector Management Assistance Program.</span> <br/></p>
 </div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
 </div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">EG.ELC.ACCS.RU.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">205</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1993-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">24</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/ag_electricity-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="section-3" class="section level1 surv-divider">
-<h1></h1>
-</div>
-<div id="employment" class="section level1 center2 main-section">
-<h1><strong>Employment</strong></h1>
-</div>
-<div id="emp_labormarket" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Labor Market Indicators</h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="employment-to-population-ratio-15-total-modeled-ilo-estimate" class="section level2">
-<h2>Employment to population ratio, 15+, total (%) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_popratio_total-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment to population ratio is the proportion of a country’s population that is employed. Employment is defined as persons of working age who, during a short reference period, were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period (i.e. who worked in a job for at least one hour) or not at work due to temporary absence from a job, or to working-time arrangements. Ages 15 and older are generally considered the working-age population.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.TOTL.SP.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">26</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_popratio_total-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="employment-to-population-ratio-15-female-modeled-ilo-estimate" class="section level2">
-<h2>Employment to population ratio, 15+, female (%) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_popratio_female-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment to population ratio is the proportion of a country’s population that is employed. Employment is defined as persons of working age who, during a short reference period, were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period (i.e. who worked in a job for at least one hour) or not at work due to temporary absence from a job, or to working-time arrangements. Ages 15 and older are generally considered the working-age population.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in November 2017.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.TOTL.SP.FE.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">26</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_popratio_female-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="employment-to-population-ratio-15-male-modeled-ilo-estimate" class="section level2">
-<h2>Employment to population ratio, 15+, male (%) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_popratio_male-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment to population ratio is the proportion of a country’s population that is employed. Employment is defined as persons of working age who, during a short reference period, were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period (i.e. who worked in a job for at least one hour) or not at work due to temporary absence from a job, or to working-time arrangements. Ages 15 and older are generally considered the working-age population.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in November 2017.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.TOTL.SP.MA.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_popratio_male-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="unemployment-total-of-total-labor-force-modeled-ilo-estimate" class="section level2">
-<h2>Unemployment, total (% of total labor force) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_unemprate-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Unemployment refers to the share of the labor force that is without work but available for and seeking employment.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.UEM.TOTL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_unemprate-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="share-of-youth-not-in-education-employment-or-training-total-of-youth-population" class="section level2">
-<h2>Share of youth not in education, employment or training, total (% of youth population)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_neet_youth-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Share of youth not in education, employment or training (NEET) is the proportion of young people who are not in education, employment, or training to the population of the corresponding age group: youth (ages 15 to 24); persons ages 15 to 29; or both age groups.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.UEM.NEET.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">141</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1999-1999</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">1</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_neet_youth-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="emp_bysector" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Employment by sector</h1>
-<div class="row">
-<div class="col-md-10">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-2 references">
-<!-- REFERENCES SECTION -->
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="employment-in-agriculture-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Employment in agriculture (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_ag-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment is defined as persons of working age who were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period or not at work due to temporary absence from a job, or to working-time arrangement. The agriculture sector consists of activities in agriculture, hunting, forestry and fishing, in accordance with division 1 (ISIC 2) or categories A-B (ISIC 3) or category A (ISIC 4).</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in November 2017.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.AGR.EMPL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_ag-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="employment-in-industry-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Employment in industry (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_ind-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment is defined as persons of working age who were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period or not at work due to temporary absence from a job, or to working-time arrangement. The industry sector consists of mining and quarrying, manufacturing, construction, and public utilities (electricity, gas, and water), in accordance with divisions 2-5 (ISIC 2) or categories C-F (ISIC 3) or categories B-F (ISIC 4).</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in November 2017.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.IND.EMPL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_ind-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="employment-in-services-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Employment in services (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_srv-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Employment is defined as persons of working age who were engaged in any activity to produce goods or provide services for pay or profit, whether at work during the reference period or not at work due to temporary absence from a job, or to working-time arrangement. The services sector consists of wholesale and retail trade and restaurants and hotels; transport, storage, and communications; financing, insurance, real estate, and business services; and community, social, and personal services, in accordance with divisions 6-9 (ISIC 2) or categories G-Q (ISIC 3) or categories G-U (ISIC 4).</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in November 2017.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.SRV.EMPL.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_srv-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="emp_informal" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Type of employment</h1>
-<div class="row">
-<div class="col-md-10">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-2 references">
-<!-- REFERENCES SECTION -->
-</div>
-</div>
-<p><!-- closes row --></p>
-<div id="wage-and-salaried-workers-total-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Wage and salaried workers, total (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_wage_total-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Wage and salaried workers (employees) are those workers who hold the type of jobs defined as “paid employment jobs,” where the incumbents hold explicit (written or oral) or implicit employment contracts that give them a basic remuneration that is not directly dependent upon the revenue of the unit for which they work.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.WORK.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_wage_total-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="self-employed-total-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Self-employed, total (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_self_total-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Self-employed workers are those workers who, working on their own account or with one or a few partners or in cooperative, hold the type of jobs defined as a “self-employment jobs.” i.e. jobs where the remuneration is directly dependent upon the profits derived from the goods and services produced. Self-employed workers include four sub-categories of employers, own-account workers, members of producers’ cooperatives, and contributing family workers.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.SELF.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_self_total-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="informal-employment-of-total-non-agricultural-employment" class="section level2">
-<h2>Informal employment (% of total non-agricultural employment)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_inf_total-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata"></span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata"></span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_inf_total-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="vulnerable-employment-total-of-total-employment-modeled-ilo-estimate" class="section level2">
-<h2>Vulnerable employment, total (% of total employment) (modeled ILO estimate)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/emp_vuln_total-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Vulnerable employment is contributing family workers and own-account workers as a percentage of total employment.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">Derived using data from International Labour Organization, ILOSTAT database. Data retrieved in September 2018.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SL.EMP.VULN.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">186</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1991-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/emp_vuln_total-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-</div>
-<div id="section-4" class="section level1 surv-divider">
-<h1></h1>
-</div>
-<div id="humancapital" class="section level1 center2 main-section">
-<h1><strong>Human capital</strong></h1>
-<div class="row">
-<div class="col-md-9">
-<!-- INDICATOR NARRATIVE SECTION -->
-<p>Placeholder text.</p>
-</div>
-<div class="col-md-3 references">
-<!-- REFERENCES SECTION -->
-<p>References:</p>
-<p><a href="http://www.healthdata.org/research-article/measuring-human-capital-systematic-analysis-195-countries-1990-2016">Measuring human capital: a systematic analysis of 195 countries and territories, 1990–2016</a></p>
-</div>
+<p><!-- closes chart column --></p>
 </div>
 <p><!-- closes row --></p>
 </div>
-<div id="healthedu" class="section level1 tabset tabset-dropdown center indicator-section">
-<h1>Health &amp; education</h1>
-<div id="expected-overall-human-capital-years" class="section level2">
-<h2>Expected overall human capital (years)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/humcap_overall-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/humcap_overall-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="expected-educational-attainment-25-29-year-old-both-sexes-years" class="section level2">
-<h2>Expected educational attainment, 25-29 year old, both sexes (years)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/humcap_edu-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<p><a href="inclusive_growth_files/figure-html/humcap_edu-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="mortality-rate-under-5-per-1000-live-births" class="section level2">
-<h2>Mortality rate, under-5 (per 1,000 live births)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/humcap_u5m-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Under-five mortality rate is the probability per 1,000 that a newborn baby will die before reaching age five, if subject to age-specific mortality rates of the specified year.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">Estimates Developed by the UN Inter-agency Group for Child Mortality Estimation ( UNICEF, WHO, World Bank, UN DESA Population Division ) at childmortality.org.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SH.DYN.MORT</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">192</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1990-2017</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">27</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/humcap_u5m-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
-<div id="prevalence-of-stunting-height-for-age-of-children-under-5" class="section level2">
-<h2>Prevalence of stunting, height for age (% of children under 5)</h2>
-<div class="panel panel-default">
-<div class="panel-body">
-<p><img src="inclusive_growth_files/figure-html/humcap_stunting-1.png" width="768" style="display: block; margin: auto;" /></p>
-</div>
-<div class="panel-footer">
-<div>
-<p><span class="label">Description:</span> <span class="metadata">Prevalence of stunting is the percentage of children under age 5 whose height for age is more than two standard deviations below the median for the international reference population ages 0-59 months. For children up to two years old height is measured by recumbent length. For older children height is measured by stature while standing. The data are based on the WHO’s new child growth standards released in 2006.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Source:</span> <span class="metadata">UNICEF, WHO, World Bank: Joint child malnutrition estimates ( JME ). Aggregation is based on UNICEF, WHO, and the World Bank harmonized dataset ( adjusted, comparable data ) and methodology.</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Extracted from:</span> <span class="metadata">World Bank: World Development Indicators (WDI)</span> <br/></p>
-</div>
-<div>
-<p><span class="label">WDI indicator code:</span> <span class="metadata">SH.STA.STNT.ZS</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Countries with data:</span> <span class="metadata">147</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (all countries):</span> <span class="metadata">1990-2016</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Time coverage (Kenya):</span> <span class="metadata">1993-2014</span> <br/></p>
-</div>
-<div>
-<p><span class="label">Number of estimates (Kenya):</span> <span class="metadata">8</span> <br/></p>
-</div>
-<p><div class="collapse" id="gdp_meta">
-<div class="well"></div>
-</div> <a href="inclusive_growth_files/figure-html/humcap_stunting-1.png"><i class="fas  fa-arrow-circle-down "></i> Download</a></p>
-</div>
-</div>
-</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>TEAMS<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>Start-ups<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p>TFP is essentially understood to be an efficiency factor that augments the productivity of factor inputs (capital and labor), however it is also recognized as “a measure of our ignorance”. Some researchers highlight generalized efficiencies such as those enabled by good management or externalities while others highlight factor specific efficiencies such as the poor performance of production workers in low wage countries. Others liken global TFP to the existing set of public knowledge goods and “know how” - or set of blueprints - that enables economic actors to transform inputs into valued outputs.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p>The Uganda Railway was originally built by the British to provide Uganda with access to the sea. Construction began at Mombasa in 1896 and reached Lake Victoria in 1901.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p>The Atlas of Economic Complexity glossary: <a href="http://atlas.cid.harvard.edu/learn/glossary" class="uri">http://atlas.cid.harvard.edu/learn/glossary</a><a href="#fnref5">↩</a></p></li>
+</ol>
 </div>
 
 

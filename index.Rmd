@@ -23,7 +23,7 @@ output: html_document
   
 <div class="card-body">
 
-<small class="text-muted">July 10, 2018</small>
+<small class="text-muted">October 1st, 2018</small>
 
 ##[Digital credit in Kenya](digitalcredit.html)
 <p class="card-text"> This report explores emerging questions about the growth, adoption and usage of digital credit. </p>
@@ -45,7 +45,7 @@ output: html_document
 <img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/03/13145230/Cash-Money.jpg" alt="Card image cap">
   
 <div class="card-body">
-<small class="text-muted">July 10, 2018</small>
+<small class="text-muted">June 15th, 2018</small>
 
 ##[Financial health, control & resilience](https://fsdkenya.shinyapps.io/gallup_global_financial_health/)
 
@@ -67,7 +67,7 @@ output: html_document
 <img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2018/06/05093128/Digital-Mobile-Women.png" alt="Card image cap">
   
 <div class="card-body">
-<small class="text-muted">July 10, 2018</small>
+<small class="text-muted">September 1st, 2018</small>
 
 ##[A snapshot of the market for credit](https://fsdkenya.shinyapps.io/kihbs_credit/)
 
@@ -87,51 +87,32 @@ output: html_document
 
 </div> <!-- closes row --> 
 
-<!--
-<div class="col-sm-5">
-<div class="img_container" id = "proj1_img"> </div>
-</div> 
 
-<div class="col-sm-7" class = "proj_details">
+<div class="row">
 
-#[Digital credit in Kenya](digitalcredit.html)
+<!-- first project --> 
+<div class="card-group"> 
 
-This report explores emerging questions about the growth, adoption and usage of digital credit in Kenya using a host of demand-side survey data, including a 2017 mobile phone survey. 
+<div class="col-sm-4">
+<div class="card">
 
-</div> 
+<img class="card-img-top" src="http://s3-eu-central-1.amazonaws.com/fsd-circle/wp-content/uploads/2017/09/27125308/KELDK33-_MG_7578.jpg" alt="Card image cap">
+  
+<div class="card-body">
 
-</div> 
+<small class="text-muted">September 26, 2018</small>
 
-<div class = "row proj_band"> 
+##[Examining the trajectory of growth and development in Kenya](inclusive_growth.html)
+<p class="card-text">  </p>
 
-<div class="col-sm-5">
-<div class="img_container" id = "proj2_img"> </div>
-</div> 
+<div class="card-footer">
+<small class="text-muted">Featured datasets:</small>
+<a href="#" class="btn btn-outline-primary btn-sm">World Development Indicators, KIHBS-II</a>
+</div>
 
-<div class="col-sm-7" class = "proj_details">
 
-#[Exploring Gallup's 2018 financial health survey](https://fsdkenya.shinyapps.io/gallup_global_financial_health/)
+</div> <!-- closes card body --> 
+</div> <!-- closes card -->
+</div> <!-- closes column --> 
 
-This interactive note provides a preliminary take on Gallup's recent survey of financial health in Kenya. 
-
-</div> 
-
-</div> 
-
-<div class = "row proj_band"> 
-
-<div class="col-sm-5">
-<div class="img_container" id = "proj3_img"> </div>
-</div> 
-
-<div class="col-sm-7" class = "proj_details">
-
-#[A snapshot of the market for credit in Kenya: evidence from KIHBS-II](https://fsdkenya.shinyapps.io/kihbs_credit/)
-
-A look into the market for credit using the Kenya's latest integrated household budget survey. 
-
-</div> 
-
-</div> 
-
---> 
+</div> <!-- closes row --> 

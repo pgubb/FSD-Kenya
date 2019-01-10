@@ -1,4 +1,8 @@
 
+blockquote { 
+  font-size: 80%; 
+}
+
 /* NAVBAR ------------------ */ 
 
 .navbar img { 
@@ -23,7 +27,7 @@ body .main-container {
 
 .center {
     margin: auto;
-    width: 70%;
+    width: 90%;
 } 
 
 .center2 { 
