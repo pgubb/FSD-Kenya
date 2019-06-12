@@ -17,14 +17,12 @@ body .main-container {
 
 /* ------------ SPLIT SCREEN SCROLLING -------------*/ 
 
-/*
 .wrap{display:flex;}
 .box{
 height: 100vh;
     width: 50vw;
     overflow: scroll;
 }
-*/ 
 
 .footnotes { 
   display: inline-block;
