@@ -1,2 +1,2 @@
-# dataindepthfsdkenya
-Collection of interactive documents exploring Kenya's financial inclusion data
+# paulgubbins
+Personal website
